@@ -40,12 +40,11 @@
             will-change: transform;
 
             transition:
-                transform 0.35s ease,
-                filter 0.4s ease;
+                transform 0.35s ease;
         }
 
         /* ----------------------------- */
-        /* DEBUG PANEL */
+        /* DEBUG */
         /* ----------------------------- */
 
         #debug {
@@ -99,7 +98,7 @@
 
         <br>
 
-        LIVE MOVEMENT:
+        MOVEMENT:
         <span id="movementText"
             class="value">
 
@@ -109,17 +108,7 @@
 
         <br>
 
-        LIVE INSTABILITY:
-        <span id="instabilityText"
-            class="value">
-
-            0
-
-        </span>
-
-        <br>
-
-        WALKING SIMILARITY:
+        WALK DIST:
         <span id="walkingText"
             class="value">
 
@@ -129,7 +118,7 @@
 
         <br>
 
-        STILL SIMILARITY:
+        STILL DIST:
         <span id="stillText"
             class="value">
 
@@ -192,42 +181,40 @@
             "videos/vid1.mp4",
             "videos/vid2.mp4",
             "videos/vid3.mp4",
-            "videos/vid4.mp4"
+            "videos/vid4.mp4",
+            "videos/vid5.mp4"
 
         ];
 
         // ---------------------------------
-        // CHOOSE MODEL
+        // MODEL
         // ---------------------------------
 
-        // "walking"
-        // "still"
-
-        const frictionModel =
+        let frictionModel =
             "still";
 
         // ---------------------------------
         // ELEMENTS
         // ---------------------------------
 
-        const current =
+        let current =
             document.getElementById(
                 "current"
             );
 
-        const next =
+        let next =
             document.getElementById(
                 "next"
+            );
+
+        const modelText =
+            document.getElementById(
+                "modelText"
             );
 
         const movementText =
             document.getElementById(
                 "movementText"
-            );
-
-        const instabilityText =
-            document.getElementById(
-                "instabilityText"
             );
 
         const walkingText =
@@ -255,16 +242,6 @@
                 "delayText"
             );
 
-        const modelText =
-            document.getElementById(
-                "modelText"
-            );
-
-        modelText.innerText =
-
-            frictionModel.toUpperCase()
-            + " FRICTION";
-
         // ---------------------------------
         // VIDEO SETUP
         // ---------------------------------
@@ -279,14 +256,18 @@
         next.playsInline = true;
 
         // ---------------------------------
-        // VIDEO START
+        // START VIDEO
         // ---------------------------------
 
         current.src = videos[0];
 
         current.load();
 
-        current.play();
+        current.play().catch(err => {
+
+            console.log(err);
+
+        });
 
         preload(1);
 
@@ -319,8 +300,14 @@
         // ---------------------------------
 
         let walkingSamples = [];
-
         let stillSamples = [];
+
+        // ---------------------------------
+        // PROFILE VALUES
+        // ---------------------------------
+
+        let walkingAverage = 0;
+        let stillAverage = 0;
 
         // ---------------------------------
         // LOAD DATA
@@ -377,93 +364,53 @@
         }
 
         // ---------------------------------
-        // PROFILES
+        // AVERAGE MOVEMENT
         // ---------------------------------
 
-        let walkingProfile = {
+        function averageMovement(samples) {
 
-            avgMovement: 0,
-            avgInstability: 0
-
-        };
-
-        let stillProfile = {
-
-            avgMovement: 0,
-            avgInstability: 0
-
-        };
-
-        // ---------------------------------
-        // BUILD PROFILES
-        // ---------------------------------
-
-        function buildProfile(samples) {
-
-            let movementSum = 0;
-
-            let instabilitySum = 0;
-
-            let previous = 0;
+            let total = 0;
 
             samples.forEach(sample => {
 
-                const movement =
+                total +=
 
                     sample.accel
                     +
                     sample.gyro;
 
-                movementSum += movement;
-
-                const instability =
-
-                    Math.abs(
-                        movement - previous
-                    );
-
-                instabilitySum += instability;
-
-                previous = movement;
-
             });
 
-            return {
-
-                avgMovement:
-
-                    movementSum
-                    / samples.length,
-
-                avgInstability:
-
-                    instabilitySum
-                    / samples.length
-
-            };
+            return total / samples.length;
 
         }
 
+        // ---------------------------------
+        // BUILD PROFILES
+        // ---------------------------------
+
         function buildProfiles() {
 
-            walkingProfile =
+            walkingAverage =
 
-                buildProfile(
+                averageMovement(
                     walkingSamples
                 );
 
-            stillProfile =
+            stillAverage =
 
-                buildProfile(
+                averageMovement(
                     stillSamples
                 );
 
             console.log(
-                walkingProfile
+                "walking avg:",
+                walkingAverage
             );
 
             console.log(
-                stillProfile
+                "still avg:",
+                stillAverage
             );
 
         }
@@ -474,13 +421,7 @@
 
         let liveMovement = 0;
 
-        let previousMovement = 0;
-
-        let liveInstability = 0;
-
         let smoothMovement = 0;
-
-        let smoothInstability = 0;
 
         // ---------------------------------
         // SENSOR LISTENER
@@ -569,20 +510,6 @@
                 liveMovement =
                     accel + gyro;
 
-                // INSTABILITY
-
-                liveInstability =
-
-                    Math.abs(
-
-                        liveMovement
-                        - previousMovement
-
-                    );
-
-                previousMovement =
-                    liveMovement;
-
                 // SMOOTHING
 
                 smoothMovement =
@@ -591,53 +518,17 @@
                     +
                     liveMovement * 0.1;
 
-                smoothInstability =
-
-                    smoothInstability * 0.9
-                    +
-                    liveInstability * 0.1;
-
             }
 
         );
 
         // ---------------------------------
-        // DISTANCE
-        // ---------------------------------
-
-        function computeDistance(
-            movement,
-            instability,
-            profile
-        ) {
-
-            return (
-
-                Math.abs(
-                    movement
-                    -
-                    profile.avgMovement
-                )
-
-                +
-
-                Math.abs(
-                    instability
-                    -
-                    profile.avgInstability
-                )
-
-            );
-
-        }
-
-        // ---------------------------------
         // FRICTION
         // ---------------------------------
 
-        let swipeThreshold = 120;
+        let swipeThreshold = 90;
 
-        let transitionDelay = 150;
+        let transitionDelay = 100;
 
         let autoplayEnabled = true;
 
@@ -647,33 +538,32 @@
 
         setInterval(() => {
 
-            if (
-                !walkingProfile.avgMovement
-            ) return;
+            if (!walkingAverage)
+                return;
 
             // DISTANCES
 
             const walkingDistance =
 
-                computeDistance(
+                Math.abs(
 
-                    smoothMovement,
-                    smoothInstability,
-                    walkingProfile
+                    smoothMovement
+                    -
+                    walkingAverage
 
                 );
 
             const stillDistance =
 
-                computeDistance(
+                Math.abs(
 
-                    smoothMovement,
-                    smoothInstability,
-                    stillProfile
+                    smoothMovement
+                    -
+                    stillAverage
 
                 );
 
-            // DETECTION
+            // DETECT
 
             let detectedState =
 
@@ -690,12 +580,11 @@
                 "still";
 
             // ---------------------------------
-            // APPLY MODEL
+            // MODEL A
+            // walking = friction
             // ---------------------------------
 
             let frictionAmount = 0;
-
-            // MODEL A
 
             if (
                 frictionModel
@@ -707,17 +596,15 @@
                     detectedState
                     === "walking"
 
-                    ?
-
-                    1
-
-                    :
-
-                    0;
+                    ? 1
+                    : 0;
 
             }
 
+            // ---------------------------------
             // MODEL B
+            // still = friction
+            // ---------------------------------
 
             if (
                 frictionModel
@@ -729,13 +616,8 @@
                     detectedState
                     === "still"
 
-                    ?
-
-                    1
-
-                    :
-
-                    0;
+                    ? 1
+                    : 0;
 
             }
 
@@ -746,7 +628,6 @@
             swipeThreshold =
 
                 frictionAmount
-                === 1
 
                 ?
 
@@ -759,7 +640,6 @@
             transitionDelay =
 
                 frictionAmount
-                === 1
 
                 ?
 
@@ -771,20 +651,20 @@
 
             autoplayEnabled =
 
-                frictionAmount === 0;
+                !frictionAmount;
 
             // ---------------------------------
             // DEBUG
             // ---------------------------------
 
+            modelText.innerText =
+
+                frictionModel.toUpperCase()
+                + " FRICTION";
+
             movementText.innerText =
 
                 smoothMovement
-                .toFixed(1);
-
-            instabilityText.innerText =
-
-                smoothInstability
                 .toFixed(1);
 
             walkingText.innerText =
@@ -819,8 +699,9 @@
         let dragging = false;
 
         let startY = 0;
-
         let currentY = 0;
+
+        let startX = 0;
 
         let currentIndex = 0;
 
@@ -840,6 +721,9 @@
                     e.touches[0].clientY;
 
                 currentY = startY;
+
+                startX =
+                    e.touches[0].clientX;
 
                 current.style.transition =
                     "none";
@@ -903,13 +787,48 @@
                     e.changedTouches[0].clientY
                     - startY;
 
+                let dx =
+
+                    e.changedTouches[0].clientX
+                    - startX;
+
                 current.style.transition =
                     "transform 0.35s ease";
 
                 next.style.transition =
                     "transform 0.35s ease";
 
+                // ---------------------------------
+                // LEFT SWIPE
+                // SWITCH MODEL
+                // ---------------------------------
+
+                if (Math.abs(dx) > 80) {
+
+                    if (dx < 0) {
+
+                        frictionModel =
+
+                            frictionModel
+                            === "walking"
+
+                            ?
+
+                            "still"
+
+                            :
+
+                            "walking";
+
+                    }
+
+                    return;
+
+                }
+
+                // ---------------------------------
                 // COMPLETE SWIPE
+                // ---------------------------------
 
                 if (dy < -swipeThreshold) {
 
@@ -962,7 +881,11 @@
 
                             current.currentTime = 0;
 
-                            current.play();
+                            current.play().catch(err => {
+
+                                console.log(err);
+
+                            });
 
                         }
 
@@ -982,7 +905,9 @@
 
                 }
 
+                // ---------------------------------
                 // SNAP BACK
+                // ---------------------------------
 
                 else {
 
@@ -999,7 +924,7 @@
         );
 
         // ---------------------------------
-        // START LOADING
+        // LOAD DATA
         // ---------------------------------
 
         loadTrainingData();
