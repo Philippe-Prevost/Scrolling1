@@ -41,8 +41,7 @@
 
             transition:
                 transform 0.35s ease,
-                filter 0.5s ease,
-                opacity 0.5s ease;
+                filter 0.4s ease;
         }
 
         /* ----------------------------- */
@@ -80,76 +79,6 @@
 
         }
 
-        /* ----------------------------- */
-        /* ATMOSPHERE */
-        /* ----------------------------- */
-
-        #atmosphere {
-
-            position: fixed;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            z-index: 50;
-
-            transition:
-                background 0.6s ease;
-        }
-
-        /* ----------------------------- */
-        /* PLAY OVERLAY */
-        /* ----------------------------- */
-
-        #playOverlay {
-
-            position: fixed;
-
-            inset: 0;
-
-            display: none;
-
-            justify-content: center;
-            align-items: center;
-
-            z-index: 500;
-
-            pointer-events: none;
-        }
-
-        #playCircle {
-
-            width: 90px;
-            height: 90px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(0,0,0,0.45);
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            backdrop-filter: blur(6px);
-        }
-
-        #playTriangle {
-
-            width: 0;
-            height: 0;
-
-            border-left: 28px solid white;
-
-            border-top: 18px solid transparent;
-
-            border-bottom: 18px solid transparent;
-
-            margin-left: 6px;
-        }
-
     </style>
 
 </head>
@@ -160,17 +89,17 @@
 
     <div id="debug">
 
-        TRACE:
-        <span id="traceText"
+        MODEL:
+        <span id="modelText"
             class="value">
 
-            walking_01
+            STILL FRICTION
 
         </span>
 
         <br>
 
-        MOVEMENT:
+        LIVE MOVEMENT:
         <span id="movementText"
             class="value">
 
@@ -180,18 +109,8 @@
 
         <br>
 
-        ATTENTION:
-        <span id="attentionText"
-            class="value">
-
-            OUT
-
-        </span>
-
-        <br>
-
-        IN SCORE:
-        <span id="inScoreText"
+        LIVE INSTABILITY:
+        <span id="instabilityText"
             class="value">
 
             0
@@ -200,29 +119,53 @@
 
         <br>
 
-        INTERNAL FRICTION:
-        <span id="frictionText"
+        WALKING SIMILARITY:
+        <span id="walkingText"
             class="value">
 
             0
 
         </span>
 
-    </div>
+        <br>
 
-    <!-- ATMOSPHERE -->
+        STILL SIMILARITY:
+        <span id="stillText"
+            class="value">
 
-    <div id="atmosphere"></div>
+            0
 
-    <!-- PLAY OVERLAY -->
+        </span>
 
-    <div id="playOverlay">
+        <br>
 
-        <div id="playCircle">
+        DETECTED:
+        <span id="detectedText"
+            class="value">
 
-            <div id="playTriangle"></div>
+            ...
 
-        </div>
+        </span>
+
+        <br>
+
+        SWIPE:
+        <span id="swipeText"
+            class="value">
+
+            0
+
+        </span>
+
+        <br>
+
+        DELAY:
+        <span id="delayText"
+            class="value">
+
+            0
+
+        </span>
 
     </div>
 
@@ -241,7 +184,7 @@
     <script>
 
         // ---------------------------------
-        // VIDEO FILES
+        // VIDEOS
         // ---------------------------------
 
         const videos = [
@@ -249,27 +192,19 @@
             "videos/vid1.mp4",
             "videos/vid2.mp4",
             "videos/vid3.mp4",
-            "videos/vid4.mp4",
-            "videos/vid5.mp4"
+            "videos/vid4.mp4"
 
         ];
 
         // ---------------------------------
-        // TRACE
+        // CHOOSE MODEL
         // ---------------------------------
 
-        const traceFile =
+        // "walking"
+        // "still"
 
-            "data/walking_01/session_Walking1.json";
-
-        const traceName =
-            "walking_01";
-
-        // try:
-        // walking_01
-        // walking_02
-        // still_01
-        // still_02
+        const frictionModel =
+            "still";
 
         // ---------------------------------
         // ELEMENTS
@@ -285,40 +220,50 @@
                 "next"
             );
 
-        const playOverlay =
-            document.getElementById(
-                "playOverlay"
-            );
-
-        const atmosphere =
-            document.getElementById(
-                "atmosphere"
-            );
-
-        const traceText =
-            document.getElementById(
-                "traceText"
-            );
-
         const movementText =
             document.getElementById(
                 "movementText"
             );
 
-        const attentionText =
+        const instabilityText =
             document.getElementById(
-                "attentionText"
+                "instabilityText"
             );
 
-        const inScoreText =
+        const walkingText =
             document.getElementById(
-                "inScoreText"
+                "walkingText"
             );
 
-        const frictionText =
+        const stillText =
             document.getElementById(
-                "frictionText"
+                "stillText"
             );
+
+        const detectedText =
+            document.getElementById(
+                "detectedText"
+            );
+
+        const swipeText =
+            document.getElementById(
+                "swipeText"
+            );
+
+        const delayText =
+            document.getElementById(
+                "delayText"
+            );
+
+        const modelText =
+            document.getElementById(
+                "modelText"
+            );
+
+        modelText.innerText =
+
+            frictionModel.toUpperCase()
+            + " FRICTION";
 
         // ---------------------------------
         // VIDEO SETUP
@@ -334,57 +279,7 @@
         next.playsInline = true;
 
         // ---------------------------------
-        // TRACE DATA
-        // ---------------------------------
-
-        let embodiedTrace = [];
-
-        let traceIndex = 0;
-
-        traceText.innerText =
-            traceName;
-
-        fetch(traceFile)
-
-        .then(r => r.json())
-
-        .then(data => {
-
-            embodiedTrace = data;
-
-        });
-
-        // ---------------------------------
-        // STATE
-        // ---------------------------------
-
-        let currentIndex = 0;
-
-        let dragging = false;
-
-        let startY = 0;
-
-        let currentY = 0;
-
-        // ---------------------------------
-        // ATTENTION MODEL
-        // ---------------------------------
-
-        let attentionInScore = 0;
-
-        // 0 = OUT
-        // 1 = IN
-
-        let internalFriction = 0;
-
-        let swipeThreshold = 120;
-
-        let transitionDelay = 150;
-
-        let autoplayEnabled = true;
-
-        // ---------------------------------
-        // START
+        // VIDEO START
         // ---------------------------------
 
         current.src = videos[0];
@@ -420,278 +315,514 @@
         }
 
         // ---------------------------------
-        // MAP RANGE
+        // TRAINING DATA
         // ---------------------------------
 
-        function mapRange(
-            value,
-            inMin,
-            inMax,
-            outMin,
-            outMax
+        let walkingSamples = [];
+
+        let stillSamples = [];
+
+        // ---------------------------------
+        // LOAD DATA
+        // ---------------------------------
+
+        async function loadTrainingData() {
+
+            // WALKING
+
+            const walking1 = await fetch(
+
+                "data/walking_01/session_Walking1.json"
+
+            ).then(r => r.json());
+
+            const walking2 = await fetch(
+
+                "data/walking_02/session_Walking2.json"
+
+            ).then(r => r.json());
+
+            // STILL
+
+            const still1 = await fetch(
+
+                "data/still_01/sessionStill_1.json"
+
+            ).then(r => r.json());
+
+            const still2 = await fetch(
+
+                "data/still_02/session_Still2.json"
+
+            ).then(r => r.json());
+
+            // MERGE
+
+            walkingSamples = [
+
+                ...walking1,
+                ...walking2
+
+            ];
+
+            stillSamples = [
+
+                ...still1,
+                ...still2
+
+            ];
+
+            buildProfiles();
+
+        }
+
+        // ---------------------------------
+        // PROFILES
+        // ---------------------------------
+
+        let walkingProfile = {
+
+            avgMovement: 0,
+            avgInstability: 0
+
+        };
+
+        let stillProfile = {
+
+            avgMovement: 0,
+            avgInstability: 0
+
+        };
+
+        // ---------------------------------
+        // BUILD PROFILES
+        // ---------------------------------
+
+        function buildProfile(samples) {
+
+            let movementSum = 0;
+
+            let instabilitySum = 0;
+
+            let previous = 0;
+
+            samples.forEach(sample => {
+
+                const movement =
+
+                    sample.accel
+                    +
+                    sample.gyro;
+
+                movementSum += movement;
+
+                const instability =
+
+                    Math.abs(
+                        movement - previous
+                    );
+
+                instabilitySum += instability;
+
+                previous = movement;
+
+            });
+
+            return {
+
+                avgMovement:
+
+                    movementSum
+                    / samples.length,
+
+                avgInstability:
+
+                    instabilitySum
+                    / samples.length
+
+            };
+
+        }
+
+        function buildProfiles() {
+
+            walkingProfile =
+
+                buildProfile(
+                    walkingSamples
+                );
+
+            stillProfile =
+
+                buildProfile(
+                    stillSamples
+                );
+
+            console.log(
+                walkingProfile
+            );
+
+            console.log(
+                stillProfile
+            );
+
+        }
+
+        // ---------------------------------
+        // LIVE SENSOR DATA
+        // ---------------------------------
+
+        let liveMovement = 0;
+
+        let previousMovement = 0;
+
+        let liveInstability = 0;
+
+        let smoothMovement = 0;
+
+        let smoothInstability = 0;
+
+        // ---------------------------------
+        // SENSOR LISTENER
+        // ---------------------------------
+
+        let lastSensorUpdate = 0;
+
+        window.addEventListener(
+
+            "devicemotion",
+
+            e => {
+
+                const now = Date.now();
+
+                if (
+                    now - lastSensorUpdate < 50
+                ) return;
+
+                lastSensorUpdate = now;
+
+                // ACCEL
+
+                const acc =
+                    e.accelerationIncludingGravity;
+
+                let accel = 0;
+
+                if (acc) {
+
+                    accel = Math.sqrt(
+
+                        (acc.x || 0)
+                        *
+                        (acc.x || 0)
+
+                        +
+
+                        (acc.y || 0)
+                        *
+                        (acc.y || 0)
+
+                        +
+
+                        (acc.z || 0)
+                        *
+                        (acc.z || 0)
+
+                    );
+
+                }
+
+                // GYRO
+
+                const rot =
+                    e.rotationRate;
+
+                let gyro = 0;
+
+                if (rot) {
+
+                    gyro = Math.sqrt(
+
+                        (rot.alpha || 0)
+                        *
+                        (rot.alpha || 0)
+
+                        +
+
+                        (rot.beta || 0)
+                        *
+                        (rot.beta || 0)
+
+                        +
+
+                        (rot.gamma || 0)
+                        *
+                        (rot.gamma || 0)
+
+                    );
+
+                }
+
+                // MOVEMENT
+
+                liveMovement =
+                    accel + gyro;
+
+                // INSTABILITY
+
+                liveInstability =
+
+                    Math.abs(
+
+                        liveMovement
+                        - previousMovement
+
+                    );
+
+                previousMovement =
+                    liveMovement;
+
+                // SMOOTHING
+
+                smoothMovement =
+
+                    smoothMovement * 0.9
+                    +
+                    liveMovement * 0.1;
+
+                smoothInstability =
+
+                    smoothInstability * 0.9
+                    +
+                    liveInstability * 0.1;
+
+            }
+
+        );
+
+        // ---------------------------------
+        // DISTANCE
+        // ---------------------------------
+
+        function computeDistance(
+            movement,
+            instability,
+            profile
         ) {
 
             return (
 
-                (value - inMin)
-
-                *
-
-                (outMax - outMin)
-
-                /
-
-                (inMax - inMin)
+                Math.abs(
+                    movement
+                    -
+                    profile.avgMovement
+                )
 
                 +
 
-                outMin
+                Math.abs(
+                    instability
+                    -
+                    profile.avgInstability
+                )
 
             );
 
         }
 
         // ---------------------------------
-        // APPLY TRACE SAMPLE
+        // FRICTION
         // ---------------------------------
 
-        function applyTrace(sample) {
+        let swipeThreshold = 120;
 
-            // -------------------------
-            // MOVEMENT VALUE
-            // -------------------------
+        let transitionDelay = 150;
 
-            const movement =
-
-                sample.accel
-                +
-                sample.gyro;
-
-            movementText.innerText =
-                movement.toFixed(1);
-
-            // -------------------------
-            // ATTENTION ESTIMATION
-            // -------------------------
-
-            // MORE movement
-            // = more OUT
-
-            // LESS movement
-            // = more IN
-
-            let targetInScore =
-
-                1
-                -
-                mapRange(
-
-                    movement,
-
-                    8,
-                    110,
-
-                    0,
-                    1
-
-                );
-
-            // clamp
-
-            targetInScore =
-
-                Math.max(
-                    0,
-
-                    Math.min(
-                        1,
-                        targetInScore
-                    )
-                );
-
-            // smoothing
-
-            attentionInScore =
-
-                attentionInScore * 0.92
-                +
-                targetInScore * 0.08;
-
-            // -------------------------
-            // INTERNAL FRICTION
-            // -------------------------
-
-            internalFriction =
-
-                attentionInScore;
-
-            // -------------------------
-            // INTERFACE MODULATION
-            // -------------------------
-
-            swipeThreshold =
-
-                mapRange(
-
-                    internalFriction,
-
-                    0,
-                    1,
-
-                    80,
-                    260
-
-                );
-
-            transitionDelay =
-
-                mapRange(
-
-                    internalFriction,
-
-                    0,
-                    1,
-
-                    50,
-                    1200
-
-                );
-
-            autoplayEnabled =
-
-                internalFriction < 0.78;
-
-            // -------------------------
-            // ATMOSPHERIC MODULATION
-            // -------------------------
-
-            const blur =
-
-                mapRange(
-
-                    internalFriction,
-
-                    0,
-                    1,
-
-                    0,
-                    2.4
-
-                );
-
-            const brightness =
-
-                mapRange(
-
-                    internalFriction,
-
-                    0,
-                    1,
-
-                    1,
-                    0.82
-
-                );
-
-            current.style.filter =
-
-                `blur(${blur}px)
-                 brightness(${brightness})`;
-
-            // vignette
-
-            const vignette =
-
-                mapRange(
-
-                    internalFriction,
-
-                    0,
-                    1,
-
-                    0,
-                    0.25
-
-                );
-
-            atmosphere.style.background =
-
-                `radial-gradient(
-                    circle at center,
-                    rgba(0,0,0,0),
-                    rgba(0,0,0,${vignette})
-                )`;
-
-            // -------------------------
-            // DEBUG
-            // -------------------------
-
-            inScoreText.innerText =
-
-                attentionInScore
-                .toFixed(2);
-
-            frictionText.innerText =
-
-                internalFriction
-                .toFixed(2);
-
-            attentionText.innerText =
-
-                attentionInScore > 0.65
-                    ? "IN"
-                    : "OUT";
-
-        }
+        let autoplayEnabled = true;
 
         // ---------------------------------
-        // TRACE PLAYBACK
+        // CLASSIFICATION LOOP
         // ---------------------------------
 
         setInterval(() => {
 
             if (
-                embodiedTrace.length === 0
+                !walkingProfile.avgMovement
             ) return;
 
-            const sample =
+            // DISTANCES
 
-                embodiedTrace[
-                    traceIndex
-                ];
+            const walkingDistance =
 
-            applyTrace(sample);
+                computeDistance(
 
-            traceIndex++;
+                    smoothMovement,
+                    smoothInstability,
+                    walkingProfile
+
+                );
+
+            const stillDistance =
+
+                computeDistance(
+
+                    smoothMovement,
+                    smoothInstability,
+                    stillProfile
+
+                );
+
+            // DETECTION
+
+            let detectedState =
+
+                walkingDistance
+                <
+                stillDistance
+
+                ?
+
+                "walking"
+
+                :
+
+                "still";
+
+            // ---------------------------------
+            // APPLY MODEL
+            // ---------------------------------
+
+            let frictionAmount = 0;
+
+            // MODEL A
 
             if (
-                traceIndex
-                >= embodiedTrace.length
+                frictionModel
+                === "walking"
             ) {
 
-                traceIndex = 0;
+                frictionAmount =
+
+                    detectedState
+                    === "walking"
+
+                    ?
+
+                    1
+
+                    :
+
+                    0;
 
             }
+
+            // MODEL B
+
+            if (
+                frictionModel
+                === "still"
+            ) {
+
+                frictionAmount =
+
+                    detectedState
+                    === "still"
+
+                    ?
+
+                    1
+
+                    :
+
+                    0;
+
+            }
+
+            // ---------------------------------
+            // APPLY FRICTION
+            // ---------------------------------
+
+            swipeThreshold =
+
+                frictionAmount
+                === 1
+
+                ?
+
+                260
+
+                :
+
+                90;
+
+            transitionDelay =
+
+                frictionAmount
+                === 1
+
+                ?
+
+                1200
+
+                :
+
+                100;
+
+            autoplayEnabled =
+
+                frictionAmount === 0;
+
+            // ---------------------------------
+            // DEBUG
+            // ---------------------------------
+
+            movementText.innerText =
+
+                smoothMovement
+                .toFixed(1);
+
+            instabilityText.innerText =
+
+                smoothInstability
+                .toFixed(1);
+
+            walkingText.innerText =
+
+                walkingDistance
+                .toFixed(1);
+
+            stillText.innerText =
+
+                stillDistance
+                .toFixed(1);
+
+            detectedText.innerText =
+                detectedState;
+
+            swipeText.innerText =
+                Math.round(
+                    swipeThreshold
+                );
+
+            delayText.innerText =
+                Math.round(
+                    transitionDelay
+                );
 
         }, 250);
 
         // ---------------------------------
-        // PLAY OVERLAY
+        // DRAGGING
         // ---------------------------------
 
-        function showPlayOverlay() {
+        let dragging = false;
 
-            playOverlay.style.display =
-                "flex";
+        let startY = 0;
 
-        }
+        let currentY = 0;
 
-        function hidePlayOverlay() {
-
-            playOverlay.style.display =
-                "none";
-
-        }
+        let currentIndex = 0;
 
         // ---------------------------------
         // TOUCH START
@@ -773,7 +904,7 @@
                     - startY;
 
                 current.style.transition =
-                    "transform 0.35s ease, filter 0.5s ease";
+                    "transform 0.35s ease";
 
                 next.style.transition =
                     "transform 0.35s ease";
@@ -829,8 +960,6 @@
                             autoplayEnabled
                         ) {
 
-                            hidePlayOverlay();
-
                             current.currentTime = 0;
 
                             current.play();
@@ -840,8 +969,6 @@
                         else {
 
                             current.pause();
-
-                            showPlayOverlay();
 
                         }
 
@@ -870,6 +997,12 @@
             }
 
         );
+
+        // ---------------------------------
+        // START LOADING
+        // ---------------------------------
+
+        loadTrainingData();
 
     </script>
 
