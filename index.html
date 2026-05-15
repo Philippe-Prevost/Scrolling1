@@ -19,8 +19,6 @@
             background: black;
 
             touch-action: none;
-
-            font-family: sans-serif;
         }
 
         video {
@@ -38,44 +36,52 @@
             background: black;
 
             will-change: transform;
-
-            transition:
-                transform 0.35s ease;
         }
 
-        /* ----------------------------- */
-        /* DEBUG */
-        /* ----------------------------- */
+        #label {
+
+            position: fixed;
+
+            top: 10px;
+            left: 10px;
+
+            color: white;
+
+            background:
+                rgba(0,0,0,0.5);
+
+            padding: 6px 10px;
+
+            z-index: 100;
+
+            font-family: sans-serif;
+
+            border-radius: 8px;
+        }
 
         #debug {
 
             position: fixed;
 
-            top: 12px;
-            left: 12px;
-
-            z-index: 1000;
+            bottom: 10px;
+            left: 10px;
 
             color: white;
 
             background:
-                rgba(0,0,0,0.45);
+                rgba(0,0,0,0.5);
 
-            padding: 12px 14px;
+            padding: 8px;
 
-            border-radius: 12px;
+            z-index: 100;
 
-            line-height: 1.7;
+            font-family: monospace;
 
-            font-size: 14px;
+            font-size: 12px;
 
-            backdrop-filter: blur(10px);
-        }
+            border-radius: 8px;
 
-        .value {
-
-            color: #7dd3fc;
-
+            line-height: 1.5;
         }
 
     </style>
@@ -84,89 +90,36 @@
 
 <body>
 
+    <!-- LABEL -->
+
+    <div id="label">
+
+        MODEL:
+        STILL FRICTION
+
+    </div>
+
     <!-- DEBUG -->
 
     <div id="debug">
 
-        MODEL:
-        <span id="modelText"
-            class="value">
-
-            STILL FRICTION
-
-        </span>
-
-        <br>
-
-        MOVEMENT:
-        <span id="movementText"
-            class="value">
-
-            0
-
-        </span>
-
-        <br>
-
-        WALK DIST:
-        <span id="walkingText"
-            class="value">
-
-            0
-
-        </span>
-
-        <br>
-
-        STILL DIST:
-        <span id="stillText"
-            class="value">
-
-            0
-
-        </span>
-
-        <br>
-
-        DETECTED:
-        <span id="detectedText"
-            class="value">
-
-            ...
-
-        </span>
-
-        <br>
-
-        SWIPE:
-        <span id="swipeText"
-            class="value">
-
-            0
-
-        </span>
-
-        <br>
-
-        DELAY:
-        <span id="delayText"
-            class="value">
-
-            0
-
-        </span>
+        Loading...
 
     </div>
 
     <!-- VIDEOS -->
 
     <video id="current"
+        autoplay
         muted
+        loop
         playsinline>
     </video>
 
     <video id="next"
+        autoplay
         muted
+        loop
         playsinline>
     </video>
 
@@ -182,16 +135,10 @@
             "videos/vid2.mp4",
             "videos/vid3.mp4",
             "videos/vid4.mp4",
-            "videos/vid5.mp4"
+            "videos/vid5.mp4",
+            "videos/vid6.mp4"
 
         ];
-
-        // ---------------------------------
-        // MODEL
-        // ---------------------------------
-
-        let frictionModel =
-            "still";
 
         // ---------------------------------
         // ELEMENTS
@@ -207,93 +154,42 @@
                 "next"
             );
 
-        const modelText =
+        const label =
             document.getElementById(
-                "modelText"
+                "label"
             );
 
-        const movementText =
+        const debug =
             document.getElementById(
-                "movementText"
-            );
-
-        const walkingText =
-            document.getElementById(
-                "walkingText"
-            );
-
-        const stillText =
-            document.getElementById(
-                "stillText"
-            );
-
-        const detectedText =
-            document.getElementById(
-                "detectedText"
-            );
-
-        const swipeText =
-            document.getElementById(
-                "swipeText"
-            );
-
-        const delayText =
-            document.getElementById(
-                "delayText"
+                "debug"
             );
 
         // ---------------------------------
-        // VIDEO SETUP
+        // VIDEO SETTINGS
         // ---------------------------------
 
-        current.loop = true;
-        next.loop = true;
+        [current, next].forEach(v => {
 
-        current.muted = true;
-        next.muted = true;
+            v.muted = true;
+            v.autoplay = true;
+            v.loop = true;
+            v.playsInline = true;
 
-        current.playsInline = true;
-        next.playsInline = true;
-
-        // ---------------------------------
-        // START VIDEO
-        // ---------------------------------
-
-        current.src = videos[0];
-
-        current.load();
-
-        current.play().catch(err => {
-
-            console.log(err);
+            v.setAttribute("muted", "");
+            v.setAttribute("autoplay", "");
+            v.setAttribute("playsinline", "");
 
         });
 
-        preload(1);
-
-        current.style.transform =
-            "translateY(0vh)";
-
-        next.style.transform =
-            "translateY(100vh)";
-
         // ---------------------------------
-        // PRELOAD
+        // MODEL
         // ---------------------------------
 
-        function preload(index) {
+        let frictionModel =
+            "still";
 
-            const file =
-
-                videos[
-                    index % videos.length
-                ];
-
-            next.src = file;
-
-            next.load();
-
-        }
+        // "walking"
+        // "still"
 
         // ---------------------------------
         // TRAINING DATA
@@ -301,10 +197,6 @@
 
         let walkingSamples = [];
         let stillSamples = [];
-
-        // ---------------------------------
-        // PROFILE VALUES
-        // ---------------------------------
 
         let walkingAverage = 0;
         let stillAverage = 0;
@@ -523,14 +415,22 @@
         );
 
         // ---------------------------------
-        // FRICTION
+        // SESSION
         // ---------------------------------
 
-        let swipeThreshold = 90;
+        let currentIndex = 0;
+
+        let swipeCount = 0;
+
+        let lastSwipe = Date.now();
+
+        // ---------------------------------
+        // FRICTION VALUES
+        // ---------------------------------
+
+        let swipeThreshold = 120;
 
         let transitionDelay = 100;
-
-        let autoplayEnabled = true;
 
         // ---------------------------------
         // CLASSIFICATION LOOP
@@ -541,7 +441,7 @@
             if (!walkingAverage)
                 return;
 
-            // DISTANCES
+            // DISTANCE
 
             const walkingDistance =
 
@@ -628,69 +528,121 @@
             swipeThreshold =
 
                 frictionAmount
-
-                ?
-
-                260
-
-                :
-
-                90;
+                ? 260
+                : 120;
 
             transitionDelay =
 
                 frictionAmount
-
-                ?
-
-                1200
-
-                :
-
-                100;
-
-            autoplayEnabled =
-
-                !frictionAmount;
+                ? 1200
+                : 100;
 
             // ---------------------------------
             // DEBUG
             // ---------------------------------
 
-            modelText.innerText =
+            label.innerText =
 
+                "MODEL: "
+                +
                 frictionModel.toUpperCase()
-                + " FRICTION";
+                +
+                " FRICTION";
 
-            movementText.innerText =
+            debug.innerHTML = `
 
-                smoothMovement
-                .toFixed(1);
+Movement:
+${smoothMovement.toFixed(1)}
 
-            walkingText.innerText =
+<br>
 
-                walkingDistance
-                .toFixed(1);
+Walking Avg:
+${walkingAverage.toFixed(1)}
 
-            stillText.innerText =
+<br>
 
-                stillDistance
-                .toFixed(1);
+Still Avg:
+${stillAverage.toFixed(1)}
 
-            detectedText.innerText =
-                detectedState;
+<br>
 
-            swipeText.innerText =
-                Math.round(
-                    swipeThreshold
-                );
+Walking Dist:
+${walkingDistance.toFixed(1)}
 
-            delayText.innerText =
-                Math.round(
-                    transitionDelay
-                );
+<br>
+
+Still Dist:
+${stillDistance.toFixed(1)}
+
+<br>
+
+Detected:
+${detectedState}
+
+<br>
+
+Swipe:
+${Math.round(swipeThreshold)}
+
+<br>
+
+Delay:
+${Math.round(transitionDelay)}ms
+
+            `;
 
         }, 250);
+
+        // ---------------------------------
+        // PRELOAD
+        // ---------------------------------
+
+        function preload(index) {
+
+            const file =
+
+                videos[
+                    index % videos.length
+                ];
+
+            console.log(
+                "Preloading:",
+                file
+            );
+
+            next.preload = "auto";
+
+            next.src = file;
+
+            next.load();
+
+            next.play().catch(err => {
+
+                console.log(err);
+
+            });
+
+        }
+
+        // ---------------------------------
+        // INITIAL VIDEO
+        // ---------------------------------
+
+        current.src = videos[0];
+
+        current.play().catch(err => {
+
+            console.log(err);
+
+        });
+
+        preload(1);
+
+        current.style.transform =
+            "translateY(0vh)";
+
+        next.style.transform =
+            "translateY(100vh)";
 
         // ---------------------------------
         // DRAGGING
@@ -698,12 +650,10 @@
 
         let dragging = false;
 
-        let startY = 0;
-        let currentY = 0;
-
         let startX = 0;
+        let startY = 0;
 
-        let currentIndex = 0;
+        let currentY = 0;
 
         // ---------------------------------
         // TOUCH START
@@ -717,19 +667,21 @@
 
                 dragging = true;
 
+                startX =
+                    e.touches[0].clientX;
+
                 startY =
                     e.touches[0].clientY;
 
                 currentY = startY;
-
-                startX =
-                    e.touches[0].clientX;
 
                 current.style.transition =
                     "none";
 
                 next.style.transition =
                     "none";
+
+                current.play();
 
             }
 
@@ -753,6 +705,8 @@
 
                 let deltaY =
                     currentY - startY;
+
+                // upward only
 
                 if (deltaY < 0) {
 
@@ -782,30 +736,28 @@
 
                 dragging = false;
 
-                let dy =
-
-                    e.changedTouches[0].clientY
-                    - startY;
-
                 let dx =
 
                     e.changedTouches[0].clientX
                     - startX;
 
-                current.style.transition =
-                    "transform 0.35s ease";
+                let dy =
 
-                next.style.transition =
-                    "transform 0.35s ease";
+                    e.changedTouches[0].clientY
+                    - startY;
 
                 // ---------------------------------
-                // LEFT SWIPE
+                // LEFT / RIGHT SWIPE
                 // SWITCH MODEL
                 // ---------------------------------
 
-                if (Math.abs(dx) > 80) {
+                if (
+                    Math.abs(dx)
+                    >
+                    Math.abs(dy)
+                ) {
 
-                    if (dx < 0) {
+                    if (dx < -50) {
 
                         frictionModel =
 
@@ -822,15 +774,43 @@
 
                     }
 
+                    current.style.transform =
+                        "translateY(0vh)";
+
+                    next.style.transform =
+                        "translateY(100vh)";
+
                     return;
 
                 }
 
                 // ---------------------------------
-                // COMPLETE SWIPE
+                // VERTICAL SWIPE
                 // ---------------------------------
 
+                current.style.transition =
+                    "transform 0.25s ease";
+
+                next.style.transition =
+                    "transform 0.25s ease";
+
+                // COMPLETE SWIPE
+
                 if (dy < -swipeThreshold) {
+
+                    const now =
+                        Date.now();
+
+                    const interval =
+                        now - lastSwipe;
+
+                    lastSwipe = now;
+
+                    swipeCount++;
+
+                    // ---------------------------------
+                    // ANIMATE
+                    // ---------------------------------
 
                     current.style.transform =
                         "translateY(-100vh)";
@@ -838,7 +818,13 @@
                     next.style.transform =
                         "translateY(0vh)";
 
+                    // ---------------------------------
+                    // APPLY DELAY
+                    // ---------------------------------
+
                     setTimeout(() => {
+
+                        // SWAP
 
                         let temp =
                             current;
@@ -848,6 +834,8 @@
 
                         next =
                             temp;
+
+                        // RESET
 
                         current.style.transition =
                             "none";
@@ -860,6 +848,8 @@
 
                         next.style.transform =
                             "translateY(100vh)";
+
+                        // NEXT VIDEO
 
                         currentIndex =
 
@@ -875,29 +865,15 @@
                             currentIndex + 1
                         );
 
-                        if (
-                            autoplayEnabled
-                        ) {
+                        current.play().catch(err => {
 
-                            current.currentTime = 0;
+                            console.log(err);
 
-                            current.play().catch(err => {
-
-                                console.log(err);
-
-                            });
-
-                        }
-
-                        else {
-
-                            current.pause();
-
-                        }
+                        });
 
                     },
 
-                    300
+                    250
                     +
                     transitionDelay
 
@@ -905,9 +881,7 @@
 
                 }
 
-                // ---------------------------------
                 // SNAP BACK
-                // ---------------------------------
 
                 else {
 
@@ -924,7 +898,39 @@
         );
 
         // ---------------------------------
-        // LOAD DATA
+        // VIDEO ERRORS
+        // ---------------------------------
+
+        current.addEventListener(
+
+            "error",
+
+            () => {
+
+                console.log(
+                    "CURRENT VIDEO FAILED"
+                );
+
+            }
+
+        );
+
+        next.addEventListener(
+
+            "error",
+
+            () => {
+
+                console.log(
+                    "NEXT VIDEO FAILED"
+                );
+
+            }
+
+        );
+
+        // ---------------------------------
+        // LOAD TRAINING DATA
         // ---------------------------------
 
         loadTrainingData();
