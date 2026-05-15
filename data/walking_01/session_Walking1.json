@@ -1,0 +1,3362 @@
+[
+  {
+    "time": 1778837092280,
+    "timeSinceStart": 10035,
+    "accel": 9.634707720510619,
+    "gyro": 36.62918315163583,
+    "state": "walking"
+  },
+  {
+    "time": 1778837092530,
+    "timeSinceStart": 10285,
+    "accel": 10.296867159280586,
+    "gyro": 43.797846811821934,
+    "state": "walking"
+  },
+  {
+    "time": 1778837092780,
+    "timeSinceStart": 10535,
+    "accel": 9.900944780093297,
+    "gyro": 48.38448295696416,
+    "state": "walking"
+  },
+  {
+    "time": 1778837093030,
+    "timeSinceStart": 10785,
+    "accel": 9.952795470692307,
+    "gyro": 45.14609195694218,
+    "state": "walking"
+  },
+  {
+    "time": 1778837093280,
+    "timeSinceStart": 11035,
+    "accel": 10.026873837068283,
+    "gyro": 43.9268512709896,
+    "state": "walking"
+  },
+  {
+    "time": 1778837093531,
+    "timeSinceStart": 11286,
+    "accel": 9.833768975866224,
+    "gyro": 40.220364838763075,
+    "state": "walking"
+  },
+  {
+    "time": 1778837093781,
+    "timeSinceStart": 11536,
+    "accel": 9.956473536635256,
+    "gyro": 48.70191357480318,
+    "state": "walking"
+  },
+  {
+    "time": 1778837094031,
+    "timeSinceStart": 11786,
+    "accel": 9.19067202163511,
+    "gyro": 37.625656661560164,
+    "state": "walking"
+  },
+  {
+    "time": 1778837094281,
+    "timeSinceStart": 12036,
+    "accel": 10.175643152864058,
+    "gyro": 53.23973459448043,
+    "state": "walking"
+  },
+  {
+    "time": 1778837094530,
+    "timeSinceStart": 12285,
+    "accel": 9.314015184335894,
+    "gyro": 77.04264922613741,
+    "state": "walking"
+  },
+  {
+    "time": 1778837094781,
+    "timeSinceStart": 12536,
+    "accel": 10.478209141640885,
+    "gyro": 70.99663654131098,
+    "state": "walking"
+  },
+  {
+    "time": 1778837095031,
+    "timeSinceStart": 12786,
+    "accel": 10.975237504769794,
+    "gyro": 80.13374571276191,
+    "state": "walking"
+  },
+  {
+    "time": 1778837095281,
+    "timeSinceStart": 13036,
+    "accel": 9.936471903565295,
+    "gyro": 98.68520451481882,
+    "state": "walking"
+  },
+  {
+    "time": 1778837095530,
+    "timeSinceStart": 13285,
+    "accel": 11.374661050960075,
+    "gyro": 90.73324864075114,
+    "state": "walking"
+  },
+  {
+    "time": 1778837095781,
+    "timeSinceStart": 13536,
+    "accel": 10.051939259349812,
+    "gyro": 99.20764595033499,
+    "state": "walking"
+  },
+  {
+    "time": 1778837096030,
+    "timeSinceStart": 13785,
+    "accel": 9.768606488275417,
+    "gyro": 78.00841904615022,
+    "state": "walking"
+  },
+  {
+    "time": 1778837096280,
+    "timeSinceStart": 14035,
+    "accel": 10.552961137092131,
+    "gyro": 71.52771698749197,
+    "state": "walking"
+  },
+  {
+    "time": 1778837096530,
+    "timeSinceStart": 14285,
+    "accel": 9.570224286658087,
+    "gyro": 57.963915620367075,
+    "state": "walking"
+  },
+  {
+    "time": 1778837096781,
+    "timeSinceStart": 14536,
+    "accel": 10.265767240497404,
+    "gyro": 51.192525774250505,
+    "state": "walking"
+  },
+  {
+    "time": 1778837097031,
+    "timeSinceStart": 14786,
+    "accel": 8.864762501108263,
+    "gyro": 68.81326216681333,
+    "state": "walking"
+  },
+  {
+    "time": 1778837097280,
+    "timeSinceStart": 15035,
+    "accel": 10.543235074547232,
+    "gyro": 61.18809950319594,
+    "state": "walking"
+  },
+  {
+    "time": 1778837097531,
+    "timeSinceStart": 15286,
+    "accel": 9.803702491002966,
+    "gyro": 59.298308712525014,
+    "state": "walking"
+  },
+  {
+    "time": 1778837097780,
+    "timeSinceStart": 15535,
+    "accel": 9.544744573551188,
+    "gyro": 69.8788594209855,
+    "state": "walking"
+  },
+  {
+    "time": 1778837098030,
+    "timeSinceStart": 15785,
+    "accel": 10.584861742910029,
+    "gyro": 66.09611696716111,
+    "state": "walking"
+  },
+  {
+    "time": 1778837098281,
+    "timeSinceStart": 16036,
+    "accel": 9.1424532352764,
+    "gyro": 59.22932632897673,
+    "state": "walking"
+  },
+  {
+    "time": 1778837098531,
+    "timeSinceStart": 16286,
+    "accel": 10.645008795780868,
+    "gyro": 60.09952359743875,
+    "state": "walking"
+  },
+  {
+    "time": 1778837098780,
+    "timeSinceStart": 16535,
+    "accel": 9.732801598582112,
+    "gyro": 71.25147698423028,
+    "state": "walking"
+  },
+  {
+    "time": 1778837099030,
+    "timeSinceStart": 16785,
+    "accel": 9.80318352714568,
+    "gyro": 69.02626159057701,
+    "state": "walking"
+  },
+  {
+    "time": 1778837099281,
+    "timeSinceStart": 17036,
+    "accel": 10.2158035216257,
+    "gyro": 80.0568773253244,
+    "state": "walking"
+  },
+  {
+    "time": 1778837099530,
+    "timeSinceStart": 17285,
+    "accel": 9.475690806386536,
+    "gyro": 67.90674068913576,
+    "state": "walking"
+  },
+  {
+    "time": 1778837099781,
+    "timeSinceStart": 17536,
+    "accel": 11.011697552089164,
+    "gyro": 62.791785709611275,
+    "state": "walking"
+  },
+  {
+    "time": 1778837100030,
+    "timeSinceStart": 17785,
+    "accel": 9.888438458685185,
+    "gyro": 58.717573545675485,
+    "state": "walking"
+  },
+  {
+    "time": 1778837100281,
+    "timeSinceStart": 18036,
+    "accel": 9.703330910006946,
+    "gyro": 45.09182300377313,
+    "state": "walking"
+  },
+  {
+    "time": 1778837100530,
+    "timeSinceStart": 18285,
+    "accel": 10.758704415043919,
+    "gyro": 53.273985276533466,
+    "state": "walking"
+  },
+  {
+    "time": 1778837100780,
+    "timeSinceStart": 18535,
+    "accel": 9.286464943621649,
+    "gyro": 40.37882481360443,
+    "state": "walking"
+  },
+  {
+    "time": 1778837101030,
+    "timeSinceStart": 18785,
+    "accel": 10.560455957870913,
+    "gyro": 45.789300462128764,
+    "state": "walking"
+  },
+  {
+    "time": 1778837101280,
+    "timeSinceStart": 19035,
+    "accel": 9.31289820086857,
+    "gyro": 38.50542014486626,
+    "state": "walking"
+  },
+  {
+    "time": 1778837101530,
+    "timeSinceStart": 19285,
+    "accel": 10.39725722668846,
+    "gyro": 50.48252554475902,
+    "state": "walking"
+  },
+  {
+    "time": 1778837101780,
+    "timeSinceStart": 19535,
+    "accel": 9.727851562346167,
+    "gyro": 56.8676502842013,
+    "state": "walking"
+  },
+  {
+    "time": 1778837102030,
+    "timeSinceStart": 19785,
+    "accel": 9.72089708153748,
+    "gyro": 45.37280481806218,
+    "state": "walking"
+  },
+  {
+    "time": 1778837102281,
+    "timeSinceStart": 20036,
+    "accel": 10.583081922789477,
+    "gyro": 53.821207790305856,
+    "state": "walking"
+  },
+  {
+    "time": 1778837102530,
+    "timeSinceStart": 20285,
+    "accel": 9.515559467247412,
+    "gyro": 43.66153379002408,
+    "state": "walking"
+  },
+  {
+    "time": 1778837102781,
+    "timeSinceStart": 20536,
+    "accel": 10.867661651489652,
+    "gyro": 41.827186302794274,
+    "state": "walking"
+  },
+  {
+    "time": 1778837103030,
+    "timeSinceStart": 20785,
+    "accel": 9.50655567097511,
+    "gyro": 56.46370234973049,
+    "state": "walking"
+  },
+  {
+    "time": 1778837103281,
+    "timeSinceStart": 21036,
+    "accel": 10.334930267189366,
+    "gyro": 55.13560863768051,
+    "state": "walking"
+  },
+  {
+    "time": 1778837103531,
+    "timeSinceStart": 21286,
+    "accel": 10.345515932713948,
+    "gyro": 66.58629699216603,
+    "state": "walking"
+  },
+  {
+    "time": 1778837103781,
+    "timeSinceStart": 21536,
+    "accel": 9.379661382826644,
+    "gyro": 53.41317509685017,
+    "state": "walking"
+  },
+  {
+    "time": 1778837104030,
+    "timeSinceStart": 21785,
+    "accel": 10.628053881320922,
+    "gyro": 57.47172029764802,
+    "state": "walking"
+  },
+  {
+    "time": 1778837104281,
+    "timeSinceStart": 22036,
+    "accel": 9.57873342972263,
+    "gyro": 56.99578794238011,
+    "state": "walking"
+  },
+  {
+    "time": 1778837104530,
+    "timeSinceStart": 22285,
+    "accel": 9.713127888205719,
+    "gyro": 57.08254823831549,
+    "state": "walking"
+  },
+  {
+    "time": 1778837104780,
+    "timeSinceStart": 22535,
+    "accel": 9.657839389032539,
+    "gyro": 59.454923515907225,
+    "state": "walking"
+  },
+  {
+    "time": 1778837105030,
+    "timeSinceStart": 22785,
+    "accel": 9.3949621176798,
+    "gyro": 63.11112698320613,
+    "state": "walking"
+  },
+  {
+    "time": 1778837105281,
+    "timeSinceStart": 23036,
+    "accel": 11.239414154180592,
+    "gyro": 104.11687141439691,
+    "state": "walking"
+  },
+  {
+    "time": 1778837105530,
+    "timeSinceStart": 23285,
+    "accel": 10.301707817068234,
+    "gyro": 92.18903602944482,
+    "state": "walking"
+  },
+  {
+    "time": 1778837105780,
+    "timeSinceStart": 23535,
+    "accel": 10.296662163618592,
+    "gyro": 121.6611797798405,
+    "state": "walking"
+  },
+  {
+    "time": 1778837106031,
+    "timeSinceStart": 23786,
+    "accel": 9.534846891853473,
+    "gyro": 120.99816186480838,
+    "state": "walking"
+  },
+  {
+    "time": 1778837106284,
+    "timeSinceStart": 24039,
+    "accel": 11.083557190931264,
+    "gyro": 107.53971215952201,
+    "state": "walking"
+  },
+  {
+    "time": 1778837106530,
+    "timeSinceStart": 24285,
+    "accel": 10.511412358717765,
+    "gyro": 114.09050157108109,
+    "state": "walking"
+  },
+  {
+    "time": 1778837106783,
+    "timeSinceStart": 24538,
+    "accel": 9.5457363270614,
+    "gyro": 83.22714437821485,
+    "state": "walking"
+  },
+  {
+    "time": 1778837107030,
+    "timeSinceStart": 24785,
+    "accel": 10.432737290641425,
+    "gyro": 72.78975740158442,
+    "state": "walking"
+  },
+  {
+    "time": 1778837107280,
+    "timeSinceStart": 25035,
+    "accel": 9.358675666413589,
+    "gyro": 58.493722512329036,
+    "state": "walking"
+  },
+  {
+    "time": 1778837107531,
+    "timeSinceStart": 25286,
+    "accel": 10.527038113076067,
+    "gyro": 76.88819139386206,
+    "state": "walking"
+  },
+  {
+    "time": 1778837107781,
+    "timeSinceStart": 25536,
+    "accel": 10.905707149163138,
+    "gyro": 92.72893541482766,
+    "state": "walking"
+  },
+  {
+    "time": 1778837108030,
+    "timeSinceStart": 25785,
+    "accel": 9.059744019248635,
+    "gyro": 98.95529404358982,
+    "state": "walking"
+  },
+  {
+    "time": 1778837108288,
+    "timeSinceStart": 26043,
+    "accel": 10.684047408891342,
+    "gyro": 102.14969441686344,
+    "state": "walking"
+  },
+  {
+    "time": 1778837108531,
+    "timeSinceStart": 26286,
+    "accel": 9.991418493869167,
+    "gyro": 94.76394659816712,
+    "state": "walking"
+  },
+  {
+    "time": 1778837108781,
+    "timeSinceStart": 26536,
+    "accel": 11.832947467274595,
+    "gyro": 107.73945303066984,
+    "state": "walking"
+  },
+  {
+    "time": 1778837109030,
+    "timeSinceStart": 26785,
+    "accel": 10.31901686046303,
+    "gyro": 88.45813288570302,
+    "state": "walking"
+  },
+  {
+    "time": 1778837109281,
+    "timeSinceStart": 27035,
+    "accel": 9.631674790461156,
+    "gyro": 67.17169857805783,
+    "state": "walking"
+  },
+  {
+    "time": 1778837109531,
+    "timeSinceStart": 27286,
+    "accel": 10.288112443394045,
+    "gyro": 60.332761519459446,
+    "state": "walking"
+  },
+  {
+    "time": 1778837109781,
+    "timeSinceStart": 27536,
+    "accel": 9.422432144387681,
+    "gyro": 46.022686669098206,
+    "state": "walking"
+  },
+  {
+    "time": 1778837110030,
+    "timeSinceStart": 27785,
+    "accel": 10.436813895255085,
+    "gyro": 42.394644820214225,
+    "state": "walking"
+  },
+  {
+    "time": 1778837110284,
+    "timeSinceStart": 28039,
+    "accel": 9.661610244090193,
+    "gyro": 47.72101862871077,
+    "state": "walking"
+  },
+  {
+    "time": 1778837110530,
+    "timeSinceStart": 28285,
+    "accel": 10.205703522190884,
+    "gyro": 42.90561247882979,
+    "state": "walking"
+  },
+  {
+    "time": 1778837110781,
+    "timeSinceStart": 28536,
+    "accel": 10.005372560023996,
+    "gyro": 44.33763977905257,
+    "state": "walking"
+  },
+  {
+    "time": 1778837111030,
+    "timeSinceStart": 28785,
+    "accel": 9.711630361805323,
+    "gyro": 31.437235148462992,
+    "state": "walking"
+  },
+  {
+    "time": 1778837111280,
+    "timeSinceStart": 29035,
+    "accel": 10.577569554993417,
+    "gyro": 33.90851118252932,
+    "state": "walking"
+  },
+  {
+    "time": 1778837111531,
+    "timeSinceStart": 29286,
+    "accel": 9.364459910119333,
+    "gyro": 32.39114782206892,
+    "state": "walking"
+  },
+  {
+    "time": 1778837111781,
+    "timeSinceStart": 29536,
+    "accel": 9.917102400164342,
+    "gyro": 50.785612410067216,
+    "state": "walking"
+  },
+  {
+    "time": 1778837112031,
+    "timeSinceStart": 29786,
+    "accel": 10.24838749338624,
+    "gyro": 52.60860203957381,
+    "state": "walking"
+  },
+  {
+    "time": 1778837112281,
+    "timeSinceStart": 30036,
+    "accel": 9.82320492616474,
+    "gyro": 50.43871540425249,
+    "state": "walking"
+  },
+  {
+    "time": 1778837112530,
+    "timeSinceStart": 30285,
+    "accel": 10.523402933045721,
+    "gyro": 50.8157050391066,
+    "state": "walking"
+  },
+  {
+    "time": 1778837112781,
+    "timeSinceStart": 30536,
+    "accel": 9.249882560514342,
+    "gyro": 38.00575432102047,
+    "state": "walking"
+  },
+  {
+    "time": 1778837113030,
+    "timeSinceStart": 30785,
+    "accel": 9.898552062137993,
+    "gyro": 46.004609236158814,
+    "state": "walking"
+  },
+  {
+    "time": 1778837113281,
+    "timeSinceStart": 31036,
+    "accel": 10.04946219598399,
+    "gyro": 79.21550261164022,
+    "state": "walking"
+  },
+  {
+    "time": 1778837113530,
+    "timeSinceStart": 31285,
+    "accel": 10.25669980412282,
+    "gyro": 76.6256982841224,
+    "state": "walking"
+  },
+  {
+    "time": 1778837113781,
+    "timeSinceStart": 31536,
+    "accel": 10.022780111965163,
+    "gyro": 85.28733744406932,
+    "state": "walking"
+  },
+  {
+    "time": 1778837114030,
+    "timeSinceStart": 31785,
+    "accel": 9.640310555443167,
+    "gyro": 86.24348989348059,
+    "state": "walking"
+  },
+  {
+    "time": 1778837114281,
+    "timeSinceStart": 32036,
+    "accel": 10.806491757484002,
+    "gyro": 79.08934445844142,
+    "state": "walking"
+  },
+  {
+    "time": 1778837114531,
+    "timeSinceStart": 32286,
+    "accel": 9.332284562062712,
+    "gyro": 58.05676136368333,
+    "state": "walking"
+  },
+  {
+    "time": 1778837114780,
+    "timeSinceStart": 32535,
+    "accel": 10.728857839984759,
+    "gyro": 52.42153992400026,
+    "state": "walking"
+  },
+  {
+    "time": 1778837115033,
+    "timeSinceStart": 32788,
+    "accel": 9.28994355361191,
+    "gyro": 44.37924884518299,
+    "state": "walking"
+  },
+  {
+    "time": 1778837115281,
+    "timeSinceStart": 33036,
+    "accel": 10.36719696497204,
+    "gyro": 48.28227325155326,
+    "state": "walking"
+  },
+  {
+    "time": 1778837115530,
+    "timeSinceStart": 33285,
+    "accel": 9.890250834411713,
+    "gyro": 46.66244397031028,
+    "state": "walking"
+  },
+  {
+    "time": 1778837115780,
+    "timeSinceStart": 33535,
+    "accel": 9.482577441922128,
+    "gyro": 39.66004764221625,
+    "state": "walking"
+  },
+  {
+    "time": 1778837116030,
+    "timeSinceStart": 33785,
+    "accel": 10.608762142407652,
+    "gyro": 46.383341517888624,
+    "state": "walking"
+  },
+  {
+    "time": 1778837116281,
+    "timeSinceStart": 34036,
+    "accel": 9.241637138462396,
+    "gyro": 44.17628022348392,
+    "state": "walking"
+  },
+  {
+    "time": 1778837116531,
+    "timeSinceStart": 34286,
+    "accel": 11.159767996772295,
+    "gyro": 54.940565884695395,
+    "state": "walking"
+  },
+  {
+    "time": 1778837116780,
+    "timeSinceStart": 34535,
+    "accel": 9.852349061524855,
+    "gyro": 67.92615037209812,
+    "state": "walking"
+  },
+  {
+    "time": 1778837117030,
+    "timeSinceStart": 34785,
+    "accel": 10.15539543159561,
+    "gyro": 56.53690094006885,
+    "state": "walking"
+  },
+  {
+    "time": 1778837117280,
+    "timeSinceStart": 35035,
+    "accel": 9.672361894278504,
+    "gyro": 56.382079732441156,
+    "state": "walking"
+  },
+  {
+    "time": 1778837117530,
+    "timeSinceStart": 35285,
+    "accel": 9.046336974541076,
+    "gyro": 51.00219955970023,
+    "state": "walking"
+  },
+  {
+    "time": 1778837117780,
+    "timeSinceStart": 35535,
+    "accel": 10.221240344603967,
+    "gyro": 53.0544676940691,
+    "state": "walking"
+  },
+  {
+    "time": 1778837118030,
+    "timeSinceStart": 35785,
+    "accel": 9.388607943302182,
+    "gyro": 43.793042334382086,
+    "state": "walking"
+  },
+  {
+    "time": 1778837118281,
+    "timeSinceStart": 36036,
+    "accel": 9.994017543008134,
+    "gyro": 32.62366507989845,
+    "state": "walking"
+  },
+  {
+    "time": 1778837118530,
+    "timeSinceStart": 36285,
+    "accel": 10.032240080475317,
+    "gyro": 32.577209867121134,
+    "state": "walking"
+  },
+  {
+    "time": 1778837118781,
+    "timeSinceStart": 36536,
+    "accel": 8.671422180053773,
+    "gyro": 33.750660180793275,
+    "state": "walking"
+  },
+  {
+    "time": 1778837119031,
+    "timeSinceStart": 36786,
+    "accel": 10.630991138661704,
+    "gyro": 56.576382569645006,
+    "state": "walking"
+  },
+  {
+    "time": 1778837119280,
+    "timeSinceStart": 37035,
+    "accel": 9.365509442931426,
+    "gyro": 76.54511084454177,
+    "state": "walking"
+  },
+  {
+    "time": 1778837119531,
+    "timeSinceStart": 37286,
+    "accel": 10.147993927236838,
+    "gyro": 70.20399047255974,
+    "state": "walking"
+  },
+  {
+    "time": 1778837119781,
+    "timeSinceStart": 37536,
+    "accel": 11.011069848028816,
+    "gyro": 86.44470880430805,
+    "state": "walking"
+  },
+  {
+    "time": 1778837120030,
+    "timeSinceStart": 37785,
+    "accel": 10.804831842729339,
+    "gyro": 87.38242819908332,
+    "state": "walking"
+  },
+  {
+    "time": 1778837120281,
+    "timeSinceStart": 38035,
+    "accel": 10.378036313671743,
+    "gyro": 100.79098005945704,
+    "state": "walking"
+  },
+  {
+    "time": 1778837120534,
+    "timeSinceStart": 38289,
+    "accel": 9.72046498623206,
+    "gyro": 87.42999784039245,
+    "state": "walking"
+  },
+  {
+    "time": 1778837120781,
+    "timeSinceStart": 38536,
+    "accel": 10.313438052937542,
+    "gyro": 74.06509681505855,
+    "state": "walking"
+  },
+  {
+    "time": 1778837121034,
+    "timeSinceStart": 38789,
+    "accel": 10.777151273996745,
+    "gyro": 70.27904202598515,
+    "state": "walking"
+  },
+  {
+    "time": 1778837121281,
+    "timeSinceStart": 39036,
+    "accel": 9.132893151218942,
+    "gyro": 49.30214427754962,
+    "state": "walking"
+  },
+  {
+    "time": 1778837121531,
+    "timeSinceStart": 39286,
+    "accel": 9.222953094365135,
+    "gyro": 61.94740980970659,
+    "state": "walking"
+  },
+  {
+    "time": 1778837121781,
+    "timeSinceStart": 39536,
+    "accel": 10.233862372158304,
+    "gyro": 75.44174366502976,
+    "state": "walking"
+  },
+  {
+    "time": 1778837122030,
+    "timeSinceStart": 39785,
+    "accel": 11.740532349307655,
+    "gyro": 94.40715830147207,
+    "state": "walking"
+  },
+  {
+    "time": 1778837122281,
+    "timeSinceStart": 40036,
+    "accel": 11.101580028443868,
+    "gyro": 126.92719638450663,
+    "state": "walking"
+  },
+  {
+    "time": 1778837122531,
+    "timeSinceStart": 40286,
+    "accel": 11.905349723050302,
+    "gyro": 175.0502108847252,
+    "state": "walking"
+  },
+  {
+    "time": 1778837122781,
+    "timeSinceStart": 40536,
+    "accel": 11.541748505505804,
+    "gyro": 172.6210829882093,
+    "state": "walking"
+  },
+  {
+    "time": 1778837123032,
+    "timeSinceStart": 40787,
+    "accel": 10.6737307623142,
+    "gyro": 128.2353199687722,
+    "state": "walking"
+  },
+  {
+    "time": 1778837123280,
+    "timeSinceStart": 41035,
+    "accel": 11.163745003055215,
+    "gyro": 114.71062095185698,
+    "state": "walking"
+  },
+  {
+    "time": 1778837123530,
+    "timeSinceStart": 41285,
+    "accel": 9.511313920841921,
+    "gyro": 86.80719337677404,
+    "state": "walking"
+  },
+  {
+    "time": 1778837123781,
+    "timeSinceStart": 41536,
+    "accel": 10.47554633765674,
+    "gyro": 86.75602306768802,
+    "state": "walking"
+  },
+  {
+    "time": 1778837124031,
+    "timeSinceStart": 41786,
+    "accel": 10.221783137410133,
+    "gyro": 78.62605322896563,
+    "state": "walking"
+  },
+  {
+    "time": 1778837124281,
+    "timeSinceStart": 42036,
+    "accel": 11.106333952784496,
+    "gyro": 74.02994454243263,
+    "state": "walking"
+  },
+  {
+    "time": 1778837124530,
+    "timeSinceStart": 42285,
+    "accel": 9.644739432516584,
+    "gyro": 66.01304681722925,
+    "state": "walking"
+  },
+  {
+    "time": 1778837124780,
+    "timeSinceStart": 42535,
+    "accel": 9.876764933748296,
+    "gyro": 60.45538177559718,
+    "state": "walking"
+  },
+  {
+    "time": 1778837125031,
+    "timeSinceStart": 42786,
+    "accel": 10.276467284567385,
+    "gyro": 83.076145397736,
+    "state": "walking"
+  },
+  {
+    "time": 1778837125282,
+    "timeSinceStart": 43037,
+    "accel": 10.031052031267123,
+    "gyro": 80.69421530270837,
+    "state": "walking"
+  },
+  {
+    "time": 1778837125530,
+    "timeSinceStart": 43285,
+    "accel": 10.78306152579716,
+    "gyro": 73.40194206721155,
+    "state": "walking"
+  },
+  {
+    "time": 1778837125781,
+    "timeSinceStart": 43536,
+    "accel": 9.764803797170497,
+    "gyro": 66.30220498141698,
+    "state": "walking"
+  },
+  {
+    "time": 1778837126030,
+    "timeSinceStart": 43785,
+    "accel": 9.83336604868297,
+    "gyro": 55.70371562279474,
+    "state": "walking"
+  },
+  {
+    "time": 1778837126281,
+    "timeSinceStart": 44036,
+    "accel": 10.076941118118453,
+    "gyro": 55.219142689590946,
+    "state": "walking"
+  },
+  {
+    "time": 1778837126530,
+    "timeSinceStart": 44285,
+    "accel": 9.684861574695663,
+    "gyro": 48.605559474843496,
+    "state": "walking"
+  },
+  {
+    "time": 1778837126780,
+    "timeSinceStart": 44535,
+    "accel": 10.291587617771416,
+    "gyro": 64.61850574666893,
+    "state": "walking"
+  },
+  {
+    "time": 1778837127030,
+    "timeSinceStart": 44785,
+    "accel": 9.551172269845148,
+    "gyro": 59.094086255093515,
+    "state": "walking"
+  },
+  {
+    "time": 1778837127281,
+    "timeSinceStart": 45035,
+    "accel": 10.584107781519979,
+    "gyro": 53.161857857335846,
+    "state": "walking"
+  },
+  {
+    "time": 1778837127530,
+    "timeSinceStart": 45285,
+    "accel": 9.989135053206459,
+    "gyro": 48.32144695751996,
+    "state": "walking"
+  },
+  {
+    "time": 1778837127781,
+    "timeSinceStart": 45536,
+    "accel": 9.830170143345645,
+    "gyro": 37.13848605457921,
+    "state": "walking"
+  },
+  {
+    "time": 1778837128032,
+    "timeSinceStart": 45787,
+    "accel": 10.566655501314289,
+    "gyro": 46.35317080996933,
+    "state": "walking"
+  },
+  {
+    "time": 1778837128281,
+    "timeSinceStart": 46036,
+    "accel": 9.521950811760732,
+    "gyro": 38.96252186093826,
+    "state": "walking"
+  },
+  {
+    "time": 1778837128530,
+    "timeSinceStart": 46285,
+    "accel": 10.658950339450643,
+    "gyro": 41.80338388910952,
+    "state": "walking"
+  },
+  {
+    "time": 1778837128781,
+    "timeSinceStart": 46536,
+    "accel": 9.468621425814689,
+    "gyro": 37.40322560320614,
+    "state": "walking"
+  },
+  {
+    "time": 1778837129030,
+    "timeSinceStart": 46785,
+    "accel": 9.94741540453205,
+    "gyro": 37.0491947862522,
+    "state": "walking"
+  },
+  {
+    "time": 1778837129281,
+    "timeSinceStart": 47036,
+    "accel": 10.054522639564302,
+    "gyro": 48.3112959348905,
+    "state": "walking"
+  },
+  {
+    "time": 1778837129531,
+    "timeSinceStart": 47286,
+    "accel": 9.355362679503672,
+    "gyro": 42.4918619046481,
+    "state": "walking"
+  },
+  {
+    "time": 1778837129781,
+    "timeSinceStart": 47536,
+    "accel": 10.45349020649618,
+    "gyro": 40.77812617735359,
+    "state": "walking"
+  },
+  {
+    "time": 1778837130031,
+    "timeSinceStart": 47786,
+    "accel": 9.519710075909325,
+    "gyro": 37.22183663972244,
+    "state": "walking"
+  },
+  {
+    "time": 1778837130282,
+    "timeSinceStart": 48037,
+    "accel": 9.838689018015547,
+    "gyro": 39.248005044027124,
+    "state": "walking"
+  },
+  {
+    "time": 1778837130530,
+    "timeSinceStart": 48285,
+    "accel": 11.139918949001519,
+    "gyro": 50.983470462678746,
+    "state": "walking"
+  },
+  {
+    "time": 1778837130780,
+    "timeSinceStart": 48535,
+    "accel": 9.076264982054978,
+    "gyro": 57.120139244546486,
+    "state": "walking"
+  },
+  {
+    "time": 1778837131030,
+    "timeSinceStart": 48785,
+    "accel": 11.070070895872941,
+    "gyro": 73.08249677762461,
+    "state": "walking"
+  },
+  {
+    "time": 1778837131281,
+    "timeSinceStart": 49036,
+    "accel": 9.886643818050354,
+    "gyro": 59.447485973859685,
+    "state": "walking"
+  },
+  {
+    "time": 1778837131530,
+    "timeSinceStart": 49285,
+    "accel": 10.080542175820414,
+    "gyro": 61.25779065530608,
+    "state": "walking"
+  },
+  {
+    "time": 1778837131781,
+    "timeSinceStart": 49536,
+    "accel": 10.113455588349904,
+    "gyro": 63.7074318646454,
+    "state": "walking"
+  },
+  {
+    "time": 1778837132031,
+    "timeSinceStart": 49786,
+    "accel": 9.617660258659113,
+    "gyro": 57.19573219817602,
+    "state": "walking"
+  },
+  {
+    "time": 1778837132284,
+    "timeSinceStart": 50038,
+    "accel": 10.790034112919459,
+    "gyro": 63.37929272297512,
+    "state": "walking"
+  },
+  {
+    "time": 1778837132530,
+    "timeSinceStart": 50285,
+    "accel": 9.627711117177387,
+    "gyro": 49.99404677944723,
+    "state": "walking"
+  },
+  {
+    "time": 1778837132781,
+    "timeSinceStart": 50536,
+    "accel": 10.450121271748115,
+    "gyro": 49.428845392220346,
+    "state": "walking"
+  },
+  {
+    "time": 1778837133030,
+    "timeSinceStart": 50785,
+    "accel": 9.630182701261338,
+    "gyro": 43.44101405042866,
+    "state": "walking"
+  },
+  {
+    "time": 1778837133281,
+    "timeSinceStart": 51036,
+    "accel": 9.792521426447133,
+    "gyro": 39.11467783491745,
+    "state": "walking"
+  },
+  {
+    "time": 1778837133531,
+    "timeSinceStart": 51286,
+    "accel": 10.615479886344827,
+    "gyro": 40.63773409149657,
+    "state": "walking"
+  },
+  {
+    "time": 1778837133782,
+    "timeSinceStart": 51537,
+    "accel": 9.357061257583089,
+    "gyro": 34.79287652198389,
+    "state": "walking"
+  },
+  {
+    "time": 1778837134031,
+    "timeSinceStart": 51786,
+    "accel": 10.11782836897816,
+    "gyro": 38.76989558456119,
+    "state": "walking"
+  },
+  {
+    "time": 1778837134281,
+    "timeSinceStart": 52036,
+    "accel": 9.639471580384152,
+    "gyro": 37.90156539290866,
+    "state": "walking"
+  },
+  {
+    "time": 1778837134530,
+    "timeSinceStart": 52285,
+    "accel": 9.481554060004154,
+    "gyro": 35.74132758998473,
+    "state": "walking"
+  },
+  {
+    "time": 1778837134781,
+    "timeSinceStart": 52536,
+    "accel": 10.642319116441227,
+    "gyro": 53.665783804793286,
+    "state": "walking"
+  },
+  {
+    "time": 1778837135030,
+    "timeSinceStart": 52785,
+    "accel": 9.57065573821994,
+    "gyro": 52.78433068611202,
+    "state": "walking"
+  },
+  {
+    "time": 1778837135288,
+    "timeSinceStart": 53043,
+    "accel": 10.64797936922588,
+    "gyro": 50.23175863154969,
+    "state": "walking"
+  },
+  {
+    "time": 1778837135530,
+    "timeSinceStart": 53285,
+    "accel": 9.72201346723619,
+    "gyro": 43.124701160748685,
+    "state": "walking"
+  },
+  {
+    "time": 1778837135781,
+    "timeSinceStart": 53536,
+    "accel": 10.20024950687726,
+    "gyro": 50.075057461086544,
+    "state": "walking"
+  },
+  {
+    "time": 1778837136031,
+    "timeSinceStart": 53786,
+    "accel": 10.191018538115959,
+    "gyro": 39.21104861862825,
+    "state": "walking"
+  },
+  {
+    "time": 1778837136281,
+    "timeSinceStart": 54036,
+    "accel": 9.599133282696823,
+    "gyro": 29.828422780530108,
+    "state": "walking"
+  },
+  {
+    "time": 1778837136531,
+    "timeSinceStart": 54286,
+    "accel": 10.59061757307026,
+    "gyro": 39.32354516321924,
+    "state": "walking"
+  },
+  {
+    "time": 1778837136783,
+    "timeSinceStart": 54538,
+    "accel": 9.59881422006492,
+    "gyro": 30.254389558483467,
+    "state": "walking"
+  },
+  {
+    "time": 1778837137031,
+    "timeSinceStart": 54786,
+    "accel": 8.863317241043786,
+    "gyro": 24.610402074584,
+    "state": "walking"
+  },
+  {
+    "time": 1778837137280,
+    "timeSinceStart": 55035,
+    "accel": 11.169499662542673,
+    "gyro": 64.95139291352294,
+    "state": "walking"
+  },
+  {
+    "time": 1778837137530,
+    "timeSinceStart": 55285,
+    "accel": 9.67591658269457,
+    "gyro": 59.745638530226074,
+    "state": "walking"
+  },
+  {
+    "time": 1778837137782,
+    "timeSinceStart": 55537,
+    "accel": 12.509896471782612,
+    "gyro": 74.1501036484128,
+    "state": "walking"
+  },
+  {
+    "time": 1778837138030,
+    "timeSinceStart": 55785,
+    "accel": 9.731344940874603,
+    "gyro": 84.12865603877292,
+    "state": "walking"
+  },
+  {
+    "time": 1778837138281,
+    "timeSinceStart": 56036,
+    "accel": 12.429009773015716,
+    "gyro": 122.95705008464108,
+    "state": "walking"
+  },
+  {
+    "time": 1778837138531,
+    "timeSinceStart": 56286,
+    "accel": 10.711895630314563,
+    "gyro": 121.06912243363416,
+    "state": "walking"
+  },
+  {
+    "time": 1778837138781,
+    "timeSinceStart": 56536,
+    "accel": 10.88058407154243,
+    "gyro": 105.20491733699673,
+    "state": "walking"
+  },
+  {
+    "time": 1778837139030,
+    "timeSinceStart": 56785,
+    "accel": 9.954876396197037,
+    "gyro": 113.10578696428017,
+    "state": "walking"
+  },
+  {
+    "time": 1778837139281,
+    "timeSinceStart": 57036,
+    "accel": 9.947232669503315,
+    "gyro": 110.85873302102571,
+    "state": "walking"
+  },
+  {
+    "time": 1778837139531,
+    "timeSinceStart": 57286,
+    "accel": 10.576088072920271,
+    "gyro": 93.12571471951826,
+    "state": "walking"
+  },
+  {
+    "time": 1778837139781,
+    "timeSinceStart": 57536,
+    "accel": 9.809074443620297,
+    "gyro": 73.78878616972244,
+    "state": "walking"
+  },
+  {
+    "time": 1778837140031,
+    "timeSinceStart": 57786,
+    "accel": 10.898377510934504,
+    "gyro": 67.44453323444762,
+    "state": "walking"
+  },
+  {
+    "time": 1778837140281,
+    "timeSinceStart": 58036,
+    "accel": 10.097619924839114,
+    "gyro": 67.51119313500989,
+    "state": "walking"
+  },
+  {
+    "time": 1778837140530,
+    "timeSinceStart": 58285,
+    "accel": 9.67351044417865,
+    "gyro": 67.20896874124506,
+    "state": "walking"
+  },
+  {
+    "time": 1778837140784,
+    "timeSinceStart": 58539,
+    "accel": 10.486964788273205,
+    "gyro": 83.63659037231221,
+    "state": "walking"
+  },
+  {
+    "time": 1778837141030,
+    "timeSinceStart": 58785,
+    "accel": 9.667361678000056,
+    "gyro": 82.55576450829926,
+    "state": "walking"
+  },
+  {
+    "time": 1778837141281,
+    "timeSinceStart": 59036,
+    "accel": 10.775193655216816,
+    "gyro": 85.49838178957941,
+    "state": "walking"
+  },
+  {
+    "time": 1778837141531,
+    "timeSinceStart": 59286,
+    "accel": 9.738957453633935,
+    "gyro": 80.12148036803454,
+    "state": "walking"
+  },
+  {
+    "time": 1778837141781,
+    "timeSinceStart": 59536,
+    "accel": 9.766987433674565,
+    "gyro": 65.74171730514819,
+    "state": "walking"
+  },
+  {
+    "time": 1778837142031,
+    "timeSinceStart": 59786,
+    "accel": 10.324756984524313,
+    "gyro": 57.31302312818114,
+    "state": "walking"
+  },
+  {
+    "time": 1778837142281,
+    "timeSinceStart": 60036,
+    "accel": 9.5078056848305,
+    "gyro": 42.176560656804206,
+    "state": "walking"
+  },
+  {
+    "time": 1778837142531,
+    "timeSinceStart": 60286,
+    "accel": 10.536130187431299,
+    "gyro": 38.92317071527701,
+    "state": "walking"
+  },
+  {
+    "time": 1778837142781,
+    "timeSinceStart": 60536,
+    "accel": 9.58022383141953,
+    "gyro": 41.96741903096186,
+    "state": "walking"
+  },
+  {
+    "time": 1778837143030,
+    "timeSinceStart": 60785,
+    "accel": 9.790889953525435,
+    "gyro": 37.747432063089306,
+    "state": "walking"
+  },
+  {
+    "time": 1778837143281,
+    "timeSinceStart": 61035,
+    "accel": 10.347057392125485,
+    "gyro": 42.70819863313388,
+    "state": "walking"
+  },
+  {
+    "time": 1778837143530,
+    "timeSinceStart": 61285,
+    "accel": 9.223734878872138,
+    "gyro": 39.12817859889375,
+    "state": "walking"
+  },
+  {
+    "time": 1778837143781,
+    "timeSinceStart": 61536,
+    "accel": 10.488319389596835,
+    "gyro": 42.221623751345945,
+    "state": "walking"
+  },
+  {
+    "time": 1778837144030,
+    "timeSinceStart": 61785,
+    "accel": 9.652003232867184,
+    "gyro": 44.60810499736082,
+    "state": "walking"
+  },
+  {
+    "time": 1778837144281,
+    "timeSinceStart": 62036,
+    "accel": 9.809172754096043,
+    "gyro": 35.74463763621426,
+    "state": "walking"
+  },
+  {
+    "time": 1778837144530,
+    "timeSinceStart": 62285,
+    "accel": 10.158428860696269,
+    "gyro": 43.22524796495374,
+    "state": "walking"
+  },
+  {
+    "time": 1778837144781,
+    "timeSinceStart": 62536,
+    "accel": 9.27111546214566,
+    "gyro": 38.84458987708462,
+    "state": "walking"
+  },
+  {
+    "time": 1778837145031,
+    "timeSinceStart": 62786,
+    "accel": 10.534893587392125,
+    "gyro": 47.92747489212249,
+    "state": "walking"
+  },
+  {
+    "time": 1778837145281,
+    "timeSinceStart": 63035,
+    "accel": 9.2507994537637,
+    "gyro": 49.15117239686228,
+    "state": "walking"
+  },
+  {
+    "time": 1778837145531,
+    "timeSinceStart": 63286,
+    "accel": 10.416433712210342,
+    "gyro": 59.72404678879611,
+    "state": "walking"
+  },
+  {
+    "time": 1778837145781,
+    "timeSinceStart": 63536,
+    "accel": 10.274715562082914,
+    "gyro": 74.21388831512479,
+    "state": "walking"
+  },
+  {
+    "time": 1778837146031,
+    "timeSinceStart": 63786,
+    "accel": 9.861642039685279,
+    "gyro": 58.443115395621355,
+    "state": "walking"
+  },
+  {
+    "time": 1778837146281,
+    "timeSinceStart": 64036,
+    "accel": 11.0099270346765,
+    "gyro": 76.47824372324763,
+    "state": "walking"
+  },
+  {
+    "time": 1778837146531,
+    "timeSinceStart": 64286,
+    "accel": 9.092626537139651,
+    "gyro": 73.04865040251403,
+    "state": "walking"
+  },
+  {
+    "time": 1778837146780,
+    "timeSinceStart": 64535,
+    "accel": 11.384835395917047,
+    "gyro": 91.06239235330338,
+    "state": "walking"
+  },
+  {
+    "time": 1778837147031,
+    "timeSinceStart": 64786,
+    "accel": 9.787039157146896,
+    "gyro": 95.48908816977973,
+    "state": "walking"
+  },
+  {
+    "time": 1778837147281,
+    "timeSinceStart": 65036,
+    "accel": 10.802725866461412,
+    "gyro": 93.55066704441035,
+    "state": "walking"
+  },
+  {
+    "time": 1778837147530,
+    "timeSinceStart": 65285,
+    "accel": 10.883575831923364,
+    "gyro": 96.2016488086648,
+    "state": "walking"
+  },
+  {
+    "time": 1778837147781,
+    "timeSinceStart": 65536,
+    "accel": 9.580092248565332,
+    "gyro": 72.78020441994367,
+    "state": "walking"
+  },
+  {
+    "time": 1778837148031,
+    "timeSinceStart": 65786,
+    "accel": 10.318989426080721,
+    "gyro": 72.12690908952004,
+    "state": "walking"
+  },
+  {
+    "time": 1778837148281,
+    "timeSinceStart": 66036,
+    "accel": 9.767870108388875,
+    "gyro": 79.19741308059031,
+    "state": "walking"
+  },
+  {
+    "time": 1778837148535,
+    "timeSinceStart": 66290,
+    "accel": 10.406149313465308,
+    "gyro": 86.26714136038348,
+    "state": "walking"
+  },
+  {
+    "time": 1778837148780,
+    "timeSinceStart": 66535,
+    "accel": 10.290146104913477,
+    "gyro": 70.58389952140811,
+    "state": "walking"
+  },
+  {
+    "time": 1778837149031,
+    "timeSinceStart": 66786,
+    "accel": 9.52946296301387,
+    "gyro": 62.01578892121236,
+    "state": "walking"
+  },
+  {
+    "time": 1778837149281,
+    "timeSinceStart": 67035,
+    "accel": 10.545896749260944,
+    "gyro": 65.20913023282732,
+    "state": "walking"
+  },
+  {
+    "time": 1778837149530,
+    "timeSinceStart": 67285,
+    "accel": 9.36171469141863,
+    "gyro": 50.115950068793666,
+    "state": "walking"
+  },
+  {
+    "time": 1778837149781,
+    "timeSinceStart": 67536,
+    "accel": 11.02943225236967,
+    "gyro": 48.470765236032676,
+    "state": "walking"
+  },
+  {
+    "time": 1778837150031,
+    "timeSinceStart": 67786,
+    "accel": 9.898227286407973,
+    "gyro": 60.54919623915348,
+    "state": "walking"
+  },
+  {
+    "time": 1778837150281,
+    "timeSinceStart": 68036,
+    "accel": 9.818028149660712,
+    "gyro": 55.341956100825186,
+    "state": "walking"
+  },
+  {
+    "time": 1778837150530,
+    "timeSinceStart": 68285,
+    "accel": 10.702501324567612,
+    "gyro": 65.88089381065693,
+    "state": "walking"
+  },
+  {
+    "time": 1778837150781,
+    "timeSinceStart": 68536,
+    "accel": 9.133595745712274,
+    "gyro": 57.36314370725654,
+    "state": "walking"
+  },
+  {
+    "time": 1778837151031,
+    "timeSinceStart": 68786,
+    "accel": 11.16487982922261,
+    "gyro": 64.5908889988123,
+    "state": "walking"
+  },
+  {
+    "time": 1778837151281,
+    "timeSinceStart": 69036,
+    "accel": 9.122445992036537,
+    "gyro": 62.60693559337115,
+    "state": "walking"
+  },
+  {
+    "time": 1778837151530,
+    "timeSinceStart": 69285,
+    "accel": 11.340801608450079,
+    "gyro": 77.82959377783527,
+    "state": "walking"
+  },
+  {
+    "time": 1778837151781,
+    "timeSinceStart": 69535,
+    "accel": 10.00161324113867,
+    "gyro": 88.40701817701093,
+    "state": "walking"
+  },
+  {
+    "time": 1778837152030,
+    "timeSinceStart": 69785,
+    "accel": 9.398884007227558,
+    "gyro": 92.83758343175458,
+    "state": "walking"
+  },
+  {
+    "time": 1778837152281,
+    "timeSinceStart": 70036,
+    "accel": 11.309337308979039,
+    "gyro": 94.38635500158675,
+    "state": "walking"
+  },
+  {
+    "time": 1778837152530,
+    "timeSinceStart": 70285,
+    "accel": 9.531890301861306,
+    "gyro": 78.81227131333205,
+    "state": "walking"
+  },
+  {
+    "time": 1778837152781,
+    "timeSinceStart": 70536,
+    "accel": 10.88634055693209,
+    "gyro": 75.13101581621308,
+    "state": "walking"
+  },
+  {
+    "time": 1778837153031,
+    "timeSinceStart": 70786,
+    "accel": 9.680821770362641,
+    "gyro": 57.442783563115874,
+    "state": "walking"
+  },
+  {
+    "time": 1778837153280,
+    "timeSinceStart": 71035,
+    "accel": 10.351066385086268,
+    "gyro": 48.187585242109684,
+    "state": "walking"
+  },
+  {
+    "time": 1778837153530,
+    "timeSinceStart": 71285,
+    "accel": 10.164240088456365,
+    "gyro": 47.8566152339342,
+    "state": "walking"
+  },
+  {
+    "time": 1778837153781,
+    "timeSinceStart": 71536,
+    "accel": 9.523123633751487,
+    "gyro": 44.00192558088839,
+    "state": "walking"
+  },
+  {
+    "time": 1778837154031,
+    "timeSinceStart": 71786,
+    "accel": 10.626570815589602,
+    "gyro": 38.543539080709515,
+    "state": "walking"
+  },
+  {
+    "time": 1778837154281,
+    "timeSinceStart": 72036,
+    "accel": 9.374426017350853,
+    "gyro": 33.616188267231195,
+    "state": "walking"
+  },
+  {
+    "time": 1778837154531,
+    "timeSinceStart": 72286,
+    "accel": 10.611723006959782,
+    "gyro": 42.0390744006045,
+    "state": "walking"
+  },
+  {
+    "time": 1778837154781,
+    "timeSinceStart": 72536,
+    "accel": 9.879422759853373,
+    "gyro": 42.74128326477108,
+    "state": "walking"
+  },
+  {
+    "time": 1778837155031,
+    "timeSinceStart": 72785,
+    "accel": 9.445374183469143,
+    "gyro": 51.01550893617105,
+    "state": "walking"
+  },
+  {
+    "time": 1778837155281,
+    "timeSinceStart": 73036,
+    "accel": 10.919777234477193,
+    "gyro": 70.802122856863,
+    "state": "walking"
+  },
+  {
+    "time": 1778837155530,
+    "timeSinceStart": 73285,
+    "accel": 9.459793905177786,
+    "gyro": 81.92915547346041,
+    "state": "walking"
+  },
+  {
+    "time": 1778837155781,
+    "timeSinceStart": 73536,
+    "accel": 10.679650028307421,
+    "gyro": 75.25141564986413,
+    "state": "walking"
+  },
+  {
+    "time": 1778837156030,
+    "timeSinceStart": 73785,
+    "accel": 9.830131981162573,
+    "gyro": 72.38537934230654,
+    "state": "walking"
+  },
+  {
+    "time": 1778837156281,
+    "timeSinceStart": 74036,
+    "accel": 9.171981915625912,
+    "gyro": 63.63744145136063,
+    "state": "walking"
+  },
+  {
+    "time": 1778837156530,
+    "timeSinceStart": 74285,
+    "accel": 10.749992606158672,
+    "gyro": 69.21642469934969,
+    "state": "walking"
+  },
+  {
+    "time": 1778837156780,
+    "timeSinceStart": 74535,
+    "accel": 9.624076633217332,
+    "gyro": 65.11368486406988,
+    "state": "walking"
+  },
+  {
+    "time": 1778837157030,
+    "timeSinceStart": 74785,
+    "accel": 10.22820428365004,
+    "gyro": 68.84911010991391,
+    "state": "walking"
+  },
+  {
+    "time": 1778837157285,
+    "timeSinceStart": 75040,
+    "accel": 9.714528847066653,
+    "gyro": 65.0100589171916,
+    "state": "walking"
+  },
+  {
+    "time": 1778837157530,
+    "timeSinceStart": 75285,
+    "accel": 10.127989302894314,
+    "gyro": 57.2154707500906,
+    "state": "walking"
+  },
+  {
+    "time": 1778837157781,
+    "timeSinceStart": 75536,
+    "accel": 11.179306966296885,
+    "gyro": 79.81969126004816,
+    "state": "walking"
+  },
+  {
+    "time": 1778837158031,
+    "timeSinceStart": 75786,
+    "accel": 9.182020398984879,
+    "gyro": 73.47855889842444,
+    "state": "walking"
+  },
+  {
+    "time": 1778837158281,
+    "timeSinceStart": 76036,
+    "accel": 10.842878181399929,
+    "gyro": 80.91807742797545,
+    "state": "walking"
+  },
+  {
+    "time": 1778837158530,
+    "timeSinceStart": 76285,
+    "accel": 9.61855587223144,
+    "gyro": 68.89951809930916,
+    "state": "walking"
+  },
+  {
+    "time": 1778837158781,
+    "timeSinceStart": 76536,
+    "accel": 10.91972007039085,
+    "gyro": 75.21453920426993,
+    "state": "walking"
+  },
+  {
+    "time": 1778837159030,
+    "timeSinceStart": 76785,
+    "accel": 9.868660416923548,
+    "gyro": 74.16328404546617,
+    "state": "walking"
+  },
+  {
+    "time": 1778837159281,
+    "timeSinceStart": 77036,
+    "accel": 9.864774484345254,
+    "gyro": 61.555168198647024,
+    "state": "walking"
+  },
+  {
+    "time": 1778837159530,
+    "timeSinceStart": 77285,
+    "accel": 10.987865330029383,
+    "gyro": 73.04870950245959,
+    "state": "walking"
+  },
+  {
+    "time": 1778837159781,
+    "timeSinceStart": 77536,
+    "accel": 9.55357970183444,
+    "gyro": 69.91129679284998,
+    "state": "walking"
+  },
+  {
+    "time": 1778837160030,
+    "timeSinceStart": 77785,
+    "accel": 10.808219491907696,
+    "gyro": 84.99104375064864,
+    "state": "walking"
+  },
+  {
+    "time": 1778837160281,
+    "timeSinceStart": 78036,
+    "accel": 9.588310319172827,
+    "gyro": 76.33146807782094,
+    "state": "walking"
+  },
+  {
+    "time": 1778837160531,
+    "timeSinceStart": 78286,
+    "accel": 10.19192632766508,
+    "gyro": 64.86906216860258,
+    "state": "walking"
+  },
+  {
+    "time": 1778837160783,
+    "timeSinceStart": 78538,
+    "accel": 10.297956332326951,
+    "gyro": 49.93582560798814,
+    "state": "walking"
+  },
+  {
+    "time": 1778837161030,
+    "timeSinceStart": 78785,
+    "accel": 9.463140558649775,
+    "gyro": 38.64697206127111,
+    "state": "walking"
+  },
+  {
+    "time": 1778837161282,
+    "timeSinceStart": 79037,
+    "accel": 10.84914090765198,
+    "gyro": 47.5697855160304,
+    "state": "walking"
+  },
+  {
+    "time": 1778837161531,
+    "timeSinceStart": 79286,
+    "accel": 9.341673905707694,
+    "gyro": 55.31347749794921,
+    "state": "walking"
+  },
+  {
+    "time": 1778837161781,
+    "timeSinceStart": 79536,
+    "accel": 10.348062751219008,
+    "gyro": 59.456628776213975,
+    "state": "walking"
+  },
+  {
+    "time": 1778837162031,
+    "timeSinceStart": 79786,
+    "accel": 9.78127438650097,
+    "gyro": 47.7139552383238,
+    "state": "walking"
+  },
+  {
+    "time": 1778837162281,
+    "timeSinceStart": 80036,
+    "accel": 9.293535223670535,
+    "gyro": 41.46449524901354,
+    "state": "walking"
+  },
+  {
+    "time": 1778837162531,
+    "timeSinceStart": 80286,
+    "accel": 10.936726216780977,
+    "gyro": 61.40027772173568,
+    "state": "walking"
+  },
+  {
+    "time": 1778837162780,
+    "timeSinceStart": 80535,
+    "accel": 9.577423638740143,
+    "gyro": 68.43904430798122,
+    "state": "walking"
+  },
+  {
+    "time": 1778837163030,
+    "timeSinceStart": 80785,
+    "accel": 10.720461805080404,
+    "gyro": 65.60130977619863,
+    "state": "walking"
+  },
+  {
+    "time": 1778837163281,
+    "timeSinceStart": 81036,
+    "accel": 9.776678384276494,
+    "gyro": 57.743104975922826,
+    "state": "walking"
+  },
+  {
+    "time": 1778837163530,
+    "timeSinceStart": 81285,
+    "accel": 9.469092757655552,
+    "gyro": 44.00644728298114,
+    "state": "walking"
+  },
+  {
+    "time": 1778837163781,
+    "timeSinceStart": 81536,
+    "accel": 10.298444297818262,
+    "gyro": 41.217001656220916,
+    "state": "walking"
+  },
+  {
+    "time": 1778837164031,
+    "timeSinceStart": 81785,
+    "accel": 9.610649945117778,
+    "gyro": 44.8418358307912,
+    "state": "walking"
+  },
+  {
+    "time": 1778837164281,
+    "timeSinceStart": 82036,
+    "accel": 10.625066493444084,
+    "gyro": 44.25642417299187,
+    "state": "walking"
+  },
+  {
+    "time": 1778837164530,
+    "timeSinceStart": 82285,
+    "accel": 9.493308700607612,
+    "gyro": 50.69172841019437,
+    "state": "walking"
+  },
+  {
+    "time": 1778837164781,
+    "timeSinceStart": 82536,
+    "accel": 9.89254839885626,
+    "gyro": 45.02646176513089,
+    "state": "walking"
+  },
+  {
+    "time": 1778837165030,
+    "timeSinceStart": 82785,
+    "accel": 10.071256561285391,
+    "gyro": 39.42028358004733,
+    "state": "walking"
+  },
+  {
+    "time": 1778837165281,
+    "timeSinceStart": 83036,
+    "accel": 9.534555068724345,
+    "gyro": 32.0189573348811,
+    "state": "walking"
+  },
+  {
+    "time": 1778837165530,
+    "timeSinceStart": 83285,
+    "accel": 10.339613398796972,
+    "gyro": 33.756698842945916,
+    "state": "walking"
+  },
+  {
+    "time": 1778837165781,
+    "timeSinceStart": 83536,
+    "accel": 9.360008769883848,
+    "gyro": 29.07741908637975,
+    "state": "walking"
+  },
+  {
+    "time": 1778837166031,
+    "timeSinceStart": 83786,
+    "accel": 10.172596636303687,
+    "gyro": 31.14686236813169,
+    "state": "walking"
+  },
+  {
+    "time": 1778837166281,
+    "timeSinceStart": 84036,
+    "accel": 9.55586447450257,
+    "gyro": 34.41384713299805,
+    "state": "walking"
+  },
+  {
+    "time": 1778837166532,
+    "timeSinceStart": 84287,
+    "accel": 9.660648463443385,
+    "gyro": 29.68957613555761,
+    "state": "walking"
+  },
+  {
+    "time": 1778837166781,
+    "timeSinceStart": 84536,
+    "accel": 10.158069962719566,
+    "gyro": 34.390233256550566,
+    "state": "walking"
+  },
+  {
+    "time": 1778837167030,
+    "timeSinceStart": 84785,
+    "accel": 9.301809352972766,
+    "gyro": 32.25977422288919,
+    "state": "walking"
+  },
+  {
+    "time": 1778837167282,
+    "timeSinceStart": 85037,
+    "accel": 10.946635682252731,
+    "gyro": 47.39765556749605,
+    "state": "walking"
+  },
+  {
+    "time": 1778837167530,
+    "timeSinceStart": 85285,
+    "accel": 9.734107472695175,
+    "gyro": 52.177927463052086,
+    "state": "walking"
+  },
+  {
+    "time": 1778837167781,
+    "timeSinceStart": 85536,
+    "accel": 10.077717582706816,
+    "gyro": 47.35760785994722,
+    "state": "walking"
+  },
+  {
+    "time": 1778837168030,
+    "timeSinceStart": 85785,
+    "accel": 10.0938635368038,
+    "gyro": 54.21440584653211,
+    "state": "walking"
+  },
+  {
+    "time": 1778837168283,
+    "timeSinceStart": 86038,
+    "accel": 9.792437358279907,
+    "gyro": 44.56208095379447,
+    "state": "walking"
+  },
+  {
+    "time": 1778837168533,
+    "timeSinceStart": 86288,
+    "accel": 10.525604902232878,
+    "gyro": 38.158207018549675,
+    "state": "walking"
+  },
+  {
+    "time": 1778837168781,
+    "timeSinceStart": 86536,
+    "accel": 9.598699644879414,
+    "gyro": 33.02972935274136,
+    "state": "walking"
+  },
+  {
+    "time": 1778837169031,
+    "timeSinceStart": 86786,
+    "accel": 10.24645392350575,
+    "gyro": 30.163698052751887,
+    "state": "walking"
+  },
+  {
+    "time": 1778837169281,
+    "timeSinceStart": 87036,
+    "accel": 10.012580614489558,
+    "gyro": 33.71195964151549,
+    "state": "walking"
+  },
+  {
+    "time": 1778837169530,
+    "timeSinceStart": 87285,
+    "accel": 9.515293166016571,
+    "gyro": 29.321454729626495,
+    "state": "walking"
+  },
+  {
+    "time": 1778837169781,
+    "timeSinceStart": 87536,
+    "accel": 10.141629596217932,
+    "gyro": 33.02680714006422,
+    "state": "walking"
+  },
+  {
+    "time": 1778837170031,
+    "timeSinceStart": 87786,
+    "accel": 9.345450667148675,
+    "gyro": 31.413036953136903,
+    "state": "walking"
+  },
+  {
+    "time": 1778837170281,
+    "timeSinceStart": 88036,
+    "accel": 10.213532661680592,
+    "gyro": 32.0069440509248,
+    "state": "walking"
+  },
+  {
+    "time": 1778837170530,
+    "timeSinceStart": 88285,
+    "accel": 9.858811664141298,
+    "gyro": 37.107013473927125,
+    "state": "walking"
+  },
+  {
+    "time": 1778837170781,
+    "timeSinceStart": 88536,
+    "accel": 9.591866724249744,
+    "gyro": 39.29011013207226,
+    "state": "walking"
+  },
+  {
+    "time": 1778837171031,
+    "timeSinceStart": 88786,
+    "accel": 10.150027372509944,
+    "gyro": 44.23021265609593,
+    "state": "walking"
+  },
+  {
+    "time": 1778837171281,
+    "timeSinceStart": 89036,
+    "accel": 9.483228009041957,
+    "gyro": 38.168641728430394,
+    "state": "walking"
+  },
+  {
+    "time": 1778837171531,
+    "timeSinceStart": 89286,
+    "accel": 10.295222289628963,
+    "gyro": 47.7528937566266,
+    "state": "walking"
+  },
+  {
+    "time": 1778837171781,
+    "timeSinceStart": 89536,
+    "accel": 9.541978070805694,
+    "gyro": 47.067037783709466,
+    "state": "walking"
+  },
+  {
+    "time": 1778837172031,
+    "timeSinceStart": 89786,
+    "accel": 9.817528027112385,
+    "gyro": 61.35719671798502,
+    "state": "walking"
+  },
+  {
+    "time": 1778837172284,
+    "timeSinceStart": 90039,
+    "accel": 9.859255759796074,
+    "gyro": 64.60071993044808,
+    "state": "walking"
+  },
+  {
+    "time": 1778837172531,
+    "timeSinceStart": 90286,
+    "accel": 9.966372851870434,
+    "gyro": 55.67256819395499,
+    "state": "walking"
+  },
+  {
+    "time": 1778837172781,
+    "timeSinceStart": 90536,
+    "accel": 10.370564103342838,
+    "gyro": 58.786161840094145,
+    "state": "walking"
+  },
+  {
+    "time": 1778837173031,
+    "timeSinceStart": 90786,
+    "accel": 9.194483496634888,
+    "gyro": 54.3026356027095,
+    "state": "walking"
+  },
+  {
+    "time": 1778837173282,
+    "timeSinceStart": 91037,
+    "accel": 9.925075982331101,
+    "gyro": 52.13762142081866,
+    "state": "walking"
+  },
+  {
+    "time": 1778837173531,
+    "timeSinceStart": 91286,
+    "accel": 9.868552322014416,
+    "gyro": 53.1817330166032,
+    "state": "walking"
+  },
+  {
+    "time": 1778837173781,
+    "timeSinceStart": 91536,
+    "accel": 9.666639644973602,
+    "gyro": 42.96561418931143,
+    "state": "walking"
+  },
+  {
+    "time": 1778837174031,
+    "timeSinceStart": 91785,
+    "accel": 10.60761679551668,
+    "gyro": 52.014368885067185,
+    "state": "walking"
+  },
+  {
+    "time": 1778837174281,
+    "timeSinceStart": 92036,
+    "accel": 9.341206048453117,
+    "gyro": 47.52943460648565,
+    "state": "walking"
+  },
+  {
+    "time": 1778837174530,
+    "timeSinceStart": 92285,
+    "accel": 10.791136436776599,
+    "gyro": 52.47013272791147,
+    "state": "walking"
+  },
+  {
+    "time": 1778837174781,
+    "timeSinceStart": 92536,
+    "accel": 9.56906268780191,
+    "gyro": 75.31104030498244,
+    "state": "walking"
+  },
+  {
+    "time": 1778837175031,
+    "timeSinceStart": 92786,
+    "accel": 10.145255118076301,
+    "gyro": 71.8315853390537,
+    "state": "walking"
+  },
+  {
+    "time": 1778837175281,
+    "timeSinceStart": 93036,
+    "accel": 10.87571851747877,
+    "gyro": 75.52245949707387,
+    "state": "walking"
+  },
+  {
+    "time": 1778837175531,
+    "timeSinceStart": 93286,
+    "accel": 9.21643149216656,
+    "gyro": 66.06340703802272,
+    "state": "walking"
+  },
+  {
+    "time": 1778837175782,
+    "timeSinceStart": 93537,
+    "accel": 10.759245095897414,
+    "gyro": 62.14368828157107,
+    "state": "walking"
+  },
+  {
+    "time": 1778837176030,
+    "timeSinceStart": 93785,
+    "accel": 9.249479370573054,
+    "gyro": 74.43120966364442,
+    "state": "walking"
+  },
+  {
+    "time": 1778837176283,
+    "timeSinceStart": 94038,
+    "accel": 10.110612065672342,
+    "gyro": 67.36190780142636,
+    "state": "walking"
+  },
+  {
+    "time": 1778837176531,
+    "timeSinceStart": 94286,
+    "accel": 9.924134965487184,
+    "gyro": 72.05901528903794,
+    "state": "walking"
+  },
+  {
+    "time": 1778837176782,
+    "timeSinceStart": 94537,
+    "accel": 9.647139221088104,
+    "gyro": 58.61536203599568,
+    "state": "walking"
+  },
+  {
+    "time": 1778837177033,
+    "timeSinceStart": 94788,
+    "accel": 10.245459695950577,
+    "gyro": 47.73078109133688,
+    "state": "walking"
+  },
+  {
+    "time": 1778837177281,
+    "timeSinceStart": 95036,
+    "accel": 9.337829450470258,
+    "gyro": 34.98412666070292,
+    "state": "walking"
+  },
+  {
+    "time": 1778837177532,
+    "timeSinceStart": 95287,
+    "accel": 10.580521157620197,
+    "gyro": 30.16001712154857,
+    "state": "walking"
+  },
+  {
+    "time": 1778837177781,
+    "timeSinceStart": 95536,
+    "accel": 9.958961736593107,
+    "gyro": 28.605285783985053,
+    "state": "walking"
+  },
+  {
+    "time": 1778837178030,
+    "timeSinceStart": 95785,
+    "accel": 9.51356450823521,
+    "gyro": 29.029170759713587,
+    "state": "walking"
+  },
+  {
+    "time": 1778837178281,
+    "timeSinceStart": 96036,
+    "accel": 10.77348358057582,
+    "gyro": 45.939170042148106,
+    "state": "walking"
+  },
+  {
+    "time": 1778837178532,
+    "timeSinceStart": 96287,
+    "accel": 9.375652798313393,
+    "gyro": 55.19192034394523,
+    "state": "walking"
+  },
+  {
+    "time": 1778837178781,
+    "timeSinceStart": 96536,
+    "accel": 10.93313626962777,
+    "gyro": 53.435265940137455,
+    "state": "walking"
+  },
+  {
+    "time": 1778837179031,
+    "timeSinceStart": 96786,
+    "accel": 9.378365006904868,
+    "gyro": 63.358754205470966,
+    "state": "walking"
+  },
+  {
+    "time": 1778837179281,
+    "timeSinceStart": 97036,
+    "accel": 9.933195178490594,
+    "gyro": 54.9661782743823,
+    "state": "walking"
+  },
+  {
+    "time": 1778837179531,
+    "timeSinceStart": 97286,
+    "accel": 10.649629151809624,
+    "gyro": 67.8857399095066,
+    "state": "walking"
+  },
+  {
+    "time": 1778837179781,
+    "timeSinceStart": 97536,
+    "accel": 9.170986356067095,
+    "gyro": 66.80241818119987,
+    "state": "walking"
+  },
+  {
+    "time": 1778837180030,
+    "timeSinceStart": 97785,
+    "accel": 10.502520299027355,
+    "gyro": 66.39567868190332,
+    "state": "walking"
+  },
+  {
+    "time": 1778837180284,
+    "timeSinceStart": 98039,
+    "accel": 9.239411282217137,
+    "gyro": 57.407714074004375,
+    "state": "walking"
+  },
+  {
+    "time": 1778837180531,
+    "timeSinceStart": 98286,
+    "accel": 9.991134597739588,
+    "gyro": 53.2144847356247,
+    "state": "walking"
+  },
+  {
+    "time": 1778837180784,
+    "timeSinceStart": 98539,
+    "accel": 10.005243643846704,
+    "gyro": 58.847536923772054,
+    "state": "walking"
+  },
+  {
+    "time": 1778837181031,
+    "timeSinceStart": 98786,
+    "accel": 9.462149076201932,
+    "gyro": 48.773063445100085,
+    "state": "walking"
+  },
+  {
+    "time": 1778837181281,
+    "timeSinceStart": 99036,
+    "accel": 10.407735517161202,
+    "gyro": 51.99510825853341,
+    "state": "walking"
+  },
+  {
+    "time": 1778837181531,
+    "timeSinceStart": 99286,
+    "accel": 9.345390142754571,
+    "gyro": 52.12152224803054,
+    "state": "walking"
+  },
+  {
+    "time": 1778837181781,
+    "timeSinceStart": 99536,
+    "accel": 10.293263935286994,
+    "gyro": 51.39215372880498,
+    "state": "walking"
+  },
+  {
+    "time": 1778837182031,
+    "timeSinceStart": 99786,
+    "accel": 10.077934444989577,
+    "gyro": 58.174507465910544,
+    "state": "walking"
+  },
+  {
+    "time": 1778837182283,
+    "timeSinceStart": 100038,
+    "accel": 9.986655726583516,
+    "gyro": 52.685237087382596,
+    "state": "walking"
+  },
+  {
+    "time": 1778837182531,
+    "timeSinceStart": 100286,
+    "accel": 10.25982871185635,
+    "gyro": 71.98113870531303,
+    "state": "walking"
+  },
+  {
+    "time": 1778837182781,
+    "timeSinceStart": 100536,
+    "accel": 9.170474676386801,
+    "gyro": 67.1184503772991,
+    "state": "walking"
+  },
+  {
+    "time": 1778837183031,
+    "timeSinceStart": 100786,
+    "accel": 11.038262565217835,
+    "gyro": 63.027834060374865,
+    "state": "walking"
+  },
+  {
+    "time": 1778837183281,
+    "timeSinceStart": 101036,
+    "accel": 9.441725496448043,
+    "gyro": 62.202462742872946,
+    "state": "walking"
+  },
+  {
+    "time": 1778837183530,
+    "timeSinceStart": 101285,
+    "accel": 10.327497435879554,
+    "gyro": 52.62911030915737,
+    "state": "walking"
+  },
+  {
+    "time": 1778837183781,
+    "timeSinceStart": 101536,
+    "accel": 10.243996863147801,
+    "gyro": 58.80971549502737,
+    "state": "walking"
+  },
+  {
+    "time": 1778837184031,
+    "timeSinceStart": 101785,
+    "accel": 9.529809467876236,
+    "gyro": 48.697043491962205,
+    "state": "walking"
+  },
+  {
+    "time": 1778837184281,
+    "timeSinceStart": 102036,
+    "accel": 10.416812149883446,
+    "gyro": 54.57685105081529,
+    "state": "walking"
+  },
+  {
+    "time": 1778837184530,
+    "timeSinceStart": 102285,
+    "accel": 9.393667042837754,
+    "gyro": 50.96266322691009,
+    "state": "walking"
+  },
+  {
+    "time": 1778837184781,
+    "timeSinceStart": 102536,
+    "accel": 10.116291274002185,
+    "gyro": 41.551346476949305,
+    "state": "walking"
+  },
+  {
+    "time": 1778837185031,
+    "timeSinceStart": 102786,
+    "accel": 10.130080043430624,
+    "gyro": 58.178368048447446,
+    "state": "walking"
+  },
+  {
+    "time": 1778837185281,
+    "timeSinceStart": 103036,
+    "accel": 9.452876925679698,
+    "gyro": 52.68162472660663,
+    "state": "walking"
+  },
+  {
+    "time": 1778837185530,
+    "timeSinceStart": 103285,
+    "accel": 10.651035603531941,
+    "gyro": 55.17800502703597,
+    "state": "walking"
+  },
+  {
+    "time": 1778837185781,
+    "timeSinceStart": 103536,
+    "accel": 9.364132387225405,
+    "gyro": 69.03398285234539,
+    "state": "walking"
+  },
+  {
+    "time": 1778837186031,
+    "timeSinceStart": 103785,
+    "accel": 10.131714054157262,
+    "gyro": 99.99953980161423,
+    "state": "walking"
+  },
+  {
+    "time": 1778837186281,
+    "timeSinceStart": 104036,
+    "accel": 10.489591642005923,
+    "gyro": 134.64807683909467,
+    "state": "walking"
+  },
+  {
+    "time": 1778837186530,
+    "timeSinceStart": 104285,
+    "accel": 9.435716244058979,
+    "gyro": 118.46461493237668,
+    "state": "walking"
+  },
+  {
+    "time": 1778837186781,
+    "timeSinceStart": 104536,
+    "accel": 10.765648883952,
+    "gyro": 117.73227709068782,
+    "state": "walking"
+  },
+  {
+    "time": 1778837187030,
+    "timeSinceStart": 104785,
+    "accel": 8.938110172898988,
+    "gyro": 133.11173268193903,
+    "state": "walking"
+  },
+  {
+    "time": 1778837187281,
+    "timeSinceStart": 105036,
+    "accel": 11.144412692741165,
+    "gyro": 107.10487748202739,
+    "state": "walking"
+  },
+  {
+    "time": 1778837187530,
+    "timeSinceStart": 105285,
+    "accel": 9.922526025638438,
+    "gyro": 94.00120370281238,
+    "state": "walking"
+  },
+  {
+    "time": 1778837187781,
+    "timeSinceStart": 105536,
+    "accel": 9.867888069118962,
+    "gyro": 75.98048238233865,
+    "state": "walking"
+  },
+  {
+    "time": 1778837188030,
+    "timeSinceStart": 105785,
+    "accel": 10.652942018227755,
+    "gyro": 70.7903275241353,
+    "state": "walking"
+  },
+  {
+    "time": 1778837188281,
+    "timeSinceStart": 106036,
+    "accel": 9.536839281757667,
+    "gyro": 64.89799455279177,
+    "state": "walking"
+  },
+  {
+    "time": 1778837188530,
+    "timeSinceStart": 106285,
+    "accel": 11.348690965925144,
+    "gyro": 70.09828397296486,
+    "state": "walking"
+  },
+  {
+    "time": 1778837188781,
+    "timeSinceStart": 106536,
+    "accel": 9.255113421322102,
+    "gyro": 98.67421012603006,
+    "state": "walking"
+  },
+  {
+    "time": 1778837189030,
+    "timeSinceStart": 106785,
+    "accel": 10.206868001582777,
+    "gyro": 96.16220377344186,
+    "state": "walking"
+  },
+  {
+    "time": 1778837189284,
+    "timeSinceStart": 107039,
+    "accel": 10.786545204200168,
+    "gyro": 103.22175391416165,
+    "state": "walking"
+  },
+  {
+    "time": 1778837189531,
+    "timeSinceStart": 107286,
+    "accel": 9.663790183829203,
+    "gyro": 90.95848647555677,
+    "state": "walking"
+  },
+  {
+    "time": 1778837189781,
+    "timeSinceStart": 107536,
+    "accel": 10.95185699990533,
+    "gyro": 95.88437536720637,
+    "state": "walking"
+  },
+  {
+    "time": 1778837190031,
+    "timeSinceStart": 107786,
+    "accel": 9.528009362007857,
+    "gyro": 96.61431116519061,
+    "state": "walking"
+  },
+  {
+    "time": 1778837190281,
+    "timeSinceStart": 108036,
+    "accel": 10.184542446316977,
+    "gyro": 85.19026806727155,
+    "state": "walking"
+  },
+  {
+    "time": 1778837190530,
+    "timeSinceStart": 108285,
+    "accel": 9.865139486033364,
+    "gyro": 71.96663856310553,
+    "state": "walking"
+  },
+  {
+    "time": 1778837190781,
+    "timeSinceStart": 108536,
+    "accel": 9.783893789745548,
+    "gyro": 63.147992206528166,
+    "state": "walking"
+  },
+  {
+    "time": 1778837191031,
+    "timeSinceStart": 108786,
+    "accel": 10.180440974571464,
+    "gyro": 60.39158713445414,
+    "state": "walking"
+  },
+  {
+    "time": 1778837191281,
+    "timeSinceStart": 109036,
+    "accel": 9.231446319373617,
+    "gyro": 46.7285346067528,
+    "state": "walking"
+  },
+  {
+    "time": 1778837191530,
+    "timeSinceStart": 109285,
+    "accel": 10.654014580171868,
+    "gyro": 53.68511741061838,
+    "state": "walking"
+  },
+  {
+    "time": 1778837191780,
+    "timeSinceStart": 109535,
+    "accel": 9.817253253716553,
+    "gyro": 51.97632899624429,
+    "state": "walking"
+  },
+  {
+    "time": 1778837192031,
+    "timeSinceStart": 109786,
+    "accel": 9.994024964864849,
+    "gyro": 40.79473245948225,
+    "state": "walking"
+  },
+  {
+    "time": 1778837192280,
+    "timeSinceStart": 110035,
+    "accel": 10.59112584163485,
+    "gyro": 48.590966880201066,
+    "state": "walking"
+  },
+  {
+    "time": 1778837192530,
+    "timeSinceStart": 110285,
+    "accel": 9.292620319050503,
+    "gyro": 41.63186208557868,
+    "state": "walking"
+  },
+  {
+    "time": 1778837192780,
+    "timeSinceStart": 110535,
+    "accel": 10.709117783131429,
+    "gyro": 47.31472986857972,
+    "state": "walking"
+  },
+  {
+    "time": 1778837193030,
+    "timeSinceStart": 110785,
+    "accel": 9.40928520428765,
+    "gyro": 55.80368732858388,
+    "state": "walking"
+  },
+  {
+    "time": 1778837193280,
+    "timeSinceStart": 111035,
+    "accel": 10.56441970475377,
+    "gyro": 52.33801689114851,
+    "state": "walking"
+  },
+  {
+    "time": 1778837193530,
+    "timeSinceStart": 111285,
+    "accel": 10.091127975743634,
+    "gyro": 53.832627801464234,
+    "state": "walking"
+  },
+  {
+    "time": 1778837193780,
+    "timeSinceStart": 111535,
+    "accel": 9.601934013309343,
+    "gyro": 43.91535827532143,
+    "state": "walking"
+  },
+  {
+    "time": 1778837194030,
+    "timeSinceStart": 111785,
+    "accel": 10.351714305360892,
+    "gyro": 50.418800073485805,
+    "state": "walking"
+  },
+  {
+    "time": 1778837194281,
+    "timeSinceStart": 112036,
+    "accel": 9.531038809002219,
+    "gyro": 43.342506355093086,
+    "state": "walking"
+  },
+  {
+    "time": 1778837194530,
+    "timeSinceStart": 112285,
+    "accel": 10.427538730332389,
+    "gyro": 45.6520157781801,
+    "state": "walking"
+  },
+  {
+    "time": 1778837194783,
+    "timeSinceStart": 112537,
+    "accel": 9.774379148721193,
+    "gyro": 57.954887285747304,
+    "state": "walking"
+  },
+  {
+    "time": 1778837195031,
+    "timeSinceStart": 112786,
+    "accel": 9.802896109524866,
+    "gyro": 50.26072441387324,
+    "state": "walking"
+  },
+  {
+    "time": 1778837195281,
+    "timeSinceStart": 113036,
+    "accel": 10.514925666278735,
+    "gyro": 49.37532281407571,
+    "state": "walking"
+  },
+  {
+    "time": 1778837195531,
+    "timeSinceStart": 113286,
+    "accel": 9.513695008753391,
+    "gyro": 40.73342245081853,
+    "state": "walking"
+  },
+  {
+    "time": 1778837195781,
+    "timeSinceStart": 113536,
+    "accel": 10.52493139423972,
+    "gyro": 43.76506126125858,
+    "state": "walking"
+  },
+  {
+    "time": 1778837196030,
+    "timeSinceStart": 113785,
+    "accel": 9.785921759349907,
+    "gyro": 50.87763413931912,
+    "state": "walking"
+  },
+  {
+    "time": 1778837196280,
+    "timeSinceStart": 114035,
+    "accel": 10.221985321388594,
+    "gyro": 64.24241328374836,
+    "state": "walking"
+  },
+  {
+    "time": 1778837196530,
+    "timeSinceStart": 114285,
+    "accel": 10.155184837133085,
+    "gyro": 55.54297761257197,
+    "state": "walking"
+  },
+  {
+    "time": 1778837196781,
+    "timeSinceStart": 114536,
+    "accel": 9.717441851782166,
+    "gyro": 44.69798402814195,
+    "state": "walking"
+  },
+  {
+    "time": 1778837197034,
+    "timeSinceStart": 114789,
+    "accel": 10.62396577991082,
+    "gyro": 43.206798532642786,
+    "state": "walking"
+  },
+  {
+    "time": 1778837197280,
+    "timeSinceStart": 115035,
+    "accel": 9.78368322984753,
+    "gyro": 39.52609979362574,
+    "state": "walking"
+  },
+  {
+    "time": 1778837197530,
+    "timeSinceStart": 115285,
+    "accel": 9.707266650668977,
+    "gyro": 35.8756396383509,
+    "state": "walking"
+  },
+  {
+    "time": 1778837197781,
+    "timeSinceStart": 115536,
+    "accel": 10.282096729385595,
+    "gyro": 38.57123352638812,
+    "state": "walking"
+  },
+  {
+    "time": 1778837198031,
+    "timeSinceStart": 115786,
+    "accel": 9.54569507445422,
+    "gyro": 28.18801710452285,
+    "state": "walking"
+  },
+  {
+    "time": 1778837198281,
+    "timeSinceStart": 116036,
+    "accel": 10.509890775618711,
+    "gyro": 31.475407643807063,
+    "state": "walking"
+  },
+  {
+    "time": 1778837198531,
+    "timeSinceStart": 116286,
+    "accel": 9.61744121258534,
+    "gyro": 37.47562523075647,
+    "state": "walking"
+  },
+  {
+    "time": 1778837198781,
+    "timeSinceStart": 116536,
+    "accel": 9.642413905280117,
+    "gyro": 34.885413536148455,
+    "state": "walking"
+  },
+  {
+    "time": 1778837199031,
+    "timeSinceStart": 116785,
+    "accel": 10.326822616235436,
+    "gyro": 47.563626840728006,
+    "state": "walking"
+  },
+  {
+    "time": 1778837199281,
+    "timeSinceStart": 117036,
+    "accel": 9.510951775423672,
+    "gyro": 47.145882622327626,
+    "state": "walking"
+  },
+  {
+    "time": 1778837199531,
+    "timeSinceStart": 117286,
+    "accel": 10.484287767830034,
+    "gyro": 59.98016247578222,
+    "state": "walking"
+  },
+  {
+    "time": 1778837199781,
+    "timeSinceStart": 117536,
+    "accel": 9.550885602257496,
+    "gyro": 64.066032635757,
+    "state": "walking"
+  },
+  {
+    "time": 1778837200031,
+    "timeSinceStart": 117786,
+    "accel": 10.139343827182898,
+    "gyro": 66.33443435247662,
+    "state": "walking"
+  },
+  {
+    "time": 1778837200281,
+    "timeSinceStart": 118036,
+    "accel": 10.366546611276627,
+    "gyro": 75.4787516630445,
+    "state": "walking"
+  },
+  {
+    "time": 1778837200530,
+    "timeSinceStart": 118285,
+    "accel": 9.474362996634255,
+    "gyro": 62.23271255837468,
+    "state": "walking"
+  },
+  {
+    "time": 1778837200780,
+    "timeSinceStart": 118535,
+    "accel": 10.602279526321903,
+    "gyro": 62.781697125672586,
+    "state": "walking"
+  },
+  {
+    "time": 1778837201031,
+    "timeSinceStart": 118786,
+    "accel": 9.19791669658528,
+    "gyro": 51.481350214319775,
+    "state": "walking"
+  },
+  {
+    "time": 1778837201289,
+    "timeSinceStart": 119044,
+    "accel": 10.104313971425626,
+    "gyro": 47.81873093233215,
+    "state": "walking"
+  },
+  {
+    "time": 1778837201531,
+    "timeSinceStart": 119286,
+    "accel": 9.860906887499983,
+    "gyro": 49.26243821479961,
+    "state": "walking"
+  },
+  {
+    "time": 1778837201781,
+    "timeSinceStart": 119536,
+    "accel": 9.509168112388592,
+    "gyro": 36.68170669579822,
+    "state": "walking"
+  },
+  {
+    "time": 1778837202031,
+    "timeSinceStart": 119786,
+    "accel": 10.772365590977689,
+    "gyro": 44.67494874146551,
+    "state": "walking"
+  },
+  {
+    "time": 1778837202280,
+    "timeSinceStart": 120035,
+    "accel": 9.27351010129697,
+    "gyro": 41.75351614777692,
+    "state": "walking"
+  },
+  {
+    "time": 1778837202534,
+    "timeSinceStart": 120289,
+    "accel": 10.602861019198325,
+    "gyro": 35.61700802400949,
+    "state": "walking"
+  },
+  {
+    "time": 1778837202781,
+    "timeSinceStart": 120536,
+    "accel": 9.716731989692821,
+    "gyro": 41.15576290981543,
+    "state": "walking"
+  },
+  {
+    "time": 1778837203031,
+    "timeSinceStart": 120786,
+    "accel": 9.493051869125997,
+    "gyro": 40.549812655326164,
+    "state": "walking"
+  },
+  {
+    "time": 1778837203281,
+    "timeSinceStart": 121036,
+    "accel": 10.604663207430495,
+    "gyro": 60.91190701139128,
+    "state": "walking"
+  },
+  {
+    "time": 1778837203531,
+    "timeSinceStart": 121286,
+    "accel": 9.222705140367914,
+    "gyro": 53.102077408018296,
+    "state": "walking"
+  },
+  {
+    "time": 1778837203781,
+    "timeSinceStart": 121536,
+    "accel": 10.655958374140575,
+    "gyro": 52.805073071444085,
+    "state": "walking"
+  },
+  {
+    "time": 1778837204032,
+    "timeSinceStart": 121787,
+    "accel": 9.155070696875928,
+    "gyro": 48.57986849967696,
+    "state": "walking"
+  },
+  {
+    "time": 1778837204281,
+    "timeSinceStart": 122036,
+    "accel": 10.050112350149536,
+    "gyro": 41.142714151806786,
+    "state": "walking"
+  },
+  {
+    "time": 1778837204531,
+    "timeSinceStart": 122286,
+    "accel": 9.943272941474415,
+    "gyro": 41.72763137890643,
+    "state": "walking"
+  },
+  {
+    "time": 1778837204782,
+    "timeSinceStart": 122537,
+    "accel": 9.343531312918312,
+    "gyro": 35.85899682529645,
+    "state": "walking"
+  },
+  {
+    "time": 1778837205031,
+    "timeSinceStart": 122786,
+    "accel": 10.21132763852247,
+    "gyro": 40.72762824137392,
+    "state": "walking"
+  },
+  {
+    "time": 1778837205281,
+    "timeSinceStart": 123036,
+    "accel": 9.562698644446776,
+    "gyro": 48.02741880177524,
+    "state": "walking"
+  },
+  {
+    "time": 1778837205530,
+    "timeSinceStart": 123285,
+    "accel": 9.890196747625513,
+    "gyro": 40.94499721717851,
+    "state": "walking"
+  },
+  {
+    "time": 1778837205780,
+    "timeSinceStart": 123535,
+    "accel": 10.086536021757057,
+    "gyro": 40.11540035540951,
+    "state": "walking"
+  },
+  {
+    "time": 1778837206031,
+    "timeSinceStart": 123786,
+    "accel": 9.442512126713469,
+    "gyro": 31.420618628134207,
+    "state": "walking"
+  },
+  {
+    "time": 1778837206283,
+    "timeSinceStart": 124038,
+    "accel": 11.012297386646283,
+    "gyro": 43.23604685668381,
+    "state": "walking"
+  },
+  {
+    "time": 1778837206531,
+    "timeSinceStart": 124286,
+    "accel": 9.398328870570941,
+    "gyro": 72.91884798192709,
+    "state": "walking"
+  },
+  {
+    "time": 1778837206781,
+    "timeSinceStart": 124536,
+    "accel": 10.095413113366048,
+    "gyro": 59.778723570025505,
+    "state": "walking"
+  },
+  {
+    "time": 1778837207031,
+    "timeSinceStart": 124785,
+    "accel": 9.87521100503092,
+    "gyro": 69.79936468648647,
+    "state": "walking"
+  },
+  {
+    "time": 1778837207281,
+    "timeSinceStart": 125036,
+    "accel": 9.613139558627886,
+    "gyro": 70.15743484358238,
+    "state": "walking"
+  },
+  {
+    "time": 1778837207531,
+    "timeSinceStart": 125286,
+    "accel": 10.57754221605796,
+    "gyro": 58.34420855079664,
+    "state": "walking"
+  },
+  {
+    "time": 1778837207781,
+    "timeSinceStart": 125536,
+    "accel": 9.53332074908419,
+    "gyro": 50.83623193393354,
+    "state": "walking"
+  },
+  {
+    "time": 1778837208032,
+    "timeSinceStart": 125787,
+    "accel": 10.490037855130275,
+    "gyro": 41.7329306368746,
+    "state": "walking"
+  },
+  {
+    "time": 1778837208281,
+    "timeSinceStart": 126036,
+    "accel": 10.150635868114902,
+    "gyro": 42.423121612543476,
+    "state": "walking"
+  },
+  {
+    "time": 1778837208530,
+    "timeSinceStart": 126285,
+    "accel": 9.382181854660814,
+    "gyro": 33.88579683352289,
+    "state": "walking"
+  },
+  {
+    "time": 1778837208782,
+    "timeSinceStart": 126537,
+    "accel": 10.59610866831528,
+    "gyro": 39.495240282424966,
+    "state": "walking"
+  },
+  {
+    "time": 1778837209030,
+    "timeSinceStart": 126785,
+    "accel": 9.554539874797353,
+    "gyro": 42.28901597873296,
+    "state": "walking"
+  },
+  {
+    "time": 1778837209281,
+    "timeSinceStart": 127036,
+    "accel": 10.542953436609352,
+    "gyro": 34.42637038006645,
+    "state": "walking"
+  },
+  {
+    "time": 1778837209530,
+    "timeSinceStart": 127285,
+    "accel": 9.969782755991465,
+    "gyro": 45.509579726654216,
+    "state": "walking"
+  },
+  {
+    "time": 1778837209781,
+    "timeSinceStart": 127536,
+    "accel": 9.478370682948396,
+    "gyro": 38.04041395368187,
+    "state": "walking"
+  },
+  {
+    "time": 1778837210031,
+    "timeSinceStart": 127786,
+    "accel": 10.528435357684744,
+    "gyro": 42.763438333425015,
+    "state": "walking"
+  },
+  {
+    "time": 1778837210282,
+    "timeSinceStart": 128037,
+    "accel": 9.356066603094224,
+    "gyro": 38.555811662770104,
+    "state": "walking"
+  },
+  {
+    "time": 1778837210531,
+    "timeSinceStart": 128286,
+    "accel": 10.596997748261689,
+    "gyro": 33.24336972784743,
+    "state": "walking"
+  },
+  {
+    "time": 1778837210781,
+    "timeSinceStart": 128536,
+    "accel": 9.589369616146548,
+    "gyro": 38.912491615872604,
+    "state": "walking"
+  },
+  {
+    "time": 1778837211031,
+    "timeSinceStart": 128786,
+    "accel": 9.643472190108284,
+    "gyro": 35.410011129864806,
+    "state": "walking"
+  },
+  {
+    "time": 1778837211281,
+    "timeSinceStart": 129036,
+    "accel": 10.234473150569297,
+    "gyro": 43.37044820945727,
+    "state": "walking"
+  },
+  {
+    "time": 1778837211531,
+    "timeSinceStart": 129286,
+    "accel": 9.3344641993498,
+    "gyro": 39.34993190602613,
+    "state": "walking"
+  },
+  {
+    "time": 1778837211781,
+    "timeSinceStart": 129536,
+    "accel": 10.457357394671156,
+    "gyro": 33.5857693305847,
+    "state": "walking"
+  },
+  {
+    "time": 1778837212031,
+    "timeSinceStart": 129786,
+    "accel": 9.40932843348208,
+    "gyro": 42.82879409676542,
+    "state": "walking"
+  }
+]
