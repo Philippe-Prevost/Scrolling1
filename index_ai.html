@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html,
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            overflow: hidden;
+
+            background: black;
+
+            touch-action: none;
+
+            font-family: sans-serif;
+        }
+
+        video {
+
+            position: absolute;
+
+            width: 100vw;
+            height: 100vh;
+
+            object-fit: cover;
+
+            top: 0;
+            left: 0;
+
+            background: black;
+
+            will-change: transform;
+
+            pointer-events: none;
+        }
+
+        #label {
+
+            position: fixed;
+
+            top: 10px;
+            left: 10px;
+
+            color: white;
+
+            background: rgba(0, 0, 0, 0.45);
+
+            padding: 10px 14px;
+
+            border-radius: 12px;
+
+            z-index: 1000;
+
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+        /* ----------------------------- */
+        /* RECORD PANEL */
+        /* ----------------------------- */
+
+        #recordPanel {
+
+            position: fixed;
+
+            top: 10px;
+            right: 10px;
+
+            z-index: 1000;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 14px;
+
+            width: 210px;
+        }
+
+        #recordPanel button {
+
+            min-height: 78px;
+
+            font-size: 19px;
+
+            border-radius: 20px;
+
+            border: none;
+
+            background: rgba(255, 255, 255, 0.94);
+
+            color: black;
+
+            font-weight: bold;
+
+            padding: 14px;
+
+            touch-action: manipulation;
+        }
+
+        #recordPanel button:active {
+
+            transform: scale(0.97);
+
+        }
+
+        /* ----------------------------- */
+        /* SENSOR PANEL */
+        /* ----------------------------- */
+
+        #sensorPanel {
+
+            position: fixed;
+
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+
+            z-index: 1000;
+        }
+
+        #sensorNumbers {
+
+            background: rgba(0, 0, 0, 0.45);
+
+            padding: 12px;
+
+            border-radius: 12px;
+
+            margin-bottom: 8px;
+
+            font-family: monospace;
+
+            line-height: 1.8;
+
+            color: white;
+
+            font-size: 15px;
+        }
+
+        .sensorLine {
+
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+        .accelText {
+
+            color: #ff4d4d;
+        }
+
+        .gyroText {
+
+            color: #4da6ff;
+        }
+
+        .stateText {
+
+            color: #7dff7d;
+        }
+
+        #motionGraph {
+
+            width: 100%;
+            height: 120px;
+
+            background: rgba(0, 0, 0, 0.35);
+
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- LABEL -->
+
+    <div id="label">
+        READY
+    </div>
+
+    <!-- RECORD PANEL -->
+
+    <div id="recordPanel">
+
+        <button onclick="startWalkingRecording()">
+            RECORD WALKING
+        </button>
+
+        <button onclick="startStillRecording()">
+            RECORD NOT WALKING
+        </button>
+
+        <button onclick="pauseRecording()">
+            PAUSE RECORDING
+        </button>
+
+        <button onclick="resetRecording()">
+            RESET RECORDING
+        </button>
+
+        <button onclick="downloadLog()">
+            DOWNLOAD RECORDS
+        </button>
+
+    </div>
+
+    <!-- SENSOR PANEL -->
+
+    <div id="sensorPanel">
+
+        <div id="sensorNumbers"></div>
+
+        <canvas id="motionGraph"></canvas>
+
+    </div>
+
+    <!-- VIDEOS -->
+
+    <video id="current" muted playsinline></video>
+
+    <video id="next" muted playsinline></video>
+
+    <script>
+
+        // ---------------------------------
+        // IOS MOTION PERMISSION
+        // ---------------------------------
+
+        async function enableMotion() {
+
+            try {
+
+                if (
+
+                    typeof DeviceMotionEvent !==
+                    "undefined"
+
+                    &&
+
+                    typeof DeviceMotionEvent
+                        .requestPermission ===
+                    "function"
+
+                ) {
+
+                    const permission =
+
+                        await DeviceMotionEvent
+                            .requestPermission();
+
+                    console.log(permission);
+
+                    if (permission === "granted") {
+
+                        label.innerText =
+                            "MOTION ENABLED";
+
+                    }
+
+                    else {
+
+                        label.innerText =
+                            "MOTION DENIED";
+
+                    }
+
+                }
+
+            }
+
+            catch (err) {
+
+                console.log(err);
+
+            }
+
+        }
+
+        // ---------------------------------
+        // VIDEOS
+        // ---------------------------------
+
+        const videos = [
+
+            "videos/vid1.mp4",
+            "videos/vid2.mp4",
+            "videos/vid3.mp4",
+            "videos/vid4.mp4",
+            "videos/vid5.mp4",
+            "videos/vid6.mp4"
+
+        ];
+
+        // ---------------------------------
+        // ELEMENTS
+        // ---------------------------------
+
+        const label =
+            document.getElementById("label");
+
+        const sensorNumbers =
+            document.getElementById("sensorNumbers");
+
+        const canvas =
+            document.getElementById("motionGraph");
+
+        const ctx =
+            canvas.getContext("2d");
+
+        canvas.width =
+            window.innerWidth - 20;
+
+        canvas.height = 120;
+
+        let current =
+            document.getElementById("current");
+
+        let next =
+            document.getElementById("next");
+
+        // ---------------------------------
+        // VIDEO SETUP
+        // ---------------------------------
+
+        current.loop = true;
+        next.loop = true;
+
+        current.muted = true;
+        next.muted = true;
+
+        current.playsInline = true;
+        next.playsInline = true;
+
+        // ---------------------------------
+        // STATE
+        // ---------------------------------
+
+        let currentIndex = 0;
+
+        let swipeCount = 0;
+
+        let absorptionScore = 0;
+
+        let recording = false;
+
+        let walkingState = "paused";
+
+        let sessionLog = [];
+
+        // ---------------------------------
+        // SENSOR VALUES
+        // ---------------------------------
+
+        let accMagnitude = 0;
+
+        let rotMagnitude = 0;
+
+        let smoothAcc = 0;
+
+        let smoothRot = 0;
+
+        let accHistory = [];
+
+        let rotHistory = [];
+
+        const maxPoints = 500;
+
+        // ---------------------------------
+        // VIDEO START
+        // ---------------------------------
+
+        current.src = videos[0];
+
+        current.load();
+
+        current.play();
+
+        preload(1);
+
+        current.style.transform =
+            "translateY(0vh)";
+
+        next.style.transform =
+            "translateY(100vh)";
+
+        // ---------------------------------
+        // PRELOAD
+        // ---------------------------------
+
+        function preload(index) {
+
+            const file =
+                videos[index % videos.length];
+
+            next.preload = "auto";
+
+            next.src = file;
+
+            next.load();
+
+        }
+
+        // ---------------------------------
+        // RECORDING CONTROLS
+        // ---------------------------------
+
+        async function startWalkingRecording() {
+
+            await enableMotion();
+
+            recording = true;
+
+            walkingState = "walking";
+
+            label.innerText =
+                "RECORDING WALKING";
+
+        }
+
+        async function startStillRecording() {
+
+            await enableMotion();
+
+            recording = true;
+
+            walkingState = "not walking";
+
+            label.innerText =
+                "RECORDING NOT WALKING";
+
+        }
+
+        function pauseRecording() {
+
+            recording = false;
+
+            walkingState = "paused";
+
+            label.innerText =
+                "RECORDING PAUSED";
+
+        }
+
+        function resetRecording() {
+
+            const confirmReset =
+                confirm(
+                    "Reset recording?"
+                );
+
+            if (!confirmReset)
+                return;
+
+            sessionLog = [];
+
+            swipeCount = 0;
+
+            label.innerText =
+                "RECORDING RESET";
+
+        }
+
+        // ---------------------------------
+        // DOWNLOAD
+        // ---------------------------------
+
+        function downloadLog() {
+
+            const sessionName = prompt(
+
+                "Session name?",
+
+                "scroll_session"
+
+            );
+
+            const blob = new Blob(
+
+                [
+                    JSON.stringify(
+                        sessionLog,
+                        null,
+                        2
+                    )
+                ],
+
+                {
+                    type: "application/json"
+                }
+
+            );
+
+            const a =
+                document.createElement("a");
+
+            a.href =
+                URL.createObjectURL(blob);
+
+            a.download =
+                `${sessionName}.json`;
+
+            a.click();
+
+        }
+
+        // ---------------------------------
+        // SENSOR SAMPLING
+        // ---------------------------------
+
+        let lastSensorUpdate = 0;
+
+        window.addEventListener(
+            "devicemotion",
+            e => {
+
+                const now = Date.now();
+
+                if (
+                    now - lastSensorUpdate < 50
+                ) return;
+
+                lastSensorUpdate = now;
+
+                // ACCELEROMETER
+
+                const acc =
+                    e.accelerationIncludingGravity;
+
+                if (acc) {
+
+                    const x = acc.x || 0;
+                    const y = acc.y || 0;
+                    const z = acc.z || 0;
+
+                    accMagnitude = Math.sqrt(
+
+                        x * x +
+                        y * y +
+                        z * z
+
+                    );
+
+                }
+
+                // GYROSCOPE
+
+                const rot =
+                    e.rotationRate;
+
+                if (rot) {
+
+                    const x = rot.alpha || 0;
+                    const y = rot.beta || 0;
+                    const z = rot.gamma || 0;
+
+                    rotMagnitude = Math.sqrt(
+
+                        x * x +
+                        y * y +
+                        z * z
+
+                    );
+
+                }
+
+                // SMOOTHING
+
+                smoothAcc =
+
+                    smoothAcc * 0.9
+                    + accMagnitude * 0.1;
+
+                smoothRot =
+
+                    smoothRot * 0.9
+                    + rotMagnitude * 0.1;
+
+                // HISTORY
+
+                accHistory.push(smoothAcc);
+
+                rotHistory.push(smoothRot);
+
+                if (accHistory.length > maxPoints) {
+
+                    accHistory.shift();
+
+                    rotHistory.shift();
+
+                }
+
+                // ABSORPTION
+
+                computeAbsorption();
+
+                // DISPLAY
+
+                sensorNumbers.innerHTML = `
+
+<div class="sensorLine accelText">
+
+<span>ACCEL</span>
+
+<span>${smoothAcc.toFixed(2)}</span>
+
+</div>
+
+<div class="sensorLine gyroText">
+
+<span>GYRO</span>
+
+<span>${smoothRot.toFixed(2)}</span>
+
+</div>
+
+<div class="sensorLine">
+
+<span>SWIPES</span>
+
+<span>${swipeCount}</span>
+
+</div>
+
+<div class="sensorLine">
+
+<span>ABSORPTION</span>
+
+<span>${absorptionScore.toFixed(1)}</span>
+
+</div>
+
+<div class="sensorLine stateText">
+
+<span>STATE</span>
+
+<span>${walkingState}</span>
+
+</div>
+
+                `;
+
+            }
+        );
+
+        // ---------------------------------
+        // ABSORPTION
+        // ---------------------------------
+
+        function computeAbsorption() {
+
+            const stillness =
+                Math.max(0, 20 - smoothAcc);
+
+            const motionlessness =
+                Math.max(0, 10 - smoothRot);
+
+            absorptionScore =
+
+                stillness * 2
+                + motionlessness * 2
+                + swipeCount * 0.2;
+
+            absorptionScore =
+                Math.min(100, absorptionScore);
+
+        }
+
+        // ---------------------------------
+        // AUTO LOGGING
+        // ---------------------------------
+
+        setInterval(() => {
+
+            if (!recording)
+                return;
+
+            const entry = {
+
+                time: Date.now(),
+
+                accel: smoothAcc,
+
+                gyro: smoothRot,
+
+                swipeCount,
+
+                absorption: absorptionScore,
+
+                state: walkingState
+
+            };
+
+            sessionLog.push(entry);
+
+            console.log(entry);
+
+        }, 1000);
+
+        // ---------------------------------
+        // GRAPH
+        // ---------------------------------
+
+        function drawGraph() {
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+            // ACCEL GRAPH
+
+            ctx.beginPath();
+
+            ctx.strokeStyle = "#ff4d4d";
+
+            ctx.lineWidth = 2;
+
+            accHistory.forEach((v, i) => {
+
+                const y =
+                    canvas.height - (v * 4);
+
+                if (i === 0) {
+
+                    ctx.moveTo(i, y);
+
+                }
+
+                else {
+
+                    ctx.lineTo(i, y);
+
+                }
+
+            });
+
+            ctx.stroke();
+
+            // GYRO GRAPH
+
+            ctx.beginPath();
+
+            ctx.strokeStyle = "#4da6ff";
+
+            ctx.lineWidth = 2;
+
+            rotHistory.forEach((v, i) => {
+
+                const y =
+                    canvas.height - (v * 10);
+
+                if (i === 0) {
+
+                    ctx.moveTo(i, y);
+
+                }
+
+                else {
+
+                    ctx.lineTo(i, y);
+
+                }
+
+            });
+
+            ctx.stroke();
+
+            requestAnimationFrame(drawGraph);
+
+        }
+
+        drawGraph();
+
+        // ---------------------------------
+        // DRAGGING
+        // ---------------------------------
+
+        let dragging = false;
+
+        let startY = 0;
+
+        let currentY = 0;
+
+        document.addEventListener(
+            "touchstart",
+            e => {
+
+                dragging = true;
+
+                startY =
+                    e.touches[0].clientY;
+
+                currentY = startY;
+
+                current.style.transition =
+                    "none";
+
+                next.style.transition =
+                    "none";
+
+            }
+        );
+
+        document.addEventListener(
+            "touchmove",
+            e => {
+
+                if (!dragging) return;
+
+                currentY =
+                    e.touches[0].clientY;
+
+                let deltaY =
+                    currentY - startY;
+
+                if (deltaY < 0) {
+
+                    current.style.transform =
+
+                        `translateY(${deltaY}px)`;
+
+                    next.style.transform =
+
+                        `translateY(${window.innerHeight + deltaY}px)`;
+
+                }
+
+            }
+        );
+
+        document.addEventListener(
+            "touchend",
+            e => {
+
+                dragging = false;
+
+                let dy =
+
+                    e.changedTouches[0].clientY
+                    - startY;
+
+                current.style.transition =
+                    "transform 0.3s ease";
+
+                next.style.transition =
+                    "transform 0.3s ease";
+
+                const swipeThreshold = 120;
+
+                if (dy < -swipeThreshold) {
+
+                    swipeCount++;
+
+                    current.style.transform =
+                        "translateY(-100vh)";
+
+                    next.style.transform =
+                        "translateY(0vh)";
+
+                    setTimeout(() => {
+
+                        let temp = current;
+
+                        current = next;
+
+                        next = temp;
+
+                        current.style.transition =
+                            "none";
+
+                        next.style.transition =
+                            "none";
+
+                        current.style.transform =
+                            "translateY(0vh)";
+
+                        next.style.transform =
+                            "translateY(100vh)";
+
+                        currentIndex =
+
+                            (currentIndex + 1)
+                            % videos.length;
+
+                        preload(currentIndex + 1);
+
+                        current.currentTime = 0;
+
+                        current.play();
+
+                    }, 300);
+
+                }
+
+                else {
+
+                    current.style.transform =
+                        "translateY(0vh)";
+
+                    next.style.transform =
+                        "translateY(100vh)";
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

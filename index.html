@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html,
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            overflow: hidden;
+
+            background: black;
+
+            touch-action: none;
+
+            font-family: sans-serif;
+        }
+
+        video {
+
+            position: absolute;
+
+            width: 100vw;
+            height: 100vh;
+
+            object-fit: cover;
+
+            top: 0;
+            left: 0;
+
+            background: black;
+
+            will-change: transform;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+        /* ----------------------------- */
+        /* LABEL */
+        /* ----------------------------- */
+
+        #label {
+
+            position: fixed;
+
+            top: 12px;
+            left: 12px;
+
+            z-index: 1000;
+
+            color: white;
+
+            background:
+                rgba(0, 0, 0, 0.45);
+
+            padding: 10px 14px;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            backdrop-filter: blur(10px);
+        }
+
+        /* ----------------------------- */
+        /* PLAY OVERLAY */
+        /* ----------------------------- */
+
+        #playOverlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            display: none;
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 500;
+
+            pointer-events: none;
+        }
+
+        #playCircle {
+
+            width: 90px;
+            height: 90px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0, 0, 0, 0.45);
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            backdrop-filter: blur(6px);
+        }
+
+        #playTriangle {
+
+            width: 0;
+            height: 0;
+
+            border-left: 28px solid white;
+
+            border-top: 18px solid transparent;
+
+            border-bottom: 18px solid transparent;
+
+            margin-left: 6px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- LABEL -->
+
+    <div id="label">
+
+        Embodied Implicit Prototype
+
+        <br><br>
+
+        STATE:
+        <span id="stateText">
+            loading...
+        </span>
+
+        <br>
+
+        TRACE:
+        <span id="traceText">
+            walking_01
+        </span>
+
+        <br>
+
+        GYRO:
+        <span id="gyroText">
+            0
+        </span>
+
+        <br>
+
+        ACCEL:
+        <span id="accelText">
+            0
+        </span>
+
+        <br>
+
+        TENSION:
+        <span id="tensionText">
+            0
+        </span>
+
+        <br>
+
+        PACE:
+        <span id="paceText">
+            0
+        </span>
+
+    </div>
+
+    <!-- PLAY OVERLAY -->
+
+    <div id="playOverlay">
+
+        <div id="playCircle">
+
+            <div id="playTriangle"></div>
+
+        </div>
+
+    </div>
+
+    <!-- VIDEOS -->
+
+    <video id="current" muted playsinline>
+    </video>
+
+    <video id="next" muted playsinline>
+    </video>
+
+    <script>
+
+        // ---------------------------------
+        // VIDEO FILES
+        // ---------------------------------
+
+        const videos = [
+
+            "videos/vid1.mp4",
+            "videos/vid2.mp4",
+            "videos/vid3.mp4",
+            "videos/vid4.mp4",
+            "videos/vid5.mp4",
+            "videos/vid6.mp4"
+
+        ];
+
+        // ---------------------------------
+        // EMBODIED TRACE
+        // ---------------------------------
+
+        let embodiedTrace = [];
+
+        let traceIndex = 0;
+
+        let currentTraceName =
+            "walking_01";
+
+        // CHANGE THIS TO TEST
+        // DIFFERENT CONTEXTS
+
+        fetch(
+            "data/walking_01/session_Walking1.json"
+        )
+
+            .then(r => r.json())
+
+            .then(data => {
+
+                embodiedTrace = data;
+
+                stateText.innerText =
+                    "trace loaded";
+
+            });
+
+        // ---------------------------------
+        // ELEMENTS
+        // ---------------------------------
+
+        let current =
+            document.getElementById(
+                "current"
+            );
+
+        let next =
+            document.getElementById(
+                "next"
+            );
+
+        const playOverlay =
+            document.getElementById(
+                "playOverlay"
+            );
+
+        const stateText =
+            document.getElementById(
+                "stateText"
+            );
+
+        const gyroText =
+            document.getElementById(
+                "gyroText"
+            );
+
+        const accelText =
+            document.getElementById(
+                "accelText"
+            );
+
+        const tensionText =
+            document.getElementById(
+                "tensionText"
+            );
+
+        const paceText =
+            document.getElementById(
+                "paceText"
+            );
+
+        const traceText =
+            document.getElementById(
+                "traceText"
+            );
+
+        // ---------------------------------
+        // VIDEO SETUP
+        // ---------------------------------
+
+        current.loop = true;
+        next.loop = true;
+
+        current.muted = true;
+        next.muted = true;
+
+        current.playsInline = true;
+        next.playsInline = true;
+
+        // ---------------------------------
+        // STATE
+        // ---------------------------------
+
+        let autoplayEnabled = true;
+
+        let swipeTension = 2;
+
+        let transitionPace = 2;
+
+        let currentIndex = 0;
+
+        // ---------------------------------
+        // MAPS
+        // ---------------------------------
+
+        const thresholdMap = {
+
+            1: 60,
+            2: 120,
+            3: 180,
+            4: 260,
+            5: 360
+
+        };
+
+        const paceMap = {
+
+            1: 0,
+            2: 150,
+            3: 400,
+            4: 900,
+            5: 1600
+
+        };
+
+        // ---------------------------------
+        // START
+        // ---------------------------------
+
+        current.src = videos[0];
+
+        current.load();
+
+        current.play();
+
+        preload(1);
+
+        current.style.transform =
+            "translateY(0vh)";
+
+        next.style.transform =
+            "translateY(100vh)";
+
+        // ---------------------------------
+        // PRELOAD
+        // ---------------------------------
+
+        function preload(index) {
+
+            const file =
+
+                videos[
+                index % videos.length
+                ];
+
+            next.preload = "auto";
+
+            next.src = file;
+
+            next.load();
+
+        }
+
+        // ---------------------------------
+        // PLAY OVERLAY
+        // ---------------------------------
+
+        function showPlayOverlay() {
+
+            playOverlay.style.display =
+                "flex";
+
+        }
+
+        function hidePlayOverlay() {
+
+            playOverlay.style.display =
+                "none";
+
+        }
+
+        // ---------------------------------
+        // MAP RANGE
+        // ---------------------------------
+
+        function mapRange(
+            value,
+            inMin,
+            inMax,
+            outMin,
+            outMax
+        ) {
+
+            return (
+
+                (value - inMin)
+
+                *
+
+                (outMax - outMin)
+
+                /
+
+                (inMax - inMin)
+
+                +
+
+                outMin
+
+            );
+
+        }
+
+        // ---------------------------------
+        // EMBODIED MODULATION
+        // ---------------------------------
+
+        function applyEmbodiedModulation(
+            sample
+        ) {
+
+            // -------------------------
+            // MAP GYRO → TENSION
+            // -------------------------
+
+            swipeTension =
+
+                Math.round(
+
+                    mapRange(
+
+                        sample.gyro,
+
+                        0,
+                        100,
+
+                        1,
+                        5
+
+                    )
+
+                );
+
+            // -------------------------
+            // MAP ACCEL → PACE
+            // -------------------------
+
+            transitionPace =
+
+                Math.round(
+
+                    mapRange(
+
+                        sample.accel,
+
+                        8,
+                        14,
+
+                        1,
+                        5
+
+                    )
+
+                );
+
+            // CLAMP
+
+            swipeTension =
+
+                Math.max(
+                    1,
+
+                    Math.min(
+                        5,
+                        swipeTension
+                    )
+                );
+
+            transitionPace =
+
+                Math.max(
+                    1,
+
+                    Math.min(
+                        5,
+                        transitionPace
+                    )
+                );
+
+            // DISPLAY
+
+            gyroText.innerText =
+                sample.gyro.toFixed(1);
+
+            accelText.innerText =
+                sample.accel.toFixed(1);
+
+            tensionText.innerText =
+                swipeTension;
+
+            paceText.innerText =
+                transitionPace;
+
+            stateText.innerText =
+                sample.state;
+
+        }
+
+        // ---------------------------------
+        // TRACE PLAYBACK
+        // ---------------------------------
+
+        setInterval(() => {
+
+            if (
+                embodiedTrace.length === 0
+            ) return;
+
+            const sample =
+
+                embodiedTrace[
+                traceIndex
+                ];
+
+            applyEmbodiedModulation(
+                sample
+            );
+
+            traceIndex++;
+
+            if (
+                traceIndex
+                >= embodiedTrace.length
+            ) {
+
+                traceIndex = 0;
+
+            }
+
+        }, 250);
+
+        // ---------------------------------
+        // DRAGGING
+        // ---------------------------------
+
+        let dragging = false;
+
+        let startY = 0;
+
+        let currentY = 0;
+
+        // ---------------------------------
+        // TOUCH START
+        // ---------------------------------
+
+        document.addEventListener(
+
+            "touchstart",
+
+            e => {
+
+                dragging = true;
+
+                startY =
+                    e.touches[0].clientY;
+
+                currentY = startY;
+
+                current.style.transition =
+                    "none";
+
+                next.style.transition =
+                    "none";
+
+            }
+
+        );
+
+        // ---------------------------------
+        // TOUCH MOVE
+        // ---------------------------------
+
+        document.addEventListener(
+
+            "touchmove",
+
+            e => {
+
+                if (!dragging)
+                    return;
+
+                currentY =
+                    e.touches[0].clientY;
+
+                let deltaY =
+                    currentY - startY;
+
+                if (deltaY < 0) {
+
+                    current.style.transform =
+
+                        `translateY(${deltaY}px)`;
+
+                    next.style.transform =
+
+                        `translateY(${window.innerHeight + deltaY}px)`;
+
+                }
+
+            }
+
+        );
+
+        // ---------------------------------
+        // TOUCH END
+        // ---------------------------------
+
+        document.addEventListener(
+
+            "touchend",
+
+            e => {
+
+                dragging = false;
+
+                let dy =
+
+                    e.changedTouches[0].clientY
+                    - startY;
+
+                current.style.transition =
+                    "transform 0.3s ease";
+
+                next.style.transition =
+                    "transform 0.3s ease";
+
+                const swipeThreshold =
+
+                    thresholdMap[
+                    swipeTension
+                    ];
+
+                const transitionDelay =
+
+                    paceMap[
+                    transitionPace
+                    ];
+
+                // COMPLETE SWIPE
+
+                if (dy < -swipeThreshold) {
+
+                    current.style.transform =
+                        "translateY(-100vh)";
+
+                    next.style.transform =
+                        "translateY(0vh)";
+
+                    setTimeout(() => {
+
+                        let temp =
+                            current;
+
+                        current =
+                            next;
+
+                        next =
+                            temp;
+
+                        current.style.transition =
+                            "none";
+
+                        next.style.transition =
+                            "none";
+
+                        current.style.transform =
+                            "translateY(0vh)";
+
+                        next.style.transform =
+                            "translateY(100vh)";
+
+                        currentIndex =
+
+                            (
+                                currentIndex + 1
+                            )
+
+                            %
+
+                            videos.length;
+
+                        preload(
+                            currentIndex + 1
+                        );
+
+                        if (
+                            autoplayEnabled
+                        ) {
+
+                            hidePlayOverlay();
+
+                            current.currentTime = 0;
+
+                            current.play();
+
+                        }
+
+                        else {
+
+                            current.pause();
+
+                            showPlayOverlay();
+
+                        }
+
+                    },
+
+                        300
+                        +
+                        transitionDelay
+
+                    );
+
+                }
+
+                // SNAP BACK
+
+                else {
+
+                    current.style.transform =
+                        "translateY(0vh)";
+
+                    next.style.transform =
+                        "translateY(100vh)";
+
+                }
+
+            }
+
+        );
+
+    </script>
+
+</body>
+
+</html>
