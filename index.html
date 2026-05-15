@@ -3,9 +3,11 @@
 
 <head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <style>
+
         html,
         body {
 
@@ -38,9 +40,9 @@
             will-change: transform;
 
             transition:
-                transform 0.3s ease,
-                filter 0.4s ease,
-                opacity 0.4s ease;
+                transform 0.35s ease,
+                filter 0.5s ease,
+                opacity 0.5s ease;
         }
 
         /* ----------------------------- */
@@ -59,15 +61,15 @@
             color: white;
 
             background:
-                rgba(0, 0, 0, 0.45);
+                rgba(0,0,0,0.45);
 
             padding: 12px 14px;
 
             border-radius: 12px;
 
-            font-size: 14px;
-
             line-height: 1.7;
+
+            font-size: 14px;
 
             backdrop-filter: blur(10px);
         }
@@ -75,16 +77,25 @@
         .value {
 
             color: #7dd3fc;
+
         }
 
-        .frictionHigh {
+        /* ----------------------------- */
+        /* ATMOSPHERE */
+        /* ----------------------------- */
 
-            color: #fca5a5;
-        }
+        #atmosphere {
 
-        .frictionLow {
+            position: fixed;
 
-            color: #86efac;
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 50;
+
+            transition:
+                background 0.6s ease;
         }
 
         /* ----------------------------- */
@@ -115,14 +126,14 @@
             border-radius: 50%;
 
             background:
-                rgba(0, 0, 0, 0.45);
+                rgba(0,0,0,0.45);
 
             display: flex;
 
             justify-content: center;
             align-items: center;
 
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(6px);
         }
 
         #playTriangle {
@@ -139,28 +150,6 @@
             margin-left: 6px;
         }
 
-        /* ----------------------------- */
-        /* ATMOSPHERIC LAYER */
-        /* ----------------------------- */
-
-        #atmosphere {
-
-            position: fixed;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            z-index: 100;
-
-            background:
-                radial-gradient(circle at center,
-                    rgba(255, 255, 255, 0),
-                    rgba(0, 0, 0, 0));
-
-            transition:
-                background 0.6s ease;
-        }
     </style>
 
 </head>
@@ -172,7 +161,8 @@
     <div id="debug">
 
         TRACE:
-        <span id="traceText" class="value">
+        <span id="traceText"
+            class="value">
 
             walking_01
 
@@ -180,8 +170,29 @@
 
         <br>
 
-        EXTERNAL FRICTION:
-        <span id="externalText" class="value">
+        MOVEMENT:
+        <span id="movementText"
+            class="value">
+
+            0
+
+        </span>
+
+        <br>
+
+        ATTENTION:
+        <span id="attentionText"
+            class="value">
+
+            OUT
+
+        </span>
+
+        <br>
+
+        IN SCORE:
+        <span id="inScoreText"
+            class="value">
 
             0
 
@@ -190,36 +201,10 @@
         <br>
 
         INTERNAL FRICTION:
-        <span id="internalText" class="value">
+        <span id="frictionText"
+            class="value">
 
             0
-
-        </span>
-
-        <br>
-
-        SWIPE TENSION:
-        <span id="tensionText" class="value">
-
-            0
-
-        </span>
-
-        <br>
-
-        TRANSITION DELAY:
-        <span id="paceText" class="value">
-
-            0
-
-        </span>
-
-        <br>
-
-        AUTOPLAY:
-        <span id="autoplayText" class="value">
-
-            ON
 
         </span>
 
@@ -243,10 +228,14 @@
 
     <!-- VIDEOS -->
 
-    <video id="current" muted playsinline>
+    <video id="current"
+        muted
+        playsinline>
     </video>
 
-    <video id="next" muted playsinline>
+    <video id="next"
+        muted
+        playsinline>
     </video>
 
     <script>
@@ -261,13 +250,12 @@
             "videos/vid2.mp4",
             "videos/vid3.mp4",
             "videos/vid4.mp4",
-            "videos/vid5.mp4",
-            "videos/vid6.mp4"
+            "videos/vid5.mp4"
 
         ];
 
         // ---------------------------------
-        // TRACE SELECTION
+        // TRACE
         // ---------------------------------
 
         const traceFile =
@@ -277,7 +265,7 @@
         const traceName =
             "walking_01";
 
-        // TRY:
+        // try:
         // walking_01
         // walking_02
         // still_01
@@ -312,29 +300,24 @@
                 "traceText"
             );
 
-        const externalText =
+        const movementText =
             document.getElementById(
-                "externalText"
+                "movementText"
             );
 
-        const internalText =
+        const attentionText =
             document.getElementById(
-                "internalText"
+                "attentionText"
             );
 
-        const tensionText =
+        const inScoreText =
             document.getElementById(
-                "tensionText"
+                "inScoreText"
             );
 
-        const paceText =
+        const frictionText =
             document.getElementById(
-                "paceText"
-            );
-
-        const autoplayText =
-            document.getElementById(
-                "autoplayText"
+                "frictionText"
             );
 
         // ---------------------------------
@@ -363,13 +346,13 @@
 
         fetch(traceFile)
 
-            .then(r => r.json())
+        .then(r => r.json())
 
-            .then(data => {
+        .then(data => {
 
-                embodiedTrace = data;
+            embodiedTrace = data;
 
-            });
+        });
 
         // ---------------------------------
         // STATE
@@ -384,14 +367,17 @@
         let currentY = 0;
 
         // ---------------------------------
-        // FRICTION
+        // ATTENTION MODEL
         // ---------------------------------
 
-        let externalFriction = 0;
+        let attentionInScore = 0;
+
+        // 0 = OUT
+        // 1 = IN
 
         let internalFriction = 0;
 
-        let swipeTension = 2;
+        let swipeThreshold = 120;
 
         let transitionDelay = 150;
 
@@ -424,7 +410,7 @@
             const file =
 
                 videos[
-                index % videos.length
+                    index % videos.length
                 ];
 
             next.src = file;
@@ -466,67 +452,84 @@
         }
 
         // ---------------------------------
-        // APPLY EMBODIED TRACE
+        // APPLY TRACE SAMPLE
         // ---------------------------------
 
-        function applyEmbodiedState(
-            sample
-        ) {
+        function applyTrace(sample) {
 
             // -------------------------
-            // EXTERNAL FRICTION
+            // MOVEMENT VALUE
             // -------------------------
 
-            // walking
-            // instability
-            // interruptions
-            // bodily movement
+            const movement =
 
-            externalFriction =
+                sample.accel
+                +
+                sample.gyro;
 
+            movementText.innerText =
+                movement.toFixed(1);
+
+            // -------------------------
+            // ATTENTION ESTIMATION
+            // -------------------------
+
+            // MORE movement
+            // = more OUT
+
+            // LESS movement
+            // = more IN
+
+            let targetInScore =
+
+                1
+                -
                 mapRange(
 
-                    sample.gyro
-                    + sample.accel,
+                    movement,
 
                     8,
-                    120,
+                    110,
 
                     0,
                     1
 
                 );
 
-            externalFriction =
+            // clamp
+
+            targetInScore =
 
                 Math.max(
                     0,
 
                     Math.min(
                         1,
-                        externalFriction
+                        targetInScore
                     )
                 );
+
+            // smoothing
+
+            attentionInScore =
+
+                attentionInScore * 0.92
+                +
+                targetInScore * 0.08;
 
             // -------------------------
             // INTERNAL FRICTION
             // -------------------------
 
-            // IMPORTANT:
-            // NOT inverse punishment
-            // just balancing enclosure
-
             internalFriction =
 
-                1
-                -
-                (externalFriction * 0.6);
+                attentionInScore;
 
             // -------------------------
-            // SWIPE TENSION
+            // INTERFACE MODULATION
             // -------------------------
 
-            swipeTension =
+            swipeThreshold =
 
                 mapRange(
 
@@ -540,10 +543,6 @@
 
                 );
 
-            // -------------------------
-            // TRANSITION DELAY
-            // -------------------------
-
             transitionDelay =
 
                 mapRange(
@@ -553,24 +552,20 @@
                     0,
                     1,
 
-                    80,
+                    50,
                     1200
 
                 );
 
-            // -------------------------
-            // AUTOPLAY
-            // -------------------------
-
             autoplayEnabled =
 
-                internalFriction < 0.72;
+                internalFriction < 0.78;
 
             // -------------------------
             // ATMOSPHERIC MODULATION
             // -------------------------
 
-            const blurAmount =
+            const blur =
 
                 mapRange(
 
@@ -580,7 +575,7 @@
                     1,
 
                     0,
-                    2.2
+                    2.4
 
                 );
 
@@ -600,12 +595,12 @@
 
             current.style.filter =
 
-                `blur(${blurAmount}px)
+                `blur(${blur}px)
                  brightness(${brightness})`;
 
-            // subtle atmospheric enclosure
+            // vignette
 
-            const vignetteOpacity =
+            const vignette =
 
                 mapRange(
 
@@ -615,7 +610,7 @@
                     1,
 
                     0,
-                    0.22
+                    0.25
 
                 );
 
@@ -624,40 +619,28 @@
                 `radial-gradient(
                     circle at center,
                     rgba(0,0,0,0),
-                    rgba(0,0,0,${vignetteOpacity})
+                    rgba(0,0,0,${vignette})
                 )`;
 
             // -------------------------
             // DEBUG
             // -------------------------
 
-            externalText.innerText =
+            inScoreText.innerText =
 
-                externalFriction
-                    .toFixed(2);
+                attentionInScore
+                .toFixed(2);
 
-            internalText.innerText =
+            frictionText.innerText =
 
                 internalFriction
-                    .toFixed(2);
+                .toFixed(2);
 
-            tensionText.innerText =
+            attentionText.innerText =
 
-                Math.round(
-                    swipeTension
-                );
-
-            paceText.innerText =
-
-                Math.round(
-                    transitionDelay
-                );
-
-            autoplayText.innerText =
-
-                autoplayEnabled
-                    ? "ON"
-                    : "OFF";
+                attentionInScore > 0.65
+                    ? "IN"
+                    : "OUT";
 
         }
 
@@ -674,12 +657,10 @@
             const sample =
 
                 embodiedTrace[
-                traceIndex
+                    traceIndex
                 ];
 
-            applyEmbodiedState(
-                sample
-            );
+            applyTrace(sample);
 
             traceIndex++;
 
@@ -792,14 +773,14 @@
                     - startY;
 
                 current.style.transition =
-                    "transform 0.3s ease, filter 0.4s ease";
+                    "transform 0.35s ease, filter 0.5s ease";
 
                 next.style.transition =
-                    "transform 0.3s ease";
+                    "transform 0.35s ease";
 
                 // COMPLETE SWIPE
 
-                if (dy < -swipeTension) {
+                if (dy < -swipeThreshold) {
 
                     current.style.transform =
                         "translateY(-100vh)";
@@ -866,9 +847,9 @@
 
                     },
 
-                        300
-                        +
-                        transitionDelay
+                    300
+                    +
+                    transitionDelay
 
                     );
 
