@@ -1,0 +1,3362 @@
+[
+  {
+    "time": 1778835903197,
+    "timeSinceStart": 10014,
+    "accel": 9.763909821358117,
+    "gyro": 27.070890405525308,
+    "state": "still"
+  },
+  {
+    "time": 1778835903447,
+    "timeSinceStart": 10264,
+    "accel": 9.735007964507243,
+    "gyro": 22.190665964897033,
+    "state": "still"
+  },
+  {
+    "time": 1778835903697,
+    "timeSinceStart": 10514,
+    "accel": 9.930941305386309,
+    "gyro": 21.28569751469418,
+    "state": "still"
+  },
+  {
+    "time": 1778835903947,
+    "timeSinceStart": 10764,
+    "accel": 9.818171876422868,
+    "gyro": 38.62097468973628,
+    "state": "still"
+  },
+  {
+    "time": 1778835904197,
+    "timeSinceStart": 11014,
+    "accel": 9.857910429763253,
+    "gyro": 66.84803923302155,
+    "state": "still"
+  },
+  {
+    "time": 1778835904447,
+    "timeSinceStart": 11264,
+    "accel": 9.91850506722906,
+    "gyro": 62.203869203172246,
+    "state": "still"
+  },
+  {
+    "time": 1778835904697,
+    "timeSinceStart": 11514,
+    "accel": 9.528952594697826,
+    "gyro": 61.87656407935829,
+    "state": "still"
+  },
+  {
+    "time": 1778835904947,
+    "timeSinceStart": 11764,
+    "accel": 9.981507205792237,
+    "gyro": 48.39977670654233,
+    "state": "still"
+  },
+  {
+    "time": 1778835905197,
+    "timeSinceStart": 12014,
+    "accel": 9.931079604359452,
+    "gyro": 32.342023450495006,
+    "state": "still"
+  },
+  {
+    "time": 1778835905447,
+    "timeSinceStart": 12264,
+    "accel": 9.879578843039626,
+    "gyro": 26.4819528978805,
+    "state": "still"
+  },
+  {
+    "time": 1778835905698,
+    "timeSinceStart": 12515,
+    "accel": 9.822802592210088,
+    "gyro": 34.58701312591328,
+    "state": "still"
+  },
+  {
+    "time": 1778835905947,
+    "timeSinceStart": 12764,
+    "accel": 9.768681327326783,
+    "gyro": 46.003537708806,
+    "state": "still"
+  },
+  {
+    "time": 1778835906197,
+    "timeSinceStart": 13014,
+    "accel": 9.712215763684746,
+    "gyro": 46.66416071936384,
+    "state": "still"
+  },
+  {
+    "time": 1778835906447,
+    "timeSinceStart": 13264,
+    "accel": 9.757830836390022,
+    "gyro": 40.40510038700343,
+    "state": "still"
+  },
+  {
+    "time": 1778835906697,
+    "timeSinceStart": 13514,
+    "accel": 9.741710570299135,
+    "gyro": 33.65217851756505,
+    "state": "still"
+  },
+  {
+    "time": 1778835906947,
+    "timeSinceStart": 13764,
+    "accel": 9.865346231519544,
+    "gyro": 34.44511177133825,
+    "state": "still"
+  },
+  {
+    "time": 1778835907197,
+    "timeSinceStart": 14014,
+    "accel": 9.928368905958495,
+    "gyro": 27.66448129341591,
+    "state": "still"
+  },
+  {
+    "time": 1778835907447,
+    "timeSinceStart": 14264,
+    "accel": 9.666244926644461,
+    "gyro": 59.418413527906566,
+    "state": "still"
+  },
+  {
+    "time": 1778835907697,
+    "timeSinceStart": 14514,
+    "accel": 10.1820804222605,
+    "gyro": 65.01219886993464,
+    "state": "still"
+  },
+  {
+    "time": 1778835907947,
+    "timeSinceStart": 14764,
+    "accel": 10.004468470776684,
+    "gyro": 75.17337030796845,
+    "state": "still"
+  },
+  {
+    "time": 1778835908197,
+    "timeSinceStart": 15014,
+    "accel": 9.888379430835704,
+    "gyro": 68.09888394407812,
+    "state": "still"
+  },
+  {
+    "time": 1778835908447,
+    "timeSinceStart": 15264,
+    "accel": 9.911879132727103,
+    "gyro": 59.59036602953855,
+    "state": "still"
+  },
+  {
+    "time": 1778835908698,
+    "timeSinceStart": 15515,
+    "accel": 10.024154746945085,
+    "gyro": 61.190208112798274,
+    "state": "still"
+  },
+  {
+    "time": 1778835908947,
+    "timeSinceStart": 15764,
+    "accel": 9.861733489108584,
+    "gyro": 58.60897385347138,
+    "state": "still"
+  },
+  {
+    "time": 1778835909197,
+    "timeSinceStart": 16014,
+    "accel": 10.129428469162539,
+    "gyro": 57.20157022317374,
+    "state": "still"
+  },
+  {
+    "time": 1778835909447,
+    "timeSinceStart": 16264,
+    "accel": 10.166487492697263,
+    "gyro": 58.93180925834552,
+    "state": "still"
+  },
+  {
+    "time": 1778835909698,
+    "timeSinceStart": 16515,
+    "accel": 10.052922702372463,
+    "gyro": 71.16128320554346,
+    "state": "still"
+  },
+  {
+    "time": 1778835909947,
+    "timeSinceStart": 16764,
+    "accel": 9.68367122181367,
+    "gyro": 57.75183824037295,
+    "state": "still"
+  },
+  {
+    "time": 1778835910197,
+    "timeSinceStart": 17014,
+    "accel": 9.719497981846846,
+    "gyro": 53.85343147323741,
+    "state": "still"
+  },
+  {
+    "time": 1778835910447,
+    "timeSinceStart": 17264,
+    "accel": 10.103446640319701,
+    "gyro": 65.67602363715896,
+    "state": "still"
+  },
+  {
+    "time": 1778835910698,
+    "timeSinceStart": 17515,
+    "accel": 9.812430989241337,
+    "gyro": 76.84098897719099,
+    "state": "still"
+  },
+  {
+    "time": 1778835910947,
+    "timeSinceStart": 17764,
+    "accel": 10.109343587157836,
+    "gyro": 68.40334086223638,
+    "state": "still"
+  },
+  {
+    "time": 1778835911197,
+    "timeSinceStart": 18014,
+    "accel": 10.043224870382488,
+    "gyro": 49.74126385667564,
+    "state": "still"
+  },
+  {
+    "time": 1778835911447,
+    "timeSinceStart": 18264,
+    "accel": 10.009804217167476,
+    "gyro": 33.32787163677041,
+    "state": "still"
+  },
+  {
+    "time": 1778835911697,
+    "timeSinceStart": 18514,
+    "accel": 9.937814958289552,
+    "gyro": 22.493047041666358,
+    "state": "still"
+  },
+  {
+    "time": 1778835911947,
+    "timeSinceStart": 18764,
+    "accel": 9.89568769515245,
+    "gyro": 14.644580133989443,
+    "state": "still"
+  },
+  {
+    "time": 1778835912197,
+    "timeSinceStart": 19014,
+    "accel": 9.859124945134464,
+    "gyro": 9.89740151237271,
+    "state": "still"
+  },
+  {
+    "time": 1778835912447,
+    "timeSinceStart": 19264,
+    "accel": 9.895057384036384,
+    "gyro": 10.703014576901813,
+    "state": "still"
+  },
+  {
+    "time": 1778835912697,
+    "timeSinceStart": 19514,
+    "accel": 9.875351856526324,
+    "gyro": 8.199462062957412,
+    "state": "still"
+  },
+  {
+    "time": 1778835912947,
+    "timeSinceStart": 19764,
+    "accel": 9.807479828666414,
+    "gyro": 7.852250294966672,
+    "state": "still"
+  },
+  {
+    "time": 1778835913197,
+    "timeSinceStart": 20014,
+    "accel": 9.825976557365497,
+    "gyro": 8.608748923822203,
+    "state": "still"
+  },
+  {
+    "time": 1778835913447,
+    "timeSinceStart": 20264,
+    "accel": 9.857981537044585,
+    "gyro": 7.04170863833797,
+    "state": "still"
+  },
+  {
+    "time": 1778835913697,
+    "timeSinceStart": 20514,
+    "accel": 9.857490253865045,
+    "gyro": 5.841895204250419,
+    "state": "still"
+  },
+  {
+    "time": 1778835913947,
+    "timeSinceStart": 20764,
+    "accel": 9.83293605061514,
+    "gyro": 5.707088561246667,
+    "state": "still"
+  },
+  {
+    "time": 1778835914197,
+    "timeSinceStart": 21014,
+    "accel": 9.814997779834284,
+    "gyro": 4.165877117937958,
+    "state": "still"
+  },
+  {
+    "time": 1778835914447,
+    "timeSinceStart": 21264,
+    "accel": 9.825449879155226,
+    "gyro": 3.329130790723427,
+    "state": "still"
+  },
+  {
+    "time": 1778835914697,
+    "timeSinceStart": 21514,
+    "accel": 9.825168028431879,
+    "gyro": 2.6729684976365293,
+    "state": "still"
+  },
+  {
+    "time": 1778835914947,
+    "timeSinceStart": 21764,
+    "accel": 9.838307741397296,
+    "gyro": 2.1596791617432523,
+    "state": "still"
+  },
+  {
+    "time": 1778835915197,
+    "timeSinceStart": 22014,
+    "accel": 9.818434033111664,
+    "gyro": 1.8857432106571281,
+    "state": "still"
+  },
+  {
+    "time": 1778835915447,
+    "timeSinceStart": 22264,
+    "accel": 9.824486331542658,
+    "gyro": 1.6384870153324422,
+    "state": "still"
+  },
+  {
+    "time": 1778835915697,
+    "timeSinceStart": 22514,
+    "accel": 9.85433596697861,
+    "gyro": 1.5052893294232932,
+    "state": "still"
+  },
+  {
+    "time": 1778835915951,
+    "timeSinceStart": 22768,
+    "accel": 9.84773952194816,
+    "gyro": 1.5660172328990078,
+    "state": "still"
+  },
+  {
+    "time": 1778835916197,
+    "timeSinceStart": 23014,
+    "accel": 9.841759020369876,
+    "gyro": 1.5683781165355581,
+    "state": "still"
+  },
+  {
+    "time": 1778835916447,
+    "timeSinceStart": 23264,
+    "accel": 9.823629927438834,
+    "gyro": 1.5028164574902771,
+    "state": "still"
+  },
+  {
+    "time": 1778835916697,
+    "timeSinceStart": 23514,
+    "accel": 9.822782830461671,
+    "gyro": 1.3850726753275873,
+    "state": "still"
+  },
+  {
+    "time": 1778835916948,
+    "timeSinceStart": 23765,
+    "accel": 9.851954893286159,
+    "gyro": 1.2778200298471325,
+    "state": "still"
+  },
+  {
+    "time": 1778835917197,
+    "timeSinceStart": 24014,
+    "accel": 9.850433489318865,
+    "gyro": 1.237370386168613,
+    "state": "still"
+  },
+  {
+    "time": 1778835917447,
+    "timeSinceStart": 24264,
+    "accel": 9.832779212970522,
+    "gyro": 1.3643341967394498,
+    "state": "still"
+  },
+  {
+    "time": 1778835917697,
+    "timeSinceStart": 24514,
+    "accel": 9.831664592832935,
+    "gyro": 1.4255769525868511,
+    "state": "still"
+  },
+  {
+    "time": 1778835917947,
+    "timeSinceStart": 24764,
+    "accel": 9.871086554986114,
+    "gyro": 1.6496458339716662,
+    "state": "still"
+  },
+  {
+    "time": 1778835918197,
+    "timeSinceStart": 25014,
+    "accel": 9.848464575967913,
+    "gyro": 1.4296103244953602,
+    "state": "still"
+  },
+  {
+    "time": 1778835918447,
+    "timeSinceStart": 25264,
+    "accel": 9.842726290499094,
+    "gyro": 1.636149529380146,
+    "state": "still"
+  },
+  {
+    "time": 1778835918697,
+    "timeSinceStart": 25514,
+    "accel": 9.852431971813473,
+    "gyro": 1.6065197280194528,
+    "state": "still"
+  },
+  {
+    "time": 1778835918947,
+    "timeSinceStart": 25764,
+    "accel": 9.863492411796464,
+    "gyro": 1.4225009143085379,
+    "state": "still"
+  },
+  {
+    "time": 1778835919197,
+    "timeSinceStart": 26014,
+    "accel": 9.87047480969986,
+    "gyro": 1.3783488889396887,
+    "state": "still"
+  },
+  {
+    "time": 1778835919447,
+    "timeSinceStart": 26264,
+    "accel": 9.84104206792782,
+    "gyro": 1.7812900950480512,
+    "state": "still"
+  },
+  {
+    "time": 1778835919697,
+    "timeSinceStart": 26514,
+    "accel": 9.730803107246155,
+    "gyro": 2.7999364622096987,
+    "state": "still"
+  },
+  {
+    "time": 1778835919952,
+    "timeSinceStart": 26769,
+    "accel": 9.817113995306388,
+    "gyro": 3.299356275711802,
+    "state": "still"
+  },
+  {
+    "time": 1778835920197,
+    "timeSinceStart": 27014,
+    "accel": 9.865467765555467,
+    "gyro": 6.161537294682668,
+    "state": "still"
+  },
+  {
+    "time": 1778835920450,
+    "timeSinceStart": 27267,
+    "accel": 9.835147519791422,
+    "gyro": 6.408532173994975,
+    "state": "still"
+  },
+  {
+    "time": 1778835920697,
+    "timeSinceStart": 27514,
+    "accel": 9.882413027800702,
+    "gyro": 15.155907958058803,
+    "state": "still"
+  },
+  {
+    "time": 1778835920947,
+    "timeSinceStart": 27764,
+    "accel": 9.477905247079972,
+    "gyro": 27.34037006956327,
+    "state": "still"
+  },
+  {
+    "time": 1778835921197,
+    "timeSinceStart": 28014,
+    "accel": 9.872198281941102,
+    "gyro": 30.40496093517124,
+    "state": "still"
+  },
+  {
+    "time": 1778835921447,
+    "timeSinceStart": 28264,
+    "accel": 9.94432423249255,
+    "gyro": 24.94163379919726,
+    "state": "still"
+  },
+  {
+    "time": 1778835921697,
+    "timeSinceStart": 28514,
+    "accel": 9.860822359921748,
+    "gyro": 30.501351913129692,
+    "state": "still"
+  },
+  {
+    "time": 1778835921947,
+    "timeSinceStart": 28764,
+    "accel": 9.82804427728715,
+    "gyro": 29.935858376370813,
+    "state": "still"
+  },
+  {
+    "time": 1778835922197,
+    "timeSinceStart": 29014,
+    "accel": 9.826677473553715,
+    "gyro": 20.50255691006508,
+    "state": "still"
+  },
+  {
+    "time": 1778835922447,
+    "timeSinceStart": 29264,
+    "accel": 9.85934957550609,
+    "gyro": 14.950368861902822,
+    "state": "still"
+  },
+  {
+    "time": 1778835922697,
+    "timeSinceStart": 29514,
+    "accel": 9.862972593822107,
+    "gyro": 11.784391416271733,
+    "state": "still"
+  },
+  {
+    "time": 1778835922947,
+    "timeSinceStart": 29764,
+    "accel": 9.863512341810459,
+    "gyro": 8.876563101834712,
+    "state": "still"
+  },
+  {
+    "time": 1778835923197,
+    "timeSinceStart": 30014,
+    "accel": 9.849831701766453,
+    "gyro": 6.026643564359231,
+    "state": "still"
+  },
+  {
+    "time": 1778835923447,
+    "timeSinceStart": 30264,
+    "accel": 9.854173009356693,
+    "gyro": 4.817527467458173,
+    "state": "still"
+  },
+  {
+    "time": 1778835923697,
+    "timeSinceStart": 30514,
+    "accel": 9.840146555987513,
+    "gyro": 3.703094925128006,
+    "state": "still"
+  },
+  {
+    "time": 1778835923947,
+    "timeSinceStart": 30764,
+    "accel": 9.852944230118288,
+    "gyro": 2.972849979541305,
+    "state": "still"
+  },
+  {
+    "time": 1778835924197,
+    "timeSinceStart": 31014,
+    "accel": 9.844225394492863,
+    "gyro": 2.336214075950216,
+    "state": "still"
+  },
+  {
+    "time": 1778835924447,
+    "timeSinceStart": 31264,
+    "accel": 9.846326183529296,
+    "gyro": 1.9549640470072203,
+    "state": "still"
+  },
+  {
+    "time": 1778835924697,
+    "timeSinceStart": 31514,
+    "accel": 9.849376678384049,
+    "gyro": 3.115642105256221,
+    "state": "still"
+  },
+  {
+    "time": 1778835924947,
+    "timeSinceStart": 31764,
+    "accel": 9.851269340366539,
+    "gyro": 2.6421822080573256,
+    "state": "still"
+  },
+  {
+    "time": 1778835925197,
+    "timeSinceStart": 32014,
+    "accel": 9.860514149672438,
+    "gyro": 1.9613011185695355,
+    "state": "still"
+  },
+  {
+    "time": 1778835925447,
+    "timeSinceStart": 32264,
+    "accel": 9.870728509434253,
+    "gyro": 1.7788388620451534,
+    "state": "still"
+  },
+  {
+    "time": 1778835925697,
+    "timeSinceStart": 32514,
+    "accel": 9.829913161565962,
+    "gyro": 1.6425992246283359,
+    "state": "still"
+  },
+  {
+    "time": 1778835925949,
+    "timeSinceStart": 32766,
+    "accel": 9.83823715971383,
+    "gyro": 2.408468183807372,
+    "state": "still"
+  },
+  {
+    "time": 1778835926197,
+    "timeSinceStart": 33014,
+    "accel": 9.834261944680945,
+    "gyro": 2.608840305584245,
+    "state": "still"
+  },
+  {
+    "time": 1778835926447,
+    "timeSinceStart": 33264,
+    "accel": 9.858818274962218,
+    "gyro": 2.3371743129877904,
+    "state": "still"
+  },
+  {
+    "time": 1778835926697,
+    "timeSinceStart": 33514,
+    "accel": 9.855523825995835,
+    "gyro": 1.8901166894769188,
+    "state": "still"
+  },
+  {
+    "time": 1778835926947,
+    "timeSinceStart": 33764,
+    "accel": 9.859279784373069,
+    "gyro": 2.6732028008236837,
+    "state": "still"
+  },
+  {
+    "time": 1778835927197,
+    "timeSinceStart": 34014,
+    "accel": 9.87978587554546,
+    "gyro": 2.6039853076013504,
+    "state": "still"
+  },
+  {
+    "time": 1778835927447,
+    "timeSinceStart": 34264,
+    "accel": 9.864636348858573,
+    "gyro": 2.3477570232938803,
+    "state": "still"
+  },
+  {
+    "time": 1778835927697,
+    "timeSinceStart": 34514,
+    "accel": 9.868740171878576,
+    "gyro": 2.4181616432634803,
+    "state": "still"
+  },
+  {
+    "time": 1778835927947,
+    "timeSinceStart": 34764,
+    "accel": 9.865705249623124,
+    "gyro": 2.122009826890147,
+    "state": "still"
+  },
+  {
+    "time": 1778835928197,
+    "timeSinceStart": 35014,
+    "accel": 9.868044881178971,
+    "gyro": 1.8179785736754437,
+    "state": "still"
+  },
+  {
+    "time": 1778835928447,
+    "timeSinceStart": 35264,
+    "accel": 9.86642147591274,
+    "gyro": 1.6402572942476346,
+    "state": "still"
+  },
+  {
+    "time": 1778835928697,
+    "timeSinceStart": 35514,
+    "accel": 9.87516077145624,
+    "gyro": 1.3483929076965186,
+    "state": "still"
+  },
+  {
+    "time": 1778835928947,
+    "timeSinceStart": 35764,
+    "accel": 9.869809005605791,
+    "gyro": 1.2669123952205055,
+    "state": "still"
+  },
+  {
+    "time": 1778835929197,
+    "timeSinceStart": 36014,
+    "accel": 9.852855010754801,
+    "gyro": 1.3033125352351242,
+    "state": "still"
+  },
+  {
+    "time": 1778835929447,
+    "timeSinceStart": 36264,
+    "accel": 9.863661920538876,
+    "gyro": 1.5949809970916298,
+    "state": "still"
+  },
+  {
+    "time": 1778835929699,
+    "timeSinceStart": 36516,
+    "accel": 9.861702559866835,
+    "gyro": 1.4589502159429844,
+    "state": "still"
+  },
+  {
+    "time": 1778835929947,
+    "timeSinceStart": 36764,
+    "accel": 9.873857901382829,
+    "gyro": 1.5190966628727132,
+    "state": "still"
+  },
+  {
+    "time": 1778835930197,
+    "timeSinceStart": 37014,
+    "accel": 9.853783284758453,
+    "gyro": 1.286148180650269,
+    "state": "still"
+  },
+  {
+    "time": 1778835930447,
+    "timeSinceStart": 37264,
+    "accel": 9.832746210110326,
+    "gyro": 1.4097065890108413,
+    "state": "still"
+  },
+  {
+    "time": 1778835930697,
+    "timeSinceStart": 37514,
+    "accel": 9.858053377637527,
+    "gyro": 1.4731376030865289,
+    "state": "still"
+  },
+  {
+    "time": 1778835930947,
+    "timeSinceStart": 37764,
+    "accel": 9.861237878714,
+    "gyro": 1.330566386833435,
+    "state": "still"
+  },
+  {
+    "time": 1778835931201,
+    "timeSinceStart": 38018,
+    "accel": 9.825388341447855,
+    "gyro": 1.3734751748303458,
+    "state": "still"
+  },
+  {
+    "time": 1778835931447,
+    "timeSinceStart": 38264,
+    "accel": 9.822818145146591,
+    "gyro": 1.2113974696261662,
+    "state": "still"
+  },
+  {
+    "time": 1778835931699,
+    "timeSinceStart": 38516,
+    "accel": 9.82586468405073,
+    "gyro": 1.1768655230209517,
+    "state": "still"
+  },
+  {
+    "time": 1778835931947,
+    "timeSinceStart": 38764,
+    "accel": 9.812875654338782,
+    "gyro": 1.2557989102287048,
+    "state": "still"
+  },
+  {
+    "time": 1778835932197,
+    "timeSinceStart": 39014,
+    "accel": 9.832492571570235,
+    "gyro": 2.239632205781781,
+    "state": "still"
+  },
+  {
+    "time": 1778835932447,
+    "timeSinceStart": 39264,
+    "accel": 9.827190405614529,
+    "gyro": 2.024841808846742,
+    "state": "still"
+  },
+  {
+    "time": 1778835932697,
+    "timeSinceStart": 39514,
+    "accel": 9.818658294657727,
+    "gyro": 2.3399041185089713,
+    "state": "still"
+  },
+  {
+    "time": 1778835932947,
+    "timeSinceStart": 39764,
+    "accel": 9.829368674418088,
+    "gyro": 1.8458235717419313,
+    "state": "still"
+  },
+  {
+    "time": 1778835933197,
+    "timeSinceStart": 40014,
+    "accel": 9.830560397444167,
+    "gyro": 1.602889320139868,
+    "state": "still"
+  },
+  {
+    "time": 1778835933448,
+    "timeSinceStart": 40265,
+    "accel": 9.836729845360123,
+    "gyro": 1.5530976826150518,
+    "state": "still"
+  },
+  {
+    "time": 1778835933698,
+    "timeSinceStart": 40515,
+    "accel": 9.83861144238104,
+    "gyro": 1.5814290466017744,
+    "state": "still"
+  },
+  {
+    "time": 1778835933947,
+    "timeSinceStart": 40764,
+    "accel": 9.80824317310057,
+    "gyro": 1.405617995868397,
+    "state": "still"
+  },
+  {
+    "time": 1778835934197,
+    "timeSinceStart": 41014,
+    "accel": 9.771342950639813,
+    "gyro": 2.3022092592814403,
+    "state": "still"
+  },
+  {
+    "time": 1778835934447,
+    "timeSinceStart": 41264,
+    "accel": 9.784136203288565,
+    "gyro": 6.031866459526487,
+    "state": "still"
+  },
+  {
+    "time": 1778835934697,
+    "timeSinceStart": 41514,
+    "accel": 9.763193122895474,
+    "gyro": 17.660056226062384,
+    "state": "still"
+  },
+  {
+    "time": 1778835934947,
+    "timeSinceStart": 41764,
+    "accel": 9.915676178119403,
+    "gyro": 20.222478663782024,
+    "state": "still"
+  },
+  {
+    "time": 1778835935197,
+    "timeSinceStart": 42014,
+    "accel": 9.817700734003884,
+    "gyro": 18.042955221215788,
+    "state": "still"
+  },
+  {
+    "time": 1778835935447,
+    "timeSinceStart": 42264,
+    "accel": 9.795906572506642,
+    "gyro": 14.75577062640992,
+    "state": "still"
+  },
+  {
+    "time": 1778835935697,
+    "timeSinceStart": 42514,
+    "accel": 9.84575770148152,
+    "gyro": 12.660490430905622,
+    "state": "still"
+  },
+  {
+    "time": 1778835935947,
+    "timeSinceStart": 42764,
+    "accel": 9.833527662787983,
+    "gyro": 8.564437879314887,
+    "state": "still"
+  },
+  {
+    "time": 1778835936197,
+    "timeSinceStart": 43014,
+    "accel": 9.824980492486512,
+    "gyro": 6.071508024464615,
+    "state": "still"
+  },
+  {
+    "time": 1778835936447,
+    "timeSinceStart": 43264,
+    "accel": 9.857756755293229,
+    "gyro": 4.512619483263148,
+    "state": "still"
+  },
+  {
+    "time": 1778835936697,
+    "timeSinceStart": 43514,
+    "accel": 9.815219067969993,
+    "gyro": 5.031859641278891,
+    "state": "still"
+  },
+  {
+    "time": 1778835936947,
+    "timeSinceStart": 43764,
+    "accel": 9.772432838753236,
+    "gyro": 7.44046097808268,
+    "state": "still"
+  },
+  {
+    "time": 1778835937197,
+    "timeSinceStart": 44014,
+    "accel": 9.862408522927154,
+    "gyro": 7.036533959343222,
+    "state": "still"
+  },
+  {
+    "time": 1778835937447,
+    "timeSinceStart": 44264,
+    "accel": 9.81681106197485,
+    "gyro": 8.386550560676058,
+    "state": "still"
+  },
+  {
+    "time": 1778835937702,
+    "timeSinceStart": 44517,
+    "accel": 9.815308574280815,
+    "gyro": 7.347468902569582,
+    "state": "still"
+  },
+  {
+    "time": 1778835937947,
+    "timeSinceStart": 44764,
+    "accel": 9.795023857446068,
+    "gyro": 5.61714872611033,
+    "state": "still"
+  },
+  {
+    "time": 1778835938197,
+    "timeSinceStart": 45014,
+    "accel": 9.827140736054675,
+    "gyro": 6.0011074699832,
+    "state": "still"
+  },
+  {
+    "time": 1778835938447,
+    "timeSinceStart": 45264,
+    "accel": 9.814367448054151,
+    "gyro": 4.67050199150993,
+    "state": "still"
+  },
+  {
+    "time": 1778835938702,
+    "timeSinceStart": 45519,
+    "accel": 9.853500703559146,
+    "gyro": 4.580977209895368,
+    "state": "still"
+  },
+  {
+    "time": 1778835938947,
+    "timeSinceStart": 45764,
+    "accel": 9.83360346898625,
+    "gyro": 4.113469307717256,
+    "state": "still"
+  },
+  {
+    "time": 1778835939197,
+    "timeSinceStart": 46014,
+    "accel": 9.844626883805738,
+    "gyro": 3.46605802139739,
+    "state": "still"
+  },
+  {
+    "time": 1778835939447,
+    "timeSinceStart": 46264,
+    "accel": 9.914168806213043,
+    "gyro": 5.792232907919463,
+    "state": "still"
+  },
+  {
+    "time": 1778835939697,
+    "timeSinceStart": 46514,
+    "accel": 9.828301714545146,
+    "gyro": 7.270236976523697,
+    "state": "still"
+  },
+  {
+    "time": 1778835939947,
+    "timeSinceStart": 46764,
+    "accel": 9.750932856415536,
+    "gyro": 8.984459512280594,
+    "state": "still"
+  },
+  {
+    "time": 1778835940197,
+    "timeSinceStart": 47014,
+    "accel": 9.815390183215113,
+    "gyro": 10.416637281613356,
+    "state": "still"
+  },
+  {
+    "time": 1778835940447,
+    "timeSinceStart": 47264,
+    "accel": 9.840492173983275,
+    "gyro": 8.520830814269148,
+    "state": "still"
+  },
+  {
+    "time": 1778835940697,
+    "timeSinceStart": 47514,
+    "accel": 9.868184204325608,
+    "gyro": 8.104649158396446,
+    "state": "still"
+  },
+  {
+    "time": 1778835940947,
+    "timeSinceStart": 47764,
+    "accel": 9.868309128490326,
+    "gyro": 5.981573924552241,
+    "state": "still"
+  },
+  {
+    "time": 1778835941198,
+    "timeSinceStart": 48015,
+    "accel": 9.892687191861087,
+    "gyro": 6.840936035200276,
+    "state": "still"
+  },
+  {
+    "time": 1778835941447,
+    "timeSinceStart": 48264,
+    "accel": 9.891891927878728,
+    "gyro": 10.671479201153913,
+    "state": "still"
+  },
+  {
+    "time": 1778835941697,
+    "timeSinceStart": 48514,
+    "accel": 9.852974253007064,
+    "gyro": 7.572913495200027,
+    "state": "still"
+  },
+  {
+    "time": 1778835941947,
+    "timeSinceStart": 48764,
+    "accel": 9.848179033282486,
+    "gyro": 7.486898776505919,
+    "state": "still"
+  },
+  {
+    "time": 1778835942197,
+    "timeSinceStart": 49014,
+    "accel": 9.831367434298315,
+    "gyro": 5.849760627828552,
+    "state": "still"
+  },
+  {
+    "time": 1778835942447,
+    "timeSinceStart": 49264,
+    "accel": 9.846873559366712,
+    "gyro": 3.9503418618474244,
+    "state": "still"
+  },
+  {
+    "time": 1778835942697,
+    "timeSinceStart": 49514,
+    "accel": 9.843518269929378,
+    "gyro": 3.0293593935508496,
+    "state": "still"
+  },
+  {
+    "time": 1778835942947,
+    "timeSinceStart": 49764,
+    "accel": 9.856362007509807,
+    "gyro": 2.440542712705111,
+    "state": "still"
+  },
+  {
+    "time": 1778835943198,
+    "timeSinceStart": 50015,
+    "accel": 9.863184041481674,
+    "gyro": 1.9426841237275876,
+    "state": "still"
+  },
+  {
+    "time": 1778835943447,
+    "timeSinceStart": 50264,
+    "accel": 9.87751846529845,
+    "gyro": 1.8506893138308314,
+    "state": "still"
+  },
+  {
+    "time": 1778835943697,
+    "timeSinceStart": 50514,
+    "accel": 9.850075344120087,
+    "gyro": 1.8218472579989204,
+    "state": "still"
+  },
+  {
+    "time": 1778835943947,
+    "timeSinceStart": 50764,
+    "accel": 9.8369546743927,
+    "gyro": 1.4823465364927135,
+    "state": "still"
+  },
+  {
+    "time": 1778835944197,
+    "timeSinceStart": 51014,
+    "accel": 9.846450307539055,
+    "gyro": 1.386006882280423,
+    "state": "still"
+  },
+  {
+    "time": 1778835944447,
+    "timeSinceStart": 51264,
+    "accel": 9.845542555120213,
+    "gyro": 1.1825518768085246,
+    "state": "still"
+  },
+  {
+    "time": 1778835944697,
+    "timeSinceStart": 51514,
+    "accel": 9.833464326885807,
+    "gyro": 1.0652496035679604,
+    "state": "still"
+  },
+  {
+    "time": 1778835944950,
+    "timeSinceStart": 51767,
+    "accel": 9.835138984228799,
+    "gyro": 1.0868956689030929,
+    "state": "still"
+  },
+  {
+    "time": 1778835945199,
+    "timeSinceStart": 52016,
+    "accel": 9.855253223180977,
+    "gyro": 1.0100636892201313,
+    "state": "still"
+  },
+  {
+    "time": 1778835945448,
+    "timeSinceStart": 52264,
+    "accel": 9.858020655859201,
+    "gyro": 0.8842446543860989,
+    "state": "still"
+  },
+  {
+    "time": 1778835945697,
+    "timeSinceStart": 52514,
+    "accel": 9.8721187019432,
+    "gyro": 1.0540373274624724,
+    "state": "still"
+  },
+  {
+    "time": 1778835945955,
+    "timeSinceStart": 52772,
+    "accel": 9.878462137047988,
+    "gyro": 1.0794524895110795,
+    "state": "still"
+  },
+  {
+    "time": 1778835946197,
+    "timeSinceStart": 53014,
+    "accel": 9.856627959171888,
+    "gyro": 0.9754708994042751,
+    "state": "still"
+  },
+  {
+    "time": 1778835946447,
+    "timeSinceStart": 53264,
+    "accel": 9.886130432331406,
+    "gyro": 0.9060738362688415,
+    "state": "still"
+  },
+  {
+    "time": 1778835946697,
+    "timeSinceStart": 53514,
+    "accel": 9.877615137182719,
+    "gyro": 0.9600774442157493,
+    "state": "still"
+  },
+  {
+    "time": 1778835946947,
+    "timeSinceStart": 53764,
+    "accel": 9.85236439378044,
+    "gyro": 1.0091159880798506,
+    "state": "still"
+  },
+  {
+    "time": 1778835947197,
+    "timeSinceStart": 54014,
+    "accel": 9.846615646879327,
+    "gyro": 1.2037952582392755,
+    "state": "still"
+  },
+  {
+    "time": 1778835947448,
+    "timeSinceStart": 54265,
+    "accel": 9.844173539979652,
+    "gyro": 1.1878807018641446,
+    "state": "still"
+  },
+  {
+    "time": 1778835947697,
+    "timeSinceStart": 54514,
+    "accel": 9.846440498862027,
+    "gyro": 1.3510297125157447,
+    "state": "still"
+  },
+  {
+    "time": 1778835947947,
+    "timeSinceStart": 54764,
+    "accel": 9.843583538019239,
+    "gyro": 1.144834961747438,
+    "state": "still"
+  },
+  {
+    "time": 1778835948197,
+    "timeSinceStart": 55014,
+    "accel": 9.853487324897815,
+    "gyro": 1.1243733234412905,
+    "state": "still"
+  },
+  {
+    "time": 1778835948447,
+    "timeSinceStart": 55264,
+    "accel": 9.848195877327836,
+    "gyro": 1.1689973928921347,
+    "state": "still"
+  },
+  {
+    "time": 1778835948697,
+    "timeSinceStart": 55514,
+    "accel": 9.852672573696232,
+    "gyro": 1.1450540827613906,
+    "state": "still"
+  },
+  {
+    "time": 1778835948947,
+    "timeSinceStart": 55764,
+    "accel": 9.851961936187209,
+    "gyro": 1.0809825611714845,
+    "state": "still"
+  },
+  {
+    "time": 1778835949197,
+    "timeSinceStart": 56014,
+    "accel": 9.851513130362637,
+    "gyro": 1.0116079282720636,
+    "state": "still"
+  },
+  {
+    "time": 1778835949447,
+    "timeSinceStart": 56264,
+    "accel": 9.837732123690797,
+    "gyro": 1.1173730535147175,
+    "state": "still"
+  },
+  {
+    "time": 1778835949697,
+    "timeSinceStart": 56514,
+    "accel": 9.853367536442397,
+    "gyro": 1.0584178036052705,
+    "state": "still"
+  },
+  {
+    "time": 1778835949947,
+    "timeSinceStart": 56764,
+    "accel": 9.8801042522525,
+    "gyro": 1.0510450719713678,
+    "state": "still"
+  },
+  {
+    "time": 1778835950197,
+    "timeSinceStart": 57014,
+    "accel": 9.854916916917073,
+    "gyro": 0.9767455205959569,
+    "state": "still"
+  },
+  {
+    "time": 1778835950447,
+    "timeSinceStart": 57264,
+    "accel": 9.84224493609447,
+    "gyro": 0.9828914264491051,
+    "state": "still"
+  },
+  {
+    "time": 1778835950697,
+    "timeSinceStart": 57514,
+    "accel": 9.837104661610772,
+    "gyro": 0.8563609854215892,
+    "state": "still"
+  },
+  {
+    "time": 1778835950947,
+    "timeSinceStart": 57764,
+    "accel": 9.80320251297478,
+    "gyro": 0.9703831219568837,
+    "state": "still"
+  },
+  {
+    "time": 1778835951197,
+    "timeSinceStart": 58014,
+    "accel": 9.828253563697176,
+    "gyro": 0.9967973892375682,
+    "state": "still"
+  },
+  {
+    "time": 1778835951447,
+    "timeSinceStart": 58264,
+    "accel": 9.851055264891254,
+    "gyro": 2.148541437534904,
+    "state": "still"
+  },
+  {
+    "time": 1778835951697,
+    "timeSinceStart": 58514,
+    "accel": 9.813560181081051,
+    "gyro": 10.782427519283422,
+    "state": "still"
+  },
+  {
+    "time": 1778835951947,
+    "timeSinceStart": 58764,
+    "accel": 9.818372489441927,
+    "gyro": 8.639463833687095,
+    "state": "still"
+  },
+  {
+    "time": 1778835952197,
+    "timeSinceStart": 59014,
+    "accel": 9.893278814470754,
+    "gyro": 8.158819650600044,
+    "state": "still"
+  },
+  {
+    "time": 1778835952447,
+    "timeSinceStart": 59264,
+    "accel": 9.918186682686676,
+    "gyro": 5.708102020772807,
+    "state": "still"
+  },
+  {
+    "time": 1778835952697,
+    "timeSinceStart": 59514,
+    "accel": 9.880338306038027,
+    "gyro": 4.032113852244722,
+    "state": "still"
+  },
+  {
+    "time": 1778835952947,
+    "timeSinceStart": 59764,
+    "accel": 9.85098257318439,
+    "gyro": 3.923385219681597,
+    "state": "still"
+  },
+  {
+    "time": 1778835953197,
+    "timeSinceStart": 60014,
+    "accel": 9.817117064735898,
+    "gyro": 3.0123968019513914,
+    "state": "still"
+  },
+  {
+    "time": 1778835953447,
+    "timeSinceStart": 60264,
+    "accel": 9.848215069156591,
+    "gyro": 2.1402358575810556,
+    "state": "still"
+  },
+  {
+    "time": 1778835953697,
+    "timeSinceStart": 60514,
+    "accel": 9.835923274648371,
+    "gyro": 1.97964006031644,
+    "state": "still"
+  },
+  {
+    "time": 1778835953947,
+    "timeSinceStart": 60764,
+    "accel": 9.856843342920124,
+    "gyro": 1.6385654597814643,
+    "state": "still"
+  },
+  {
+    "time": 1778835954197,
+    "timeSinceStart": 61014,
+    "accel": 9.827576531559744,
+    "gyro": 1.3448043377368752,
+    "state": "still"
+  },
+  {
+    "time": 1778835954447,
+    "timeSinceStart": 61264,
+    "accel": 9.879341867485167,
+    "gyro": 1.203642825553237,
+    "state": "still"
+  },
+  {
+    "time": 1778835954697,
+    "timeSinceStart": 61514,
+    "accel": 9.844463683332027,
+    "gyro": 0.9621109386160565,
+    "state": "still"
+  },
+  {
+    "time": 1778835954947,
+    "timeSinceStart": 61764,
+    "accel": 9.863827820034977,
+    "gyro": 0.9994938204964346,
+    "state": "still"
+  },
+  {
+    "time": 1778835955197,
+    "timeSinceStart": 62014,
+    "accel": 9.855339265675344,
+    "gyro": 1.1693119102545741,
+    "state": "still"
+  },
+  {
+    "time": 1778835955447,
+    "timeSinceStart": 62264,
+    "accel": 9.846816956036974,
+    "gyro": 1.142434637691013,
+    "state": "still"
+  },
+  {
+    "time": 1778835955697,
+    "timeSinceStart": 62514,
+    "accel": 9.8547109217182,
+    "gyro": 1.1516406491692242,
+    "state": "still"
+  },
+  {
+    "time": 1778835955947,
+    "timeSinceStart": 62764,
+    "accel": 9.85770508645331,
+    "gyro": 1.2073442755500463,
+    "state": "still"
+  },
+  {
+    "time": 1778835956197,
+    "timeSinceStart": 63014,
+    "accel": 9.889442971652457,
+    "gyro": 1.1308895597481419,
+    "state": "still"
+  },
+  {
+    "time": 1778835956447,
+    "timeSinceStart": 63264,
+    "accel": 9.904776222183083,
+    "gyro": 1.1047479267508888,
+    "state": "still"
+  },
+  {
+    "time": 1778835956697,
+    "timeSinceStart": 63514,
+    "accel": 9.882697582975748,
+    "gyro": 2.095688831521962,
+    "state": "still"
+  },
+  {
+    "time": 1778835956947,
+    "timeSinceStart": 63764,
+    "accel": 9.851458835852315,
+    "gyro": 3.1861226899999213,
+    "state": "still"
+  },
+  {
+    "time": 1778835957197,
+    "timeSinceStart": 64014,
+    "accel": 9.851322847024658,
+    "gyro": 4.166299627466121,
+    "state": "still"
+  },
+  {
+    "time": 1778835957447,
+    "timeSinceStart": 64264,
+    "accel": 9.875382382736696,
+    "gyro": 3.5857222808467832,
+    "state": "still"
+  },
+  {
+    "time": 1778835957697,
+    "timeSinceStart": 64514,
+    "accel": 9.835169853299996,
+    "gyro": 2.9824641100332725,
+    "state": "still"
+  },
+  {
+    "time": 1778835957947,
+    "timeSinceStart": 64764,
+    "accel": 9.837524744174454,
+    "gyro": 4.435955028992932,
+    "state": "still"
+  },
+  {
+    "time": 1778835958197,
+    "timeSinceStart": 65014,
+    "accel": 9.875318841778023,
+    "gyro": 3.7089788253311,
+    "state": "still"
+  },
+  {
+    "time": 1778835958447,
+    "timeSinceStart": 65264,
+    "accel": 9.849019486011827,
+    "gyro": 3.2489856081335953,
+    "state": "still"
+  },
+  {
+    "time": 1778835958697,
+    "timeSinceStart": 65514,
+    "accel": 9.812554238352844,
+    "gyro": 3.1027116055175687,
+    "state": "still"
+  },
+  {
+    "time": 1778835958947,
+    "timeSinceStart": 65764,
+    "accel": 9.817077207056602,
+    "gyro": 3.1974395587226088,
+    "state": "still"
+  },
+  {
+    "time": 1778835959197,
+    "timeSinceStart": 66014,
+    "accel": 9.868925202154724,
+    "gyro": 2.631052434569467,
+    "state": "still"
+  },
+  {
+    "time": 1778835959448,
+    "timeSinceStart": 66265,
+    "accel": 9.860828810876988,
+    "gyro": 2.110082169750828,
+    "state": "still"
+  },
+  {
+    "time": 1778835959697,
+    "timeSinceStart": 66514,
+    "accel": 9.854774235945495,
+    "gyro": 1.753867172986902,
+    "state": "still"
+  },
+  {
+    "time": 1778835959947,
+    "timeSinceStart": 66764,
+    "accel": 9.841817046698754,
+    "gyro": 1.494966432981954,
+    "state": "still"
+  },
+  {
+    "time": 1778835960197,
+    "timeSinceStart": 67014,
+    "accel": 9.79894997377195,
+    "gyro": 1.222530622547903,
+    "state": "still"
+  },
+  {
+    "time": 1778835960447,
+    "timeSinceStart": 67264,
+    "accel": 9.838628591634135,
+    "gyro": 2.5140928561352966,
+    "state": "still"
+  },
+  {
+    "time": 1778835960697,
+    "timeSinceStart": 67514,
+    "accel": 9.810771697493292,
+    "gyro": 2.7633742278433133,
+    "state": "still"
+  },
+  {
+    "time": 1778835960947,
+    "timeSinceStart": 67764,
+    "accel": 9.435352378418068,
+    "gyro": 28.699508141390282,
+    "state": "still"
+  },
+  {
+    "time": 1778835961197,
+    "timeSinceStart": 68014,
+    "accel": 10.65110995575748,
+    "gyro": 94.91143069309643,
+    "state": "still"
+  },
+  {
+    "time": 1778835961447,
+    "timeSinceStart": 68264,
+    "accel": 10.035535845407223,
+    "gyro": 82.43590869914883,
+    "state": "still"
+  },
+  {
+    "time": 1778835961697,
+    "timeSinceStart": 68514,
+    "accel": 9.816548743606905,
+    "gyro": 59.463844271083865,
+    "state": "still"
+  },
+  {
+    "time": 1778835961947,
+    "timeSinceStart": 68764,
+    "accel": 9.884942144995954,
+    "gyro": 47.419425771079894,
+    "state": "still"
+  },
+  {
+    "time": 1778835962198,
+    "timeSinceStart": 69015,
+    "accel": 9.832377022372668,
+    "gyro": 33.69078662952486,
+    "state": "still"
+  },
+  {
+    "time": 1778835962447,
+    "timeSinceStart": 69264,
+    "accel": 9.961016264834736,
+    "gyro": 24.585852899163697,
+    "state": "still"
+  },
+  {
+    "time": 1778835962697,
+    "timeSinceStart": 69514,
+    "accel": 9.868397188045073,
+    "gyro": 18.246355562913244,
+    "state": "still"
+  },
+  {
+    "time": 1778835962947,
+    "timeSinceStart": 69764,
+    "accel": 9.898171374801162,
+    "gyro": 22.489126787923222,
+    "state": "still"
+  },
+  {
+    "time": 1778835963197,
+    "timeSinceStart": 70014,
+    "accel": 9.822878786359146,
+    "gyro": 18.682205912514306,
+    "state": "still"
+  },
+  {
+    "time": 1778835963447,
+    "timeSinceStart": 70264,
+    "accel": 9.85804449109111,
+    "gyro": 16.936065238974017,
+    "state": "still"
+  },
+  {
+    "time": 1778835963697,
+    "timeSinceStart": 70514,
+    "accel": 9.897452173472608,
+    "gyro": 14.159674853195154,
+    "state": "still"
+  },
+  {
+    "time": 1778835963947,
+    "timeSinceStart": 70764,
+    "accel": 9.997430388213948,
+    "gyro": 16.589014175711306,
+    "state": "still"
+  },
+  {
+    "time": 1778835964197,
+    "timeSinceStart": 71014,
+    "accel": 10.212856789863825,
+    "gyro": 19.018587312433507,
+    "state": "still"
+  },
+  {
+    "time": 1778835964447,
+    "timeSinceStart": 71264,
+    "accel": 10.057381684007307,
+    "gyro": 25.175649439609504,
+    "state": "still"
+  },
+  {
+    "time": 1778835964697,
+    "timeSinceStart": 71514,
+    "accel": 9.861317976619569,
+    "gyro": 27.615911287508652,
+    "state": "still"
+  },
+  {
+    "time": 1778835964949,
+    "timeSinceStart": 71766,
+    "accel": 9.716194632819718,
+    "gyro": 32.0412821886922,
+    "state": "still"
+  },
+  {
+    "time": 1778835965197,
+    "timeSinceStart": 72014,
+    "accel": 9.429451710707559,
+    "gyro": 41.79372935200228,
+    "state": "still"
+  },
+  {
+    "time": 1778835965447,
+    "timeSinceStart": 72264,
+    "accel": 9.648817718267482,
+    "gyro": 41.6222427784562,
+    "state": "still"
+  },
+  {
+    "time": 1778835965697,
+    "timeSinceStart": 72514,
+    "accel": 9.896001194764848,
+    "gyro": 32.51468275353922,
+    "state": "still"
+  },
+  {
+    "time": 1778835965947,
+    "timeSinceStart": 72764,
+    "accel": 9.926294356367789,
+    "gyro": 31.16762306634343,
+    "state": "still"
+  },
+  {
+    "time": 1778835966201,
+    "timeSinceStart": 73018,
+    "accel": 9.636598368233393,
+    "gyro": 27.18528446511273,
+    "state": "still"
+  },
+  {
+    "time": 1778835966447,
+    "timeSinceStart": 73264,
+    "accel": 9.667199659078863,
+    "gyro": 25.59560435385711,
+    "state": "still"
+  },
+  {
+    "time": 1778835966697,
+    "timeSinceStart": 73514,
+    "accel": 9.912754055008952,
+    "gyro": 28.723390235436284,
+    "state": "still"
+  },
+  {
+    "time": 1778835966947,
+    "timeSinceStart": 73764,
+    "accel": 9.8250760670094,
+    "gyro": 22.051005502259986,
+    "state": "still"
+  },
+  {
+    "time": 1778835967197,
+    "timeSinceStart": 74014,
+    "accel": 9.891938304320497,
+    "gyro": 16.14205186183969,
+    "state": "still"
+  },
+  {
+    "time": 1778835967447,
+    "timeSinceStart": 74264,
+    "accel": 9.828782060225551,
+    "gyro": 11.093433917497551,
+    "state": "still"
+  },
+  {
+    "time": 1778835967697,
+    "timeSinceStart": 74514,
+    "accel": 9.826930000883998,
+    "gyro": 7.883250762015553,
+    "state": "still"
+  },
+  {
+    "time": 1778835967947,
+    "timeSinceStart": 74764,
+    "accel": 9.855990483316738,
+    "gyro": 5.798602809274821,
+    "state": "still"
+  },
+  {
+    "time": 1778835968197,
+    "timeSinceStart": 75014,
+    "accel": 9.841604459754112,
+    "gyro": 4.314547758562916,
+    "state": "still"
+  },
+  {
+    "time": 1778835968447,
+    "timeSinceStart": 75264,
+    "accel": 9.846301681487141,
+    "gyro": 3.4851997061635593,
+    "state": "still"
+  },
+  {
+    "time": 1778835968697,
+    "timeSinceStart": 75514,
+    "accel": 9.850541517513475,
+    "gyro": 3.3224774975704614,
+    "state": "still"
+  },
+  {
+    "time": 1778835968947,
+    "timeSinceStart": 75764,
+    "accel": 9.862427664222489,
+    "gyro": 2.799377810642746,
+    "state": "still"
+  },
+  {
+    "time": 1778835969197,
+    "timeSinceStart": 76014,
+    "accel": 9.835872375417363,
+    "gyro": 2.6658369920639795,
+    "state": "still"
+  },
+  {
+    "time": 1778835969447,
+    "timeSinceStart": 76264,
+    "accel": 9.823361450250845,
+    "gyro": 2.4688876412722616,
+    "state": "still"
+  },
+  {
+    "time": 1778835969698,
+    "timeSinceStart": 76515,
+    "accel": 9.839359201019407,
+    "gyro": 1.8594014953554259,
+    "state": "still"
+  },
+  {
+    "time": 1778835969947,
+    "timeSinceStart": 76764,
+    "accel": 9.857688613448031,
+    "gyro": 1.6490981622531151,
+    "state": "still"
+  },
+  {
+    "time": 1778835970197,
+    "timeSinceStart": 77014,
+    "accel": 9.862551771689182,
+    "gyro": 1.570737092743636,
+    "state": "still"
+  },
+  {
+    "time": 1778835970451,
+    "timeSinceStart": 77268,
+    "accel": 9.86521576273126,
+    "gyro": 1.8309643277707384,
+    "state": "still"
+  },
+  {
+    "time": 1778835970698,
+    "timeSinceStart": 77515,
+    "accel": 9.812711688703429,
+    "gyro": 1.8023720940965204,
+    "state": "still"
+  },
+  {
+    "time": 1778835970948,
+    "timeSinceStart": 77765,
+    "accel": 9.831337171708457,
+    "gyro": 1.7014537665270124,
+    "state": "still"
+  },
+  {
+    "time": 1778835971197,
+    "timeSinceStart": 78014,
+    "accel": 9.84206216605038,
+    "gyro": 1.5312872737872947,
+    "state": "still"
+  },
+  {
+    "time": 1778835971447,
+    "timeSinceStart": 78264,
+    "accel": 9.831069723699061,
+    "gyro": 1.4552306661909142,
+    "state": "still"
+  },
+  {
+    "time": 1778835971697,
+    "timeSinceStart": 78514,
+    "accel": 9.836059471887163,
+    "gyro": 1.1965527841062977,
+    "state": "still"
+  },
+  {
+    "time": 1778835971947,
+    "timeSinceStart": 78764,
+    "accel": 9.83102008490779,
+    "gyro": 1.2311849632256409,
+    "state": "still"
+  },
+  {
+    "time": 1778835972197,
+    "timeSinceStart": 79014,
+    "accel": 9.849332097776593,
+    "gyro": 1.1902015359966591,
+    "state": "still"
+  },
+  {
+    "time": 1778835972447,
+    "timeSinceStart": 79264,
+    "accel": 9.837091689538665,
+    "gyro": 1.0418609964970416,
+    "state": "still"
+  },
+  {
+    "time": 1778835972697,
+    "timeSinceStart": 79514,
+    "accel": 9.863596864660648,
+    "gyro": 1.2116380171776573,
+    "state": "still"
+  },
+  {
+    "time": 1778835972947,
+    "timeSinceStart": 79764,
+    "accel": 9.868274823001634,
+    "gyro": 1.0977102703330426,
+    "state": "still"
+  },
+  {
+    "time": 1778835973197,
+    "timeSinceStart": 80014,
+    "accel": 9.85525850840467,
+    "gyro": 1.1858134004163456,
+    "state": "still"
+  },
+  {
+    "time": 1778835973447,
+    "timeSinceStart": 80264,
+    "accel": 9.870358824819279,
+    "gyro": 1.2712930430039897,
+    "state": "still"
+  },
+  {
+    "time": 1778835973697,
+    "timeSinceStart": 80514,
+    "accel": 9.86006215614925,
+    "gyro": 1.512591316056807,
+    "state": "still"
+  },
+  {
+    "time": 1778835973947,
+    "timeSinceStart": 80764,
+    "accel": 9.852398679634259,
+    "gyro": 1.447849971589285,
+    "state": "still"
+  },
+  {
+    "time": 1778835974197,
+    "timeSinceStart": 81014,
+    "accel": 9.849317870396664,
+    "gyro": 1.439143379049978,
+    "state": "still"
+  },
+  {
+    "time": 1778835974447,
+    "timeSinceStart": 81264,
+    "accel": 9.837787175356878,
+    "gyro": 1.4108246584157655,
+    "state": "still"
+  },
+  {
+    "time": 1778835974697,
+    "timeSinceStart": 81514,
+    "accel": 9.848978374345105,
+    "gyro": 1.482467341837721,
+    "state": "still"
+  },
+  {
+    "time": 1778835974947,
+    "timeSinceStart": 81764,
+    "accel": 9.831475677275172,
+    "gyro": 1.2809784338548538,
+    "state": "still"
+  },
+  {
+    "time": 1778835975197,
+    "timeSinceStart": 82014,
+    "accel": 9.827116506078626,
+    "gyro": 1.534456136853707,
+    "state": "still"
+  },
+  {
+    "time": 1778835975447,
+    "timeSinceStart": 82264,
+    "accel": 9.819633547573268,
+    "gyro": 1.5987376417275654,
+    "state": "still"
+  },
+  {
+    "time": 1778835975697,
+    "timeSinceStart": 82514,
+    "accel": 9.834342103214551,
+    "gyro": 1.3716933561588083,
+    "state": "still"
+  },
+  {
+    "time": 1778835975947,
+    "timeSinceStart": 82764,
+    "accel": 9.824838811554226,
+    "gyro": 1.3969230043175695,
+    "state": "still"
+  },
+  {
+    "time": 1778835976197,
+    "timeSinceStart": 83014,
+    "accel": 9.839632077531894,
+    "gyro": 1.256573346798802,
+    "state": "still"
+  },
+  {
+    "time": 1778835976447,
+    "timeSinceStart": 83264,
+    "accel": 9.83227395204089,
+    "gyro": 1.0853695087257307,
+    "state": "still"
+  },
+  {
+    "time": 1778835976697,
+    "timeSinceStart": 83514,
+    "accel": 9.838741637629365,
+    "gyro": 1.1304518709744775,
+    "state": "still"
+  },
+  {
+    "time": 1778835976947,
+    "timeSinceStart": 83764,
+    "accel": 9.86107024221002,
+    "gyro": 1.1511128587872985,
+    "state": "still"
+  },
+  {
+    "time": 1778835977197,
+    "timeSinceStart": 84014,
+    "accel": 9.846224791605708,
+    "gyro": 1.0426864875157624,
+    "state": "still"
+  },
+  {
+    "time": 1778835977447,
+    "timeSinceStart": 84264,
+    "accel": 9.833447861815197,
+    "gyro": 1.1274792144472834,
+    "state": "still"
+  },
+  {
+    "time": 1778835977697,
+    "timeSinceStart": 84514,
+    "accel": 9.852976805015519,
+    "gyro": 1.1496302652764638,
+    "state": "still"
+  },
+  {
+    "time": 1778835977947,
+    "timeSinceStart": 84764,
+    "accel": 9.836578760188358,
+    "gyro": 0.9593662255940125,
+    "state": "still"
+  },
+  {
+    "time": 1778835978197,
+    "timeSinceStart": 85014,
+    "accel": 9.839483287586827,
+    "gyro": 0.8077171403988438,
+    "state": "still"
+  },
+  {
+    "time": 1778835978447,
+    "timeSinceStart": 85264,
+    "accel": 9.849987143165585,
+    "gyro": 0.8161285643190678,
+    "state": "still"
+  },
+  {
+    "time": 1778835978697,
+    "timeSinceStart": 85514,
+    "accel": 9.847046993932915,
+    "gyro": 0.799680111612286,
+    "state": "still"
+  },
+  {
+    "time": 1778835978947,
+    "timeSinceStart": 85764,
+    "accel": 9.845269159992396,
+    "gyro": 0.8352264361009083,
+    "state": "still"
+  },
+  {
+    "time": 1778835979197,
+    "timeSinceStart": 86014,
+    "accel": 9.870603413220406,
+    "gyro": 1.049722790364554,
+    "state": "still"
+  },
+  {
+    "time": 1778835979447,
+    "timeSinceStart": 86264,
+    "accel": 9.849820525918235,
+    "gyro": 0.9956652393922613,
+    "state": "still"
+  },
+  {
+    "time": 1778835979697,
+    "timeSinceStart": 86514,
+    "accel": 9.858947424805718,
+    "gyro": 1.089626917828772,
+    "state": "still"
+  },
+  {
+    "time": 1778835979947,
+    "timeSinceStart": 86764,
+    "accel": 9.842872740688398,
+    "gyro": 1.030013707095564,
+    "state": "still"
+  },
+  {
+    "time": 1778835980197,
+    "timeSinceStart": 87014,
+    "accel": 9.824491685528711,
+    "gyro": 0.8919692675390816,
+    "state": "still"
+  },
+  {
+    "time": 1778835980447,
+    "timeSinceStart": 87264,
+    "accel": 9.83007425903616,
+    "gyro": 0.8804798979235359,
+    "state": "still"
+  },
+  {
+    "time": 1778835980697,
+    "timeSinceStart": 87514,
+    "accel": 9.831159779059027,
+    "gyro": 0.7783661767179171,
+    "state": "still"
+  },
+  {
+    "time": 1778835980947,
+    "timeSinceStart": 87764,
+    "accel": 9.83128508487974,
+    "gyro": 0.8880427969508284,
+    "state": "still"
+  },
+  {
+    "time": 1778835981197,
+    "timeSinceStart": 88014,
+    "accel": 9.824332297181348,
+    "gyro": 0.9798837272761058,
+    "state": "still"
+  },
+  {
+    "time": 1778835981447,
+    "timeSinceStart": 88264,
+    "accel": 9.847175824245372,
+    "gyro": 0.9063306129766611,
+    "state": "still"
+  },
+  {
+    "time": 1778835981697,
+    "timeSinceStart": 88514,
+    "accel": 9.838833112262696,
+    "gyro": 1.1220956466535397,
+    "state": "still"
+  },
+  {
+    "time": 1778835981947,
+    "timeSinceStart": 88764,
+    "accel": 9.848562126892496,
+    "gyro": 1.3781446977602705,
+    "state": "still"
+  },
+  {
+    "time": 1778835982197,
+    "timeSinceStart": 89014,
+    "accel": 9.851206493749078,
+    "gyro": 1.335465566039524,
+    "state": "still"
+  },
+  {
+    "time": 1778835982447,
+    "timeSinceStart": 89264,
+    "accel": 9.841984738982465,
+    "gyro": 1.1670884078489305,
+    "state": "still"
+  },
+  {
+    "time": 1778835982697,
+    "timeSinceStart": 89514,
+    "accel": 9.855500333075366,
+    "gyro": 1.2623430110527454,
+    "state": "still"
+  },
+  {
+    "time": 1778835982947,
+    "timeSinceStart": 89764,
+    "accel": 9.856429559352538,
+    "gyro": 1.244747470952854,
+    "state": "still"
+  },
+  {
+    "time": 1778835983197,
+    "timeSinceStart": 90014,
+    "accel": 9.835766087625695,
+    "gyro": 1.1299153438042024,
+    "state": "still"
+  },
+  {
+    "time": 1778835983449,
+    "timeSinceStart": 90266,
+    "accel": 9.834334667282041,
+    "gyro": 1.113619313310892,
+    "state": "still"
+  },
+  {
+    "time": 1778835983697,
+    "timeSinceStart": 90514,
+    "accel": 9.848350940358939,
+    "gyro": 1.1335459026495769,
+    "state": "still"
+  },
+  {
+    "time": 1778835983947,
+    "timeSinceStart": 90764,
+    "accel": 9.854122199589714,
+    "gyro": 1.239360325197575,
+    "state": "still"
+  },
+  {
+    "time": 1778835984197,
+    "timeSinceStart": 91014,
+    "accel": 9.850365626597728,
+    "gyro": 1.1635346169243517,
+    "state": "still"
+  },
+  {
+    "time": 1778835984447,
+    "timeSinceStart": 91264,
+    "accel": 9.830258310756967,
+    "gyro": 1.2193617769541942,
+    "state": "still"
+  },
+  {
+    "time": 1778835984697,
+    "timeSinceStart": 91514,
+    "accel": 9.833459113740956,
+    "gyro": 1.224492865519572,
+    "state": "still"
+  },
+  {
+    "time": 1778835984947,
+    "timeSinceStart": 91764,
+    "accel": 9.84311945938593,
+    "gyro": 1.2290838486876663,
+    "state": "still"
+  },
+  {
+    "time": 1778835985197,
+    "timeSinceStart": 92014,
+    "accel": 9.858218952098365,
+    "gyro": 1.0660350553802254,
+    "state": "still"
+  },
+  {
+    "time": 1778835985447,
+    "timeSinceStart": 92264,
+    "accel": 9.846754438806224,
+    "gyro": 0.9983533810793161,
+    "state": "still"
+  },
+  {
+    "time": 1778835985697,
+    "timeSinceStart": 92514,
+    "accel": 9.84984198429478,
+    "gyro": 1.0499618403747668,
+    "state": "still"
+  },
+  {
+    "time": 1778835985947,
+    "timeSinceStart": 92764,
+    "accel": 9.844494862266842,
+    "gyro": 1.0637495035693896,
+    "state": "still"
+  },
+  {
+    "time": 1778835986197,
+    "timeSinceStart": 93014,
+    "accel": 9.828596571858993,
+    "gyro": 0.8962581362805326,
+    "state": "still"
+  },
+  {
+    "time": 1778835986447,
+    "timeSinceStart": 93264,
+    "accel": 9.839484660257142,
+    "gyro": 1.014172860694527,
+    "state": "still"
+  },
+  {
+    "time": 1778835986698,
+    "timeSinceStart": 93515,
+    "accel": 9.834215541036922,
+    "gyro": 1.1393440807373925,
+    "state": "still"
+  },
+  {
+    "time": 1778835986947,
+    "timeSinceStart": 93764,
+    "accel": 9.820060086781089,
+    "gyro": 1.2445799743460706,
+    "state": "still"
+  },
+  {
+    "time": 1778835987197,
+    "timeSinceStart": 94014,
+    "accel": 9.851748965602031,
+    "gyro": 1.152747261181267,
+    "state": "still"
+  },
+  {
+    "time": 1778835987448,
+    "timeSinceStart": 94265,
+    "accel": 9.847415155013808,
+    "gyro": 1.2640486180683388,
+    "state": "still"
+  },
+  {
+    "time": 1778835987697,
+    "timeSinceStart": 94514,
+    "accel": 9.841970385310029,
+    "gyro": 1.106357875373261,
+    "state": "still"
+  },
+  {
+    "time": 1778835987947,
+    "timeSinceStart": 94764,
+    "accel": 9.853333830439745,
+    "gyro": 1.1633178232197305,
+    "state": "still"
+  },
+  {
+    "time": 1778835988197,
+    "timeSinceStart": 95014,
+    "accel": 9.849607666354204,
+    "gyro": 1.0589074703348529,
+    "state": "still"
+  },
+  {
+    "time": 1778835988447,
+    "timeSinceStart": 95264,
+    "accel": 9.849705652703221,
+    "gyro": 0.9992549903667424,
+    "state": "still"
+  },
+  {
+    "time": 1778835988697,
+    "timeSinceStart": 95514,
+    "accel": 9.867996595257411,
+    "gyro": 1.058355753159355,
+    "state": "still"
+  },
+  {
+    "time": 1778835988947,
+    "timeSinceStart": 95764,
+    "accel": 9.834550484927545,
+    "gyro": 1.1031484688819513,
+    "state": "still"
+  },
+  {
+    "time": 1778835989197,
+    "timeSinceStart": 96014,
+    "accel": 9.835391410861112,
+    "gyro": 1.1090323068047454,
+    "state": "still"
+  },
+  {
+    "time": 1778835989447,
+    "timeSinceStart": 96264,
+    "accel": 9.851003609540584,
+    "gyro": 1.0721328161608032,
+    "state": "still"
+  },
+  {
+    "time": 1778835989697,
+    "timeSinceStart": 96514,
+    "accel": 9.845385977146666,
+    "gyro": 1.045085608823444,
+    "state": "still"
+  },
+  {
+    "time": 1778835989948,
+    "timeSinceStart": 96765,
+    "accel": 9.828594596279581,
+    "gyro": 0.9227741068910708,
+    "state": "still"
+  },
+  {
+    "time": 1778835990197,
+    "timeSinceStart": 97014,
+    "accel": 9.827263168849893,
+    "gyro": 0.8653378884536918,
+    "state": "still"
+  },
+  {
+    "time": 1778835990447,
+    "timeSinceStart": 97264,
+    "accel": 9.845139504142578,
+    "gyro": 1.1432388054065927,
+    "state": "still"
+  },
+  {
+    "time": 1778835990697,
+    "timeSinceStart": 97514,
+    "accel": 9.871019831405771,
+    "gyro": 1.347906970447789,
+    "state": "still"
+  },
+  {
+    "time": 1778835990947,
+    "timeSinceStart": 97764,
+    "accel": 9.867566044871584,
+    "gyro": 1.2655277832809901,
+    "state": "still"
+  },
+  {
+    "time": 1778835991197,
+    "timeSinceStart": 98014,
+    "accel": 9.852375567754713,
+    "gyro": 1.261999440276935,
+    "state": "still"
+  },
+  {
+    "time": 1778835991447,
+    "timeSinceStart": 98264,
+    "accel": 9.853754545091865,
+    "gyro": 1.4073024574621846,
+    "state": "still"
+  },
+  {
+    "time": 1778835991697,
+    "timeSinceStart": 98514,
+    "accel": 9.866693785261836,
+    "gyro": 1.41840463949058,
+    "state": "still"
+  },
+  {
+    "time": 1778835991947,
+    "timeSinceStart": 98764,
+    "accel": 9.862415410497363,
+    "gyro": 1.462312037704888,
+    "state": "still"
+  },
+  {
+    "time": 1778835992197,
+    "timeSinceStart": 99014,
+    "accel": 9.83478531620886,
+    "gyro": 1.5945514512327676,
+    "state": "still"
+  },
+  {
+    "time": 1778835992447,
+    "timeSinceStart": 99264,
+    "accel": 9.841818591618408,
+    "gyro": 1.530661861540081,
+    "state": "still"
+  },
+  {
+    "time": 1778835992697,
+    "timeSinceStart": 99514,
+    "accel": 9.845399552593431,
+    "gyro": 1.350672855228615,
+    "state": "still"
+  },
+  {
+    "time": 1778835992947,
+    "timeSinceStart": 99764,
+    "accel": 9.846701477532225,
+    "gyro": 1.54429680153129,
+    "state": "still"
+  },
+  {
+    "time": 1778835993197,
+    "timeSinceStart": 100014,
+    "accel": 9.863620158854927,
+    "gyro": 1.5187860621608216,
+    "state": "still"
+  },
+  {
+    "time": 1778835993447,
+    "timeSinceStart": 100264,
+    "accel": 9.863293714260516,
+    "gyro": 1.133547207820154,
+    "state": "still"
+  },
+  {
+    "time": 1778835993697,
+    "timeSinceStart": 100514,
+    "accel": 9.866382169041495,
+    "gyro": 1.0297572981262433,
+    "state": "still"
+  },
+  {
+    "time": 1778835993947,
+    "timeSinceStart": 100764,
+    "accel": 9.860282249864087,
+    "gyro": 1.0488296110521338,
+    "state": "still"
+  },
+  {
+    "time": 1778835994197,
+    "timeSinceStart": 101014,
+    "accel": 9.838389352911024,
+    "gyro": 1.2250769149236762,
+    "state": "still"
+  },
+  {
+    "time": 1778835994447,
+    "timeSinceStart": 101264,
+    "accel": 9.824070590567496,
+    "gyro": 1.2031401065347214,
+    "state": "still"
+  },
+  {
+    "time": 1778835994697,
+    "timeSinceStart": 101514,
+    "accel": 9.837078637119301,
+    "gyro": 1.3202242509364501,
+    "state": "still"
+  },
+  {
+    "time": 1778835994947,
+    "timeSinceStart": 101764,
+    "accel": 9.847090887299833,
+    "gyro": 1.2086541812787392,
+    "state": "still"
+  },
+  {
+    "time": 1778835995197,
+    "timeSinceStart": 102014,
+    "accel": 9.845006214277682,
+    "gyro": 0.9215775521683051,
+    "state": "still"
+  },
+  {
+    "time": 1778835995447,
+    "timeSinceStart": 102264,
+    "accel": 9.866015402293206,
+    "gyro": 1.0634375812161594,
+    "state": "still"
+  },
+  {
+    "time": 1778835995697,
+    "timeSinceStart": 102514,
+    "accel": 9.870879559680924,
+    "gyro": 1.2851196587911333,
+    "state": "still"
+  },
+  {
+    "time": 1778835995947,
+    "timeSinceStart": 102764,
+    "accel": 9.851424357231448,
+    "gyro": 1.2057293415920898,
+    "state": "still"
+  },
+  {
+    "time": 1778835996198,
+    "timeSinceStart": 103015,
+    "accel": 9.83189039402392,
+    "gyro": 1.2096577569322184,
+    "state": "still"
+  },
+  {
+    "time": 1778835996447,
+    "timeSinceStart": 103264,
+    "accel": 9.846982504475465,
+    "gyro": 1.2752275747086357,
+    "state": "still"
+  },
+  {
+    "time": 1778835996697,
+    "timeSinceStart": 103514,
+    "accel": 9.831515351217332,
+    "gyro": 1.496414513271166,
+    "state": "still"
+  },
+  {
+    "time": 1778835996947,
+    "timeSinceStart": 103764,
+    "accel": 9.84080351134479,
+    "gyro": 1.365869221169731,
+    "state": "still"
+  },
+  {
+    "time": 1778835997197,
+    "timeSinceStart": 104014,
+    "accel": 9.83901427558635,
+    "gyro": 1.1647824462177347,
+    "state": "still"
+  },
+  {
+    "time": 1778835997447,
+    "timeSinceStart": 104264,
+    "accel": 9.831468997982943,
+    "gyro": 1.2770291327619094,
+    "state": "still"
+  },
+  {
+    "time": 1778835997697,
+    "timeSinceStart": 104514,
+    "accel": 9.813292178468494,
+    "gyro": 1.1960999241348877,
+    "state": "still"
+  },
+  {
+    "time": 1778835997947,
+    "timeSinceStart": 104764,
+    "accel": 9.818482449906538,
+    "gyro": 0.9895721090430498,
+    "state": "still"
+  },
+  {
+    "time": 1778835998197,
+    "timeSinceStart": 105014,
+    "accel": 9.853608343223165,
+    "gyro": 0.8341240356677954,
+    "state": "still"
+  },
+  {
+    "time": 1778835998447,
+    "timeSinceStart": 105264,
+    "accel": 9.855159555192992,
+    "gyro": 0.8581381484737214,
+    "state": "still"
+  },
+  {
+    "time": 1778835998707,
+    "timeSinceStart": 105524,
+    "accel": 9.858190555552687,
+    "gyro": 0.7586344039094117,
+    "state": "still"
+  },
+  {
+    "time": 1778835998947,
+    "timeSinceStart": 105764,
+    "accel": 9.848320810119894,
+    "gyro": 0.9960215832051322,
+    "state": "still"
+  },
+  {
+    "time": 1778835999197,
+    "timeSinceStart": 106014,
+    "accel": 9.851035924022296,
+    "gyro": 1.3032406213800467,
+    "state": "still"
+  },
+  {
+    "time": 1778835999448,
+    "timeSinceStart": 106265,
+    "accel": 9.855570950236695,
+    "gyro": 1.119174940168892,
+    "state": "still"
+  },
+  {
+    "time": 1778835999699,
+    "timeSinceStart": 106515,
+    "accel": 9.813550297367264,
+    "gyro": 1.1629596178146313,
+    "state": "still"
+  },
+  {
+    "time": 1778835999947,
+    "timeSinceStart": 106764,
+    "accel": 9.823652026324426,
+    "gyro": 1.083711950885737,
+    "state": "still"
+  },
+  {
+    "time": 1778836000197,
+    "timeSinceStart": 107014,
+    "accel": 9.840570906961162,
+    "gyro": 1.0206236521702987,
+    "state": "still"
+  },
+  {
+    "time": 1778836000447,
+    "timeSinceStart": 107264,
+    "accel": 9.780129446679583,
+    "gyro": 2.4485656791318737,
+    "state": "still"
+  },
+  {
+    "time": 1778836000697,
+    "timeSinceStart": 107514,
+    "accel": 9.911519861479416,
+    "gyro": 9.858518546449117,
+    "state": "still"
+  },
+  {
+    "time": 1778836000947,
+    "timeSinceStart": 107764,
+    "accel": 9.776408237797597,
+    "gyro": 10.54190880365029,
+    "state": "still"
+  },
+  {
+    "time": 1778836001197,
+    "timeSinceStart": 108014,
+    "accel": 9.78864748037294,
+    "gyro": 14.749558354802199,
+    "state": "still"
+  },
+  {
+    "time": 1778836001447,
+    "timeSinceStart": 108264,
+    "accel": 9.729164607030807,
+    "gyro": 15.759729187245895,
+    "state": "still"
+  },
+  {
+    "time": 1778836001697,
+    "timeSinceStart": 108514,
+    "accel": 9.9027339546411,
+    "gyro": 26.11566874254841,
+    "state": "still"
+  },
+  {
+    "time": 1778836001947,
+    "timeSinceStart": 108764,
+    "accel": 9.711564424116538,
+    "gyro": 30.470433758214817,
+    "state": "still"
+  },
+  {
+    "time": 1778836002197,
+    "timeSinceStart": 109014,
+    "accel": 9.727552980904013,
+    "gyro": 30.626225476170383,
+    "state": "still"
+  },
+  {
+    "time": 1778836002447,
+    "timeSinceStart": 109264,
+    "accel": 9.809940367819003,
+    "gyro": 24.724393482198273,
+    "state": "still"
+  },
+  {
+    "time": 1778836002697,
+    "timeSinceStart": 109514,
+    "accel": 9.84044501202061,
+    "gyro": 25.45071247505081,
+    "state": "still"
+  },
+  {
+    "time": 1778836002947,
+    "timeSinceStart": 109764,
+    "accel": 9.901631218140315,
+    "gyro": 21.958300284271672,
+    "state": "still"
+  },
+  {
+    "time": 1778836003197,
+    "timeSinceStart": 110014,
+    "accel": 9.777119079064853,
+    "gyro": 20.339975311875932,
+    "state": "still"
+  },
+  {
+    "time": 1778836003447,
+    "timeSinceStart": 110264,
+    "accel": 9.969319220811492,
+    "gyro": 24.515365386328604,
+    "state": "still"
+  },
+  {
+    "time": 1778836003697,
+    "timeSinceStart": 110514,
+    "accel": 9.939387721744874,
+    "gyro": 18.76189062886423,
+    "state": "still"
+  },
+  {
+    "time": 1778836003947,
+    "timeSinceStart": 110764,
+    "accel": 9.933130157284733,
+    "gyro": 12.091682904330439,
+    "state": "still"
+  },
+  {
+    "time": 1778836004197,
+    "timeSinceStart": 111014,
+    "accel": 9.925822793819176,
+    "gyro": 8.33567918453195,
+    "state": "still"
+  },
+  {
+    "time": 1778836004447,
+    "timeSinceStart": 111264,
+    "accel": 9.888142805715669,
+    "gyro": 8.827904362117879,
+    "state": "still"
+  },
+  {
+    "time": 1778836004697,
+    "timeSinceStart": 111514,
+    "accel": 9.846586826294482,
+    "gyro": 6.256808903231038,
+    "state": "still"
+  },
+  {
+    "time": 1778836004947,
+    "timeSinceStart": 111764,
+    "accel": 9.886419435995025,
+    "gyro": 4.9860387382088005,
+    "state": "still"
+  },
+  {
+    "time": 1778836005197,
+    "timeSinceStart": 112014,
+    "accel": 10.064315631941295,
+    "gyro": 15.350230817168155,
+    "state": "still"
+  },
+  {
+    "time": 1778836005447,
+    "timeSinceStart": 112264,
+    "accel": 10.022902752679352,
+    "gyro": 15.561707468823608,
+    "state": "still"
+  },
+  {
+    "time": 1778836005697,
+    "timeSinceStart": 112514,
+    "accel": 9.947839014482549,
+    "gyro": 11.291424906531093,
+    "state": "still"
+  },
+  {
+    "time": 1778836005947,
+    "timeSinceStart": 112764,
+    "accel": 9.894541209850273,
+    "gyro": 8.261346405137683,
+    "state": "still"
+  },
+  {
+    "time": 1778836006197,
+    "timeSinceStart": 113014,
+    "accel": 9.89565315467978,
+    "gyro": 5.6116680586462,
+    "state": "still"
+  },
+  {
+    "time": 1778836006447,
+    "timeSinceStart": 113264,
+    "accel": 9.841251594943683,
+    "gyro": 4.684734085208486,
+    "state": "still"
+  },
+  {
+    "time": 1778836006697,
+    "timeSinceStart": 113514,
+    "accel": 9.845569924867135,
+    "gyro": 3.8989295139271385,
+    "state": "still"
+  },
+  {
+    "time": 1778836006947,
+    "timeSinceStart": 113764,
+    "accel": 9.821060219738042,
+    "gyro": 2.924512091471828,
+    "state": "still"
+  },
+  {
+    "time": 1778836007197,
+    "timeSinceStart": 114014,
+    "accel": 9.828402227355294,
+    "gyro": 2.1098866256860007,
+    "state": "still"
+  },
+  {
+    "time": 1778836007447,
+    "timeSinceStart": 114264,
+    "accel": 9.844762653714485,
+    "gyro": 1.9467274897447928,
+    "state": "still"
+  },
+  {
+    "time": 1778836007697,
+    "timeSinceStart": 114514,
+    "accel": 9.843176007818341,
+    "gyro": 1.7389044639433135,
+    "state": "still"
+  },
+  {
+    "time": 1778836007947,
+    "timeSinceStart": 114764,
+    "accel": 9.841608406977404,
+    "gyro": 1.4328632867713518,
+    "state": "still"
+  },
+  {
+    "time": 1778836008197,
+    "timeSinceStart": 115014,
+    "accel": 9.8402663627945,
+    "gyro": 1.2676536715038096,
+    "state": "still"
+  },
+  {
+    "time": 1778836008447,
+    "timeSinceStart": 115264,
+    "accel": 9.845150230284101,
+    "gyro": 1.211162306000654,
+    "state": "still"
+  },
+  {
+    "time": 1778836008698,
+    "timeSinceStart": 115514,
+    "accel": 9.837139959112315,
+    "gyro": 1.1360776994531456,
+    "state": "still"
+  },
+  {
+    "time": 1778836008947,
+    "timeSinceStart": 115764,
+    "accel": 9.831844104242162,
+    "gyro": 1.7356157103213392,
+    "state": "still"
+  },
+  {
+    "time": 1778836009197,
+    "timeSinceStart": 116014,
+    "accel": 9.876458735145745,
+    "gyro": 2.2777628789375446,
+    "state": "still"
+  },
+  {
+    "time": 1778836009447,
+    "timeSinceStart": 116264,
+    "accel": 9.857446603303918,
+    "gyro": 1.9666155467246855,
+    "state": "still"
+  },
+  {
+    "time": 1778836009697,
+    "timeSinceStart": 116514,
+    "accel": 9.822183535346968,
+    "gyro": 1.677603220041029,
+    "state": "still"
+  },
+  {
+    "time": 1778836009947,
+    "timeSinceStart": 116764,
+    "accel": 9.827288751940005,
+    "gyro": 1.5495038711538376,
+    "state": "still"
+  },
+  {
+    "time": 1778836010197,
+    "timeSinceStart": 117014,
+    "accel": 9.831411467476288,
+    "gyro": 1.676293641844636,
+    "state": "still"
+  },
+  {
+    "time": 1778836010447,
+    "timeSinceStart": 117264,
+    "accel": 9.836080977607672,
+    "gyro": 1.6719569121261404,
+    "state": "still"
+  },
+  {
+    "time": 1778836010697,
+    "timeSinceStart": 117514,
+    "accel": 9.853437506776006,
+    "gyro": 1.526008712282581,
+    "state": "still"
+  },
+  {
+    "time": 1778836010947,
+    "timeSinceStart": 117764,
+    "accel": 9.8731490224787,
+    "gyro": 1.496565715895522,
+    "state": "still"
+  },
+  {
+    "time": 1778836011197,
+    "timeSinceStart": 118014,
+    "accel": 9.879084332740026,
+    "gyro": 1.6226421935305415,
+    "state": "still"
+  },
+  {
+    "time": 1778836011447,
+    "timeSinceStart": 118264,
+    "accel": 9.843966220231415,
+    "gyro": 1.615499158709947,
+    "state": "still"
+  },
+  {
+    "time": 1778836011697,
+    "timeSinceStart": 118514,
+    "accel": 9.820591771662068,
+    "gyro": 1.3853642815722236,
+    "state": "still"
+  },
+  {
+    "time": 1778836011947,
+    "timeSinceStart": 118764,
+    "accel": 9.805875038296813,
+    "gyro": 1.1795574703695697,
+    "state": "still"
+  },
+  {
+    "time": 1778836012197,
+    "timeSinceStart": 119014,
+    "accel": 9.831889072726334,
+    "gyro": 1.3333564468364845,
+    "state": "still"
+  },
+  {
+    "time": 1778836012447,
+    "timeSinceStart": 119264,
+    "accel": 9.837061639359023,
+    "gyro": 1.5093024640712234,
+    "state": "still"
+  },
+  {
+    "time": 1778836012699,
+    "timeSinceStart": 119516,
+    "accel": 9.846692314161448,
+    "gyro": 1.4981915048255992,
+    "state": "still"
+  },
+  {
+    "time": 1778836012949,
+    "timeSinceStart": 119766,
+    "accel": 9.839145673454615,
+    "gyro": 1.6188030527187647,
+    "state": "still"
+  },
+  {
+    "time": 1778836013197,
+    "timeSinceStart": 120014,
+    "accel": 9.817106001593618,
+    "gyro": 1.653416982658485,
+    "state": "still"
+  },
+  {
+    "time": 1778836013448,
+    "timeSinceStart": 120265,
+    "accel": 9.835334816109397,
+    "gyro": 1.5234826883737143,
+    "state": "still"
+  },
+  {
+    "time": 1778836013697,
+    "timeSinceStart": 120514,
+    "accel": 9.822370829034499,
+    "gyro": 1.420602466600991,
+    "state": "still"
+  },
+  {
+    "time": 1778836013947,
+    "timeSinceStart": 120764,
+    "accel": 9.821212336247386,
+    "gyro": 1.3724979258904584,
+    "state": "still"
+  },
+  {
+    "time": 1778836014197,
+    "timeSinceStart": 121014,
+    "accel": 9.826870218134852,
+    "gyro": 1.4556794907273223,
+    "state": "still"
+  },
+  {
+    "time": 1778836014447,
+    "timeSinceStart": 121264,
+    "accel": 9.828720408690698,
+    "gyro": 1.976285827251143,
+    "state": "still"
+  },
+  {
+    "time": 1778836014697,
+    "timeSinceStart": 121514,
+    "accel": 9.88091063809712,
+    "gyro": 1.9600520696798875,
+    "state": "still"
+  },
+  {
+    "time": 1778836014947,
+    "timeSinceStart": 121764,
+    "accel": 9.86766231491136,
+    "gyro": 1.9818042422622428,
+    "state": "still"
+  },
+  {
+    "time": 1778836015199,
+    "timeSinceStart": 122016,
+    "accel": 9.874226441461635,
+    "gyro": 3.125704710594117,
+    "state": "still"
+  },
+  {
+    "time": 1778836015447,
+    "timeSinceStart": 122264,
+    "accel": 9.870211339325598,
+    "gyro": 4.187481922141871,
+    "state": "still"
+  },
+  {
+    "time": 1778836015698,
+    "timeSinceStart": 122515,
+    "accel": 9.89581742842595,
+    "gyro": 5.776780348577638,
+    "state": "still"
+  },
+  {
+    "time": 1778836015947,
+    "timeSinceStart": 122764,
+    "accel": 9.953362328522122,
+    "gyro": 8.411728256382627,
+    "state": "still"
+  },
+  {
+    "time": 1778836016197,
+    "timeSinceStart": 123014,
+    "accel": 9.82654744390482,
+    "gyro": 9.426792431090986,
+    "state": "still"
+  },
+  {
+    "time": 1778836016447,
+    "timeSinceStart": 123264,
+    "accel": 9.855778830097552,
+    "gyro": 7.75673049285984,
+    "state": "still"
+  },
+  {
+    "time": 1778836016697,
+    "timeSinceStart": 123514,
+    "accel": 9.864937406269558,
+    "gyro": 6.36005613954007,
+    "state": "still"
+  },
+  {
+    "time": 1778836016956,
+    "timeSinceStart": 123773,
+    "accel": 9.837826083270182,
+    "gyro": 13.602718587454891,
+    "state": "still"
+  },
+  {
+    "time": 1778836017197,
+    "timeSinceStart": 124014,
+    "accel": 9.885853693920343,
+    "gyro": 14.13251740547096,
+    "state": "still"
+  },
+  {
+    "time": 1778836017447,
+    "timeSinceStart": 124264,
+    "accel": 9.867127191463016,
+    "gyro": 10.949952975094808,
+    "state": "still"
+  },
+  {
+    "time": 1778836017697,
+    "timeSinceStart": 124514,
+    "accel": 9.811557629252661,
+    "gyro": 8.25748416897002,
+    "state": "still"
+  },
+  {
+    "time": 1778836017947,
+    "timeSinceStart": 124764,
+    "accel": 9.82176974613202,
+    "gyro": 6.265808940041443,
+    "state": "still"
+  },
+  {
+    "time": 1778836018197,
+    "timeSinceStart": 125014,
+    "accel": 9.81855745434495,
+    "gyro": 5.702643722797846,
+    "state": "still"
+  },
+  {
+    "time": 1778836018447,
+    "timeSinceStart": 125264,
+    "accel": 9.887217858274397,
+    "gyro": 5.5351902848868,
+    "state": "still"
+  },
+  {
+    "time": 1778836018697,
+    "timeSinceStart": 125514,
+    "accel": 9.816259229459698,
+    "gyro": 4.795176991080169,
+    "state": "still"
+  },
+  {
+    "time": 1778836018947,
+    "timeSinceStart": 125764,
+    "accel": 9.82614494261993,
+    "gyro": 4.122920963262178,
+    "state": "still"
+  },
+  {
+    "time": 1778836019197,
+    "timeSinceStart": 126014,
+    "accel": 9.83802737308095,
+    "gyro": 3.1848299779860754,
+    "state": "still"
+  },
+  {
+    "time": 1778836019447,
+    "timeSinceStart": 126264,
+    "accel": 9.854244722679026,
+    "gyro": 2.819269332119611,
+    "state": "still"
+  },
+  {
+    "time": 1778836019697,
+    "timeSinceStart": 126514,
+    "accel": 9.864774518930789,
+    "gyro": 2.185753291052814,
+    "state": "still"
+  },
+  {
+    "time": 1778836019947,
+    "timeSinceStart": 126764,
+    "accel": 9.867629925755052,
+    "gyro": 2.1881065824390924,
+    "state": "still"
+  },
+  {
+    "time": 1778836020199,
+    "timeSinceStart": 127016,
+    "accel": 9.845709193333342,
+    "gyro": 1.7353349364625743,
+    "state": "still"
+  },
+  {
+    "time": 1778836020448,
+    "timeSinceStart": 127265,
+    "accel": 9.832128830697997,
+    "gyro": 1.4739189953760936,
+    "state": "still"
+  },
+  {
+    "time": 1778836020697,
+    "timeSinceStart": 127514,
+    "accel": 9.822141910237521,
+    "gyro": 1.5869626635130114,
+    "state": "still"
+  },
+  {
+    "time": 1778836020947,
+    "timeSinceStart": 127764,
+    "accel": 9.821789636429457,
+    "gyro": 1.584953963971246,
+    "state": "still"
+  },
+  {
+    "time": 1778836021197,
+    "timeSinceStart": 128014,
+    "accel": 9.825866050461727,
+    "gyro": 1.5531157503669395,
+    "state": "still"
+  },
+  {
+    "time": 1778836021448,
+    "timeSinceStart": 128265,
+    "accel": 9.829511914888217,
+    "gyro": 1.8485067530631127,
+    "state": "still"
+  },
+  {
+    "time": 1778836021697,
+    "timeSinceStart": 128514,
+    "accel": 9.832824813995826,
+    "gyro": 1.4666557947061292,
+    "state": "still"
+  },
+  {
+    "time": 1778836021947,
+    "timeSinceStart": 128764,
+    "accel": 9.82528073913515,
+    "gyro": 1.5021653827366255,
+    "state": "still"
+  },
+  {
+    "time": 1778836022198,
+    "timeSinceStart": 129015,
+    "accel": 9.804511076053073,
+    "gyro": 1.4743908966043082,
+    "state": "still"
+  },
+  {
+    "time": 1778836022447,
+    "timeSinceStart": 129264,
+    "accel": 9.813374409131791,
+    "gyro": 1.4437224029109728,
+    "state": "still"
+  },
+  {
+    "time": 1778836022697,
+    "timeSinceStart": 129514,
+    "accel": 9.8223100315098,
+    "gyro": 1.5349558071069445,
+    "state": "still"
+  },
+  {
+    "time": 1778836022947,
+    "timeSinceStart": 129764,
+    "accel": 9.832264226518802,
+    "gyro": 2.1115523526467164,
+    "state": "still"
+  }
+]
