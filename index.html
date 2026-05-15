@@ -38,14 +38,16 @@
             will-change: transform;
 
             transition:
-                transform 0.3s ease;
+                transform 0.3s ease,
+                filter 0.4s ease,
+                opacity 0.4s ease;
         }
 
         /* ----------------------------- */
-        /* LABEL */
+        /* DEBUG PANEL */
         /* ----------------------------- */
 
-        #label {
+        #debug {
 
             position: fixed;
 
@@ -59,15 +61,30 @@
             background:
                 rgba(0, 0, 0, 0.45);
 
-            padding: 10px 14px;
+            padding: 12px 14px;
 
             border-radius: 12px;
 
             font-size: 14px;
 
-            line-height: 1.6;
+            line-height: 1.7;
 
             backdrop-filter: blur(10px);
+        }
+
+        .value {
+
+            color: #7dd3fc;
+        }
+
+        .frictionHigh {
+
+            color: #fca5a5;
+        }
+
+        .frictionLow {
+
+            color: #86efac;
         }
 
         /* ----------------------------- */
@@ -105,7 +122,7 @@
             justify-content: center;
             align-items: center;
 
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(8px);
         }
 
         #playTriangle {
@@ -121,61 +138,96 @@
 
             margin-left: 6px;
         }
+
+        /* ----------------------------- */
+        /* ATMOSPHERIC LAYER */
+        /* ----------------------------- */
+
+        #atmosphere {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 100;
+
+            background:
+                radial-gradient(circle at center,
+                    rgba(255, 255, 255, 0),
+                    rgba(0, 0, 0, 0));
+
+            transition:
+                background 0.6s ease;
+        }
     </style>
 
 </head>
 
 <body>
 
-    <!-- LABEL -->
+    <!-- DEBUG -->
 
-    <div id="label">
-
-        Embodied Implicit Prototype
-
-        <br><br>
-
-        STATE:
-        <span id="stateText">
-            loading...
-        </span>
-
-        <br>
+    <div id="debug">
 
         TRACE:
-        <span id="traceText">
+        <span id="traceText" class="value">
+
             walking_01
+
         </span>
 
         <br>
 
-        GYRO:
-        <span id="gyroText">
+        EXTERNAL FRICTION:
+        <span id="externalText" class="value">
+
             0
+
         </span>
 
         <br>
 
-        ACCEL:
-        <span id="accelText">
+        INTERNAL FRICTION:
+        <span id="internalText" class="value">
+
             0
+
         </span>
 
         <br>
 
-        TENSION:
-        <span id="tensionText">
+        SWIPE TENSION:
+        <span id="tensionText" class="value">
+
             0
+
         </span>
 
         <br>
 
-        PACE:
-        <span id="paceText">
+        TRANSITION DELAY:
+        <span id="paceText" class="value">
+
             0
+
+        </span>
+
+        <br>
+
+        AUTOPLAY:
+        <span id="autoplayText" class="value">
+
+            ON
+
         </span>
 
     </div>
+
+    <!-- ATMOSPHERE -->
+
+    <div id="atmosphere"></div>
 
     <!-- PLAY OVERLAY -->
 
@@ -215,44 +267,32 @@
         ];
 
         // ---------------------------------
-        // EMBODIED TRACE
+        // TRACE SELECTION
         // ---------------------------------
 
-        let embodiedTrace = [];
+        const traceFile =
 
-        let traceIndex = 0;
+            "data/walking_01/session_Walking1.json";
 
-        let currentTraceName =
+        const traceName =
             "walking_01";
 
-        // CHANGE THIS TO TEST
-        // DIFFERENT CONTEXTS
-
-        fetch(
-            "data/walking_01/session_Walking1.json"
-        )
-
-            .then(r => r.json())
-
-            .then(data => {
-
-                embodiedTrace = data;
-
-                stateText.innerText =
-                    "trace loaded";
-
-            });
+        // TRY:
+        // walking_01
+        // walking_02
+        // still_01
+        // still_02
 
         // ---------------------------------
         // ELEMENTS
         // ---------------------------------
 
-        let current =
+        const current =
             document.getElementById(
                 "current"
             );
 
-        let next =
+        const next =
             document.getElementById(
                 "next"
             );
@@ -262,19 +302,24 @@
                 "playOverlay"
             );
 
-        const stateText =
+        const atmosphere =
             document.getElementById(
-                "stateText"
+                "atmosphere"
             );
 
-        const gyroText =
+        const traceText =
             document.getElementById(
-                "gyroText"
+                "traceText"
             );
 
-        const accelText =
+        const externalText =
             document.getElementById(
-                "accelText"
+                "externalText"
+            );
+
+        const internalText =
+            document.getElementById(
+                "internalText"
             );
 
         const tensionText =
@@ -287,9 +332,9 @@
                 "paceText"
             );
 
-        const traceText =
+        const autoplayText =
             document.getElementById(
-                "traceText"
+                "autoplayText"
             );
 
         // ---------------------------------
@@ -306,40 +351,51 @@
         next.playsInline = true;
 
         // ---------------------------------
+        // TRACE DATA
+        // ---------------------------------
+
+        let embodiedTrace = [];
+
+        let traceIndex = 0;
+
+        traceText.innerText =
+            traceName;
+
+        fetch(traceFile)
+
+            .then(r => r.json())
+
+            .then(data => {
+
+                embodiedTrace = data;
+
+            });
+
+        // ---------------------------------
         // STATE
         // ---------------------------------
 
-        let autoplayEnabled = true;
+        let currentIndex = 0;
+
+        let dragging = false;
+
+        let startY = 0;
+
+        let currentY = 0;
+
+        // ---------------------------------
+        // FRICTION
+        // ---------------------------------
+
+        let externalFriction = 0;
+
+        let internalFriction = 0;
 
         let swipeTension = 2;
 
-        let transitionPace = 2;
+        let transitionDelay = 150;
 
-        let currentIndex = 0;
-
-        // ---------------------------------
-        // MAPS
-        // ---------------------------------
-
-        const thresholdMap = {
-
-            1: 60,
-            2: 120,
-            3: 180,
-            4: 260,
-            5: 360
-
-        };
-
-        const paceMap = {
-
-            1: 0,
-            2: 150,
-            3: 400,
-            4: 900,
-            5: 1600
-
-        };
+        let autoplayEnabled = true;
 
         // ---------------------------------
         // START
@@ -371,29 +427,9 @@
                 index % videos.length
                 ];
 
-            next.preload = "auto";
-
             next.src = file;
 
             next.load();
-
-        }
-
-        // ---------------------------------
-        // PLAY OVERLAY
-        // ---------------------------------
-
-        function showPlayOverlay() {
-
-            playOverlay.style.display =
-                "flex";
-
-        }
-
-        function hidePlayOverlay() {
-
-            playOverlay.style.display =
-                "none";
 
         }
 
@@ -430,97 +466,198 @@
         }
 
         // ---------------------------------
-        // EMBODIED MODULATION
+        // APPLY EMBODIED TRACE
         // ---------------------------------
 
-        function applyEmbodiedModulation(
+        function applyEmbodiedState(
             sample
         ) {
 
             // -------------------------
-            // MAP GYRO → TENSION
+            // EXTERNAL FRICTION
+            // -------------------------
+
+            // walking
+            // instability
+            // interruptions
+            // bodily movement
+
+            externalFriction =
+
+                mapRange(
+
+                    sample.gyro
+                    + sample.accel,
+
+                    8,
+                    120,
+
+                    0,
+                    1
+
+                );
+
+            externalFriction =
+
+                Math.max(
+                    0,
+
+                    Math.min(
+                        1,
+                        externalFriction
+                    )
+                );
+
+            // -------------------------
+            // INTERNAL FRICTION
+            // -------------------------
+
+            // IMPORTANT:
+            // NOT inverse punishment
+            // just balancing enclosure
+
+            internalFriction =
+
+                1
+                -
+                (externalFriction * 0.6);
+
+            // -------------------------
+            // SWIPE TENSION
             // -------------------------
 
             swipeTension =
 
-                Math.round(
+                mapRange(
 
-                    mapRange(
+                    internalFriction,
 
-                        sample.gyro,
+                    0,
+                    1,
 
-                        0,
-                        100,
-
-                        1,
-                        5
-
-                    )
+                    80,
+                    260
 
                 );
 
             // -------------------------
-            // MAP ACCEL → PACE
+            // TRANSITION DELAY
             // -------------------------
 
-            transitionPace =
+            transitionDelay =
 
-                Math.round(
+                mapRange(
 
-                    mapRange(
+                    internalFriction,
 
-                        sample.accel,
-
-                        8,
-                        14,
-
-                        1,
-                        5
-
-                    )
-
-                );
-
-            // CLAMP
-
-            swipeTension =
-
-                Math.max(
+                    0,
                     1,
 
-                    Math.min(
-                        5,
-                        swipeTension
-                    )
+                    80,
+                    1200
+
                 );
 
-            transitionPace =
+            // -------------------------
+            // AUTOPLAY
+            // -------------------------
 
-                Math.max(
+            autoplayEnabled =
+
+                internalFriction < 0.72;
+
+            // -------------------------
+            // ATMOSPHERIC MODULATION
+            // -------------------------
+
+            const blurAmount =
+
+                mapRange(
+
+                    internalFriction,
+
+                    0,
                     1,
 
-                    Math.min(
-                        5,
-                        transitionPace
-                    )
+                    0,
+                    2.2
+
                 );
 
-            // DISPLAY
+            const brightness =
 
-            gyroText.innerText =
-                sample.gyro.toFixed(1);
+                mapRange(
 
-            accelText.innerText =
-                sample.accel.toFixed(1);
+                    internalFriction,
+
+                    0,
+                    1,
+
+                    1,
+                    0.82
+
+                );
+
+            current.style.filter =
+
+                `blur(${blurAmount}px)
+                 brightness(${brightness})`;
+
+            // subtle atmospheric enclosure
+
+            const vignetteOpacity =
+
+                mapRange(
+
+                    internalFriction,
+
+                    0,
+                    1,
+
+                    0,
+                    0.22
+
+                );
+
+            atmosphere.style.background =
+
+                `radial-gradient(
+                    circle at center,
+                    rgba(0,0,0,0),
+                    rgba(0,0,0,${vignetteOpacity})
+                )`;
+
+            // -------------------------
+            // DEBUG
+            // -------------------------
+
+            externalText.innerText =
+
+                externalFriction
+                    .toFixed(2);
+
+            internalText.innerText =
+
+                internalFriction
+                    .toFixed(2);
 
             tensionText.innerText =
-                swipeTension;
+
+                Math.round(
+                    swipeTension
+                );
 
             paceText.innerText =
-                transitionPace;
 
-            stateText.innerText =
-                sample.state;
+                Math.round(
+                    transitionDelay
+                );
+
+            autoplayText.innerText =
+
+                autoplayEnabled
+                    ? "ON"
+                    : "OFF";
 
         }
 
@@ -540,7 +677,7 @@
                 traceIndex
                 ];
 
-            applyEmbodiedModulation(
+            applyEmbodiedState(
                 sample
             );
 
@@ -558,14 +695,22 @@
         }, 250);
 
         // ---------------------------------
-        // DRAGGING
+        // PLAY OVERLAY
         // ---------------------------------
 
-        let dragging = false;
+        function showPlayOverlay() {
 
-        let startY = 0;
+            playOverlay.style.display =
+                "flex";
 
-        let currentY = 0;
+        }
+
+        function hidePlayOverlay() {
+
+            playOverlay.style.display =
+                "none";
+
+        }
 
         // ---------------------------------
         // TOUCH START
@@ -647,26 +792,14 @@
                     - startY;
 
                 current.style.transition =
-                    "transform 0.3s ease";
+                    "transform 0.3s ease, filter 0.4s ease";
 
                 next.style.transition =
                     "transform 0.3s ease";
 
-                const swipeThreshold =
-
-                    thresholdMap[
-                    swipeTension
-                    ];
-
-                const transitionDelay =
-
-                    paceMap[
-                    transitionPace
-                    ];
-
                 // COMPLETE SWIPE
 
-                if (dy < -swipeThreshold) {
+                if (dy < -swipeTension) {
 
                     current.style.transform =
                         "translateY(-100vh)";
