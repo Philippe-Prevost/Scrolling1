@@ -32,10 +32,11 @@
             left: 10px;
             color: white;
             background: rgba(0, 0, 0, 0.5);
-            padding: 6px 10px;
+            padding: 8px 12px;
             z-index: 100;
             font-family: sans-serif;
-            border-radius: 8px;
+            border-radius: 10px;
+            line-height: 1.4;
         }
 
         #debug {
@@ -110,27 +111,39 @@
 
 <body>
 
-    <!-- PERMISSION OVERLAY (shown until sensor access granted) -->
+    <!-- PERMISSION OVERLAY -->
     <div id="permission-overlay">
-        <p style="font-size:20px; font-weight:600;">Still Friction</p>
-        <p>This app uses your phone's motion sensors to adjust scroll friction based on whether you're walking or
-            standing still.</p>
-        <button id="permission-btn">Enable Motion Sensor</button>
-        <p id="permission-error" style="color: #ff6b6b; display: none;"></p>
+        <p style="font-size:20px; font-weight:600;">Adaptive Friction Feed</p>
+
+        <p>
+            This app uses your phone's motion sensors to adjust
+            scroll friction based on whether you're walking or standing still.
+        </p>
+
+        <button id="permission-btn">
+            Enable Motion Sensor
+        </button>
+
+        <p id="permission-error"
+            style="color: #ff6b6b; display: none;"></p>
     </div>
 
     <!-- SENSOR STATUS -->
-    <div id="sensor-status">sensor: waiting</div>
+    <div id="sensor-status">
+        sensor: waiting
+    </div>
 
     <!-- LABEL -->
-    <div id="label">MODEL: STILL FRICTION</div>
+    <div id="label"></div>
 
     <!-- DEBUG -->
-    <div id="debug">Loading...</div>
+    <div id="debug">
+        Loading...
+    </div>
 
     <!-- VIDEOS -->
-    <video id="current" autoplay muted loop playsinline></video>
-    <video id="next" autoplay muted loop playsinline></video>
+    <video id="current" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="next" autoplay muted loop playsinline webkit-playsinline></video>
 
     <script>
 
@@ -144,7 +157,9 @@
             "videos/vid3.mp4",
             "videos/vid4.mp4",
             "videos/vid5.mp4",
-            "videos/vid6.mp4"
+            "videos/vid6.mp4",
+            "videos/vid7.mp4",
+            "videos/vid8.mp4"
         ];
 
         // ---------------------------------
@@ -166,20 +181,23 @@
         // ---------------------------------
 
         [current, next].forEach(v => {
+
             v.muted = true;
             v.autoplay = true;
             v.loop = true;
             v.playsInline = true;
+
             v.setAttribute("muted", "");
             v.setAttribute("autoplay", "");
             v.setAttribute("playsinline", "");
+
         });
 
         // ---------------------------------
         // MODEL
         // ---------------------------------
 
-        let frictionModel = "still";
+        let frictionModel = "walking";
 
         // ---------------------------------
         // TRAINING DATA
@@ -187,6 +205,7 @@
 
         let walkingSamples = [];
         let stillSamples = [];
+
         let walkingAverage = 0;
         let stillAverage = 0;
 
@@ -195,12 +214,17 @@
         // ---------------------------------
 
         async function loadTrainingData() {
+
             try {
+
                 const [walking1, walking2, still1, still2] = await Promise.all([
+
                     fetch("data/walking_01/session_Walking1.json").then(r => r.json()),
                     fetch("data/walking_02/session_Walking2.json").then(r => r.json()),
+
                     fetch("data/still_01/sessionStill_1.json").then(r => r.json()),
                     fetch("data/still_02/session_Still2.json").then(r => r.json())
+
                 ]);
 
                 walkingSamples = [...walking1, ...walking2];
@@ -208,14 +232,15 @@
 
                 buildProfiles();
 
-                debug.innerHTML = "Data loaded ✓<br>Move around to calibrate...";
+                debug.innerHTML =
+                    "Data loaded ✓<br>Move around to calibrate...";
 
             } catch (err) {
+
                 console.warn("Training data load failed:", err);
 
-                // FALLBACK: hardcoded averages so the app still works
-                // even if JSON files are missing or on a wrong path.
-                // Tweak these to match your device/recording setup.
+                // FALLBACK VALUES
+
                 walkingAverage = 22;
                 stillAverage = 10;
 
@@ -225,7 +250,6 @@
                     `Walking avg: ${walkingAverage}<br>` +
                     `Still avg: ${stillAverage}`;
 
-                console.log("Fallback — walking avg:", walkingAverage, "still avg:", stillAverage);
             }
         }
 
@@ -234,8 +258,13 @@
         // ---------------------------------
 
         function averageMovement(samples) {
+
             let total = 0;
-            samples.forEach(s => { total += s.accel + s.gyro; });
+
+            samples.forEach(s => {
+                total += s.accel + s.gyro;
+            });
+
             return total / samples.length;
         }
 
@@ -244,8 +273,10 @@
         // ---------------------------------
 
         function buildProfiles() {
+
             walkingAverage = averageMovement(walkingSamples);
             stillAverage = averageMovement(stillSamples);
+
             console.log("walking avg:", walkingAverage);
             console.log("still avg:", stillAverage);
         }
@@ -256,49 +287,66 @@
 
         let liveMovement = 0;
         let smoothMovement = 0;
+
         let sensorActive = false;
         let lastSensorUpdate = 0;
 
         // ---------------------------------
         // SENSOR HANDLER
-        // (called after permission is granted)
         // ---------------------------------
 
         function onDeviceMotion(e) {
+
             const now = Date.now();
+
             if (now - lastSensorUpdate < 50) return;
+
             lastSensorUpdate = now;
 
             sensorActive = true;
+
             sensorStatus.textContent = "sensor: ✓ active";
 
             // ACCEL
+
             const acc = e.accelerationIncludingGravity;
+
             let accel = 0;
+
             if (acc) {
+
                 accel = Math.sqrt(
                     (acc.x || 0) ** 2 +
                     (acc.y || 0) ** 2 +
                     (acc.z || 0) ** 2
                 );
+
             }
 
             // GYRO
+
             const rot = e.rotationRate;
+
             let gyro = 0;
+
             if (rot) {
+
                 gyro = Math.sqrt(
                     (rot.alpha || 0) ** 2 +
                     (rot.beta || 0) ** 2 +
                     (rot.gamma || 0) ** 2
                 );
+
             }
 
             liveMovement = accel + gyro;
 
+            // SMOOTHER + FASTER RESPONSE
+
             smoothMovement =
-                smoothMovement * 0.9 +
-                liveMovement * 0.1;
+                smoothMovement * 0.7 +
+                liveMovement * 0.3;
+
         }
 
         // ---------------------------------
@@ -306,73 +354,109 @@
         // ---------------------------------
 
         function attachSensor() {
-            window.addEventListener("devicemotion", onDeviceMotion);
+
+            window.addEventListener(
+                "devicemotion",
+                onDeviceMotion
+            );
+
         }
 
         // ---------------------------------
-        // REQUEST PERMISSION (iOS 13+)
-        // Android / desktop: no-op, just attach.
+        // REQUEST PERMISSION
         // ---------------------------------
 
         async function requestSensorPermission() {
-            // iOS 13+ requires explicit permission via DeviceMotionEvent.requestPermission()
+
             if (
                 typeof DeviceMotionEvent !== "undefined" &&
                 typeof DeviceMotionEvent.requestPermission === "function"
             ) {
+
                 try {
-                    const result = await DeviceMotionEvent.requestPermission();
+
+                    const result =
+                        await DeviceMotionEvent.requestPermission();
+
                     if (result === "granted") {
+
                         attachSensor();
+
                         overlay.style.display = "none";
-                        sensorStatus.textContent = "sensor: ✓ iOS granted";
+
+                        sensorStatus.textContent =
+                            "sensor: ✓ iOS granted";
+
                     } else {
+
                         permErr.style.display = "block";
+
                         permErr.textContent =
-                            "Motion access denied. Please allow it in Settings → Safari → Motion & Orientation Access.";
-                        sensorStatus.textContent = "sensor: ✗ denied";
+                            "Motion access denied.";
+
+                        sensorStatus.textContent =
+                            "sensor: ✗ denied";
+
                     }
+
                 } catch (err) {
+
                     permErr.style.display = "block";
-                    permErr.textContent = "Error: " + err.message;
+
+                    permErr.textContent =
+                        "Error: " + err.message;
+
                 }
+
             } else {
-                // Android / desktop — no permission dialog needed
+
                 attachSensor();
+
                 overlay.style.display = "none";
-                sensorStatus.textContent = "sensor: listening (non-iOS)";
+
+                sensorStatus.textContent =
+                    "sensor: listening";
+
             }
         }
 
-        permBtn.addEventListener("click", requestSensorPermission);
+        permBtn.addEventListener(
+            "click",
+            requestSensorPermission
+        );
 
         // ---------------------------------
-        // If NOT iOS, dismiss overlay automatically
-        // (Android doesn't need a user gesture for sensors)
+        // AUTO ENABLE NON-iOS
         // ---------------------------------
 
         const isIOS =
             /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+            (navigator.platform === "MacIntel" &&
+                navigator.maxTouchPoints > 1);
 
         if (!isIOS) {
-            // Auto-dismiss on non-iOS; still let user tap to start videos
+
             overlay.style.display = "none";
+
             attachSensor();
         }
 
         // ---------------------------------
-        // WARN if no events arrive after 4 s
+        // SENSOR CHECK
         // ---------------------------------
 
         setTimeout(() => {
+
             if (!sensorActive) {
-                sensorStatus.textContent = "sensor: ✗ no data";
+
+                sensorStatus.textContent =
+                    "sensor: ✗ no data";
+
                 debug.innerHTML +=
-                    "<br>⚠ No sensor events received.<br>" +
-                    "On iOS: tap 'Enable Motion Sensor'.<br>" +
-                    "On Android: check browser permissions.";
+                    "<br>⚠ No sensor events received";
+
             }
+
         }, 4000);
 
         // ---------------------------------
@@ -380,8 +464,6 @@
         // ---------------------------------
 
         let currentIndex = 0;
-        let swipeCount = 0;
-        let lastSwipe = Date.now();
 
         // ---------------------------------
         // FRICTION VALUES
@@ -396,57 +478,125 @@
 
         setInterval(() => {
 
-            // Use fallback averages if data not loaded yet
             if (!walkingAverage) return;
 
-            const walkingDistance = Math.abs(smoothMovement - walkingAverage);
-            const stillDistance = Math.abs(smoothMovement - stillAverage);
+            const walkingDistance =
+                Math.abs(smoothMovement - walkingAverage);
+
+            const stillDistance =
+                Math.abs(smoothMovement - stillAverage);
 
             let detectedState =
-                walkingDistance < stillDistance ? "walking" : "still";
+                walkingDistance < stillDistance
+                    ? "walking"
+                    : "still";
 
-            // MODEL A: walking = friction
+            // MODEL A
+            // more friction walking
+            // less friction still
+
             let frictionAmount = 0;
+
             if (frictionModel === "walking") {
-                frictionAmount = detectedState === "walking" ? 1 : 0;
+
+                frictionAmount =
+                    detectedState === "walking"
+                        ? 1
+                        : 0;
             }
 
-            // MODEL B: still = friction
+            // MODEL B
+            // more friction still
+            // less friction walking
+
             if (frictionModel === "still") {
-                frictionAmount = detectedState === "still" ? 1 : 0;
+
+                frictionAmount =
+                    detectedState === "still"
+                        ? 1
+                        : 0;
             }
 
             // APPLY FRICTION
-            swipeThreshold = frictionAmount ? 260 : 120;
-            transitionDelay = frictionAmount ? 1200 : 100;
+
+            swipeThreshold =
+                frictionAmount
+                    ? 260
+                    : 120;
+
+            transitionDelay =
+                frictionAmount
+                    ? 1200
+                    : 100;
+
+            // LABEL
+
+            if (frictionModel === "walking") {
+
+                label.innerHTML =
+                    `
+                    <b>MODEL A</b><br>
+                    <span style="font-size:12px; opacity:0.8;">
+                    more friction walking<br>
+                    less friction still
+                    </span>
+                    `;
+
+            } else {
+
+                label.innerHTML =
+                    `
+                    <b>MODEL B</b><br>
+                    <span style="font-size:12px; opacity:0.8;">
+                    more friction still<br>
+                    less friction walking
+                    </span>
+                    `;
+
+            }
 
             // DEBUG
-            label.innerText = "MODEL: " + frictionModel.toUpperCase() + " FRICTION";
 
             debug.innerHTML = `
 Movement: ${smoothMovement.toFixed(1)}<br>
 Walking avg: ${walkingAverage.toFixed(1)}<br>
 Still avg: ${stillAverage.toFixed(1)}<br>
-Walking dist: ${walkingDistance.toFixed(1)}<br>
-Still dist: ${stillDistance.toFixed(1)}<br>
-Detected: <b>${detectedState}</b><br>
+Detected: <b style="color:#00ff66;">${detectedState}</b><br>
 Swipe threshold: ${Math.round(swipeThreshold)}<br>
 Delay: ${Math.round(transitionDelay)}ms
             `;
 
-        }, 250);
+        }, 100);
 
         // ---------------------------------
         // PRELOAD
         // ---------------------------------
 
         function preload(index) {
-            const file = videos[index % videos.length];
+
+            const file =
+                videos[index % videos.length];
+
             console.log("Preloading:", file);
-            next.preload = "auto";
-            next.src = file;
+
+            next.pause();
+
+            next.removeAttribute("src");
             next.load();
-            next.play().catch(err => console.log(err));
+
+            setTimeout(() => {
+
+                next.preload = "auto";
+                next.src = file;
+
+                next.load();
+
+                next.play().catch(err =>
+                    console.log(err)
+                );
+
+            }, 100);
+
         }
 
         // ---------------------------------
@@ -454,95 +604,164 @@ Delay: ${Math.round(transitionDelay)}ms
         // ---------------------------------
 
         current.src = videos[0];
-        current.play().catch(err => console.log(err));
+
+        current.play().catch(err =>
+            console.log(err)
+        );
+
         preload(1);
 
-        current.style.transform = "translateY(0vh)";
-        next.style.transform = "translateY(100vh)";
+        current.style.transform =
+            "translateY(0vh)";
+
+        next.style.transform =
+            "translateY(100vh)";
 
         // ---------------------------------
         // DRAGGING
         // ---------------------------------
 
         let dragging = false;
-        let startX = 0, startY = 0, currentY = 0;
+
+        let startX = 0;
+        let startY = 0;
+        let currentY = 0;
 
         document.addEventListener("touchstart", e => {
+
             dragging = true;
+
             startX = e.touches[0].clientX;
             startY = e.touches[0].clientY;
+
             currentY = startY;
+
             current.style.transition = "none";
             next.style.transition = "none";
+
             current.play();
+
         });
 
         document.addEventListener("touchmove", e => {
+
             if (!dragging) return;
+
             currentY = e.touches[0].clientY;
+
             let deltaY = currentY - startY;
+
             if (deltaY < 0) {
-                current.style.transform = `translateY(${deltaY}px)`;
-                next.style.transform = `translateY(${window.innerHeight + deltaY}px)`;
+
+                current.style.transform =
+                    `translateY(${deltaY}px)`;
+
+                next.style.transform =
+                    `translateY(${window.innerHeight + deltaY}px)`;
+
             }
+
         });
 
         document.addEventListener("touchend", e => {
+
             dragging = false;
 
-            let dx = e.changedTouches[0].clientX - startX;
-            let dy = e.changedTouches[0].clientY - startY;
+            let dx =
+                e.changedTouches[0].clientX - startX;
 
-            // LEFT / RIGHT SWIPE → switch model
+            let dy =
+                e.changedTouches[0].clientY - startY;
+
+            // SWITCH MODEL
+
             if (Math.abs(dx) > Math.abs(dy)) {
+
                 if (dx < -50) {
+
                     frictionModel =
-                        frictionModel === "walking" ? "still" : "walking";
+                        frictionModel === "walking"
+                            ? "still"
+                            : "walking";
+
                 }
-                current.style.transform = "translateY(0vh)";
-                next.style.transform = "translateY(100vh)";
+
+                current.style.transform =
+                    "translateY(0vh)";
+
+                next.style.transform =
+                    "translateY(100vh)";
+
                 return;
             }
 
             // VERTICAL SWIPE
-            current.style.transition = "transform 0.25s ease";
-            next.style.transition = "transform 0.25s ease";
+
+            current.style.transition =
+                "transform 0.25s ease";
+
+            next.style.transition =
+                "transform 0.25s ease";
 
             if (dy < -swipeThreshold) {
-                lastSwipe = Date.now();
-                swipeCount++;
 
-                current.style.transform = "translateY(-100vh)";
-                next.style.transform = "translateY(0vh)";
+                current.style.transform =
+                    "translateY(-100vh)";
+
+                next.style.transform =
+                    "translateY(0vh)";
 
                 setTimeout(() => {
+
                     let temp = current;
                     current = next;
                     next = temp;
 
                     current.style.transition = "none";
                     next.style.transition = "none";
-                    current.style.transform = "translateY(0vh)";
-                    next.style.transform = "translateY(100vh)";
 
-                    currentIndex = (currentIndex + 1) % videos.length;
+                    current.style.transform =
+                        "translateY(0vh)";
+
+                    next.style.transform =
+                        "translateY(100vh)";
+
+                    currentIndex =
+                        (currentIndex + 1) % videos.length;
+
                     preload(currentIndex + 1);
-                    current.play().catch(err => console.log(err));
+
+                    current.play().catch(err =>
+                        console.log(err)
+                    );
 
                 }, 250 + transitionDelay);
 
             } else {
-                current.style.transform = "translateY(0vh)";
-                next.style.transform = "translateY(100vh)";
+
+                current.style.transform =
+                    "translateY(0vh)";
+
+                next.style.transform =
+                    "translateY(100vh)";
+
             }
+
         });
 
         // ---------------------------------
         // VIDEO ERRORS
         // ---------------------------------
 
-        current.addEventListener("error", () => console.log("CURRENT VIDEO FAILED"));
-        next.addEventListener("error", () => console.log("NEXT VIDEO FAILED"));
+        current.addEventListener(
+            "error",
+            () => console.log("CURRENT VIDEO FAILED")
+        );
+
+        next.addEventListener(
+            "error",
+            () => console.log("NEXT VIDEO FAILED")
+        );
 
         // ---------------------------------
         // LOAD TRAINING DATA
