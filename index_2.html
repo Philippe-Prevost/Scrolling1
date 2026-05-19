@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: black;
+            touch-action: none;
+        }
+
+        video {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            background: black;
+            will-change: transform;
+        }
+
+        #label {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 12px;
+            z-index: 100;
+            font-family: sans-serif;
+            border-radius: 10px;
+            line-height: 1.4;
+        }
+
+        #debug {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+            z-index: 100;
+            font-family: monospace;
+            font-size: 12px;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+
+        /* ---------------------------------
+           PERMISSION OVERLAY
+           --------------------------------- */
+
+        #permission-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            font-family: sans-serif;
+            color: white;
+            text-align: center;
+            padding: 24px;
+        }
+
+        #permission-overlay p {
+            margin: 0;
+            font-size: 15px;
+            opacity: 0.8;
+            max-width: 280px;
+            line-height: 1.5;
+        }
+
+        #permission-btn {
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 24px;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        #sensor-status {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 6px 10px;
+            z-index: 100;
+            font-family: monospace;
+            font-size: 11px;
+            border-radius: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- PERMISSION OVERLAY -->
+    <div id="permission-overlay">
+        <p style="font-size:20px; font-weight:600;">Adaptive Friction Feed</p>
+
+        <p>
+            This app uses your phone's motion sensors to adjust
+            scroll friction based on whether you're walking or standing still.
+        </p>
+
+        <button id="permission-btn">
+            Enable Motion Sensor
+        </button>
+
+        <p id="permission-error" style="color: #ff6b6b; display: none;"></p>
+    </div>
+
+    <!-- SENSOR STATUS -->
+    <div id="sensor-status">
+        sensor: waiting
+    </div>
+
+    <!-- LABEL -->
+    <div id="label"></div>
+
+    <!-- DEBUG -->
+    <div id="debug">
+        Loading...
+    </div>
+
+    <!-- VIDEOS -->
+    <video id="current" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="next" autoplay muted loop playsinline webkit-playsinline></video>
+
+    <script>
+
+        // ---------------------------------
+        // VIDEOS
+        // ---------------------------------
+
+        const videos = [
+            "videos/vid1.mp4",
+            "videos/vid2.mp4",
+            "videos/vid3.mp4",
+            "videos/vid4.mp4",
+            "videos/vid5.mp4",
+            "videos/vid6.mp4",
+            "videos/vid7.mp4",
+            "videos/vid8.mp4"
+        ];
+
+        // ---------------------------------
+        // ELEMENTS
+        // ---------------------------------
+
+        let current = document.getElementById("current");
+        let next = document.getElementById("next");
+
+        const label = document.getElementById("label");
+        const debug = document.getElementById("debug");
+        const overlay = document.getElementById("permission-overlay");
+        const permBtn = document.getElementById("permission-btn");
+        const permErr = document.getElementById("permission-error");
+        const sensorStatus = document.getElementById("sensor-status");
+
+        // ---------------------------------
+        // VIDEO SETTINGS
+        // ---------------------------------
+
+        [current, next].forEach(v => {
+
+            v.muted = true;
+            v.autoplay = true;
+            v.loop = true;
+            v.playsInline = true;
+
+            v.setAttribute("muted", "");
+            v.setAttribute("autoplay", "");
+            v.setAttribute("playsinline", "");
+
+        });
+
+        // ---------------------------------
+        // MODEL
+        // ---------------------------------
+
+        let frictionModel = "walking";
+
+        // ---------------------------------
+        // TRAINING DATA
+        // ---------------------------------
+
+        let walkingSamples = [];
+        let stillSamples = [];
+
+        let walkingAverage = 0;
+        let stillAverage = 0;
+
+        // ---------------------------------
+        // LOAD TRAINING DATA
+        // ---------------------------------
+
+        async function loadTrainingData() {
+
+            try {
+
+                const [walking1, walking2, still1, still2] = await Promise.all([
+
+                    fetch("data/walking_01/session_Walking1.json").then(r => r.json()),
+                    fetch("data/walking_02/session_Walking2.json").then(r => r.json()),
+
+                    fetch("data/still_01/sessionStill_1.json").then(r => r.json()),
+                    fetch("data/still_02/session_Still2.json").then(r => r.json())
+
+                ]);
+
+                walkingSamples = [...walking1, ...walking2];
+                stillSamples = [...still1, ...still2];
+
+                buildProfiles();
+
+                debug.innerHTML =
+                    "Data loaded ✓<br>Move around to calibrate...";
+
+            } catch (err) {
+
+                console.warn("Training data load failed:", err);
+
+                // FALLBACK VALUES
+
+                walkingAverage = 22;
+                stillAverage = 10;
+
+                debug.innerHTML =
+                    "⚠ Training data not found<br>" +
+                    "Using fallback averages<br>" +
+                    `Walking avg: ${walkingAverage}<br>` +
+                    `Still avg: ${stillAverage}`;
+
+            }
+        }
+
+        // ---------------------------------
+        // AVERAGE MOVEMENT
+        // ---------------------------------
+
+        function averageMovement(samples) {
+
+            let total = 0;
+
+            samples.forEach(s => {
+                total += s.accel + s.gyro;
+            });
+
+            return total / samples.length;
+        }
+
+        // ---------------------------------
+        // BUILD PROFILES
+        // ---------------------------------
+
+        function buildProfiles() {
+
+            walkingAverage = averageMovement(walkingSamples);
+            stillAverage = averageMovement(stillSamples);
+
+            console.log("walking avg:", walkingAverage);
+            console.log("still avg:", stillAverage);
+        }
+
+        // ---------------------------------
+        // LIVE SENSOR DATA
+        // ---------------------------------
+
+        let liveMovement = 0;
+        let smoothMovement = 0;
+
+        let sensorActive = false;
+        let lastSensorUpdate = 0;
+
+        // ---------------------------------
+        // SENSOR HANDLER
+        // ---------------------------------
+
+        function onDeviceMotion(e) {
+
+            const now = Date.now();
+
+            if (now - lastSensorUpdate < 50) return;
+
+            lastSensorUpdate = now;
+
+            sensorActive = true;
+
+            sensorStatus.textContent = "sensor: ✓ active";
+
+            // ACCEL
+
+            const acc = e.accelerationIncludingGravity;
+
+            let accel = 0;
+
+            if (acc) {
+
+                accel = Math.sqrt(
+                    (acc.x || 0) ** 2 +
+                    (acc.y || 0) ** 2 +
+                    (acc.z || 0) ** 2
+                );
+
+            }
+
+            // GYRO
+
+            const rot = e.rotationRate;
+
+            let gyro = 0;
+
+            if (rot) {
+
+                gyro = Math.sqrt(
+                    (rot.alpha || 0) ** 2 +
+                    (rot.beta || 0) ** 2 +
+                    (rot.gamma || 0) ** 2
+                );
+
+            }
+
+            liveMovement = accel + gyro;
+
+            // SMOOTHER + FASTER RESPONSE
+
+            smoothMovement =
+                smoothMovement * 0.7 +
+                liveMovement * 0.3;
+
+        }
+
+        // ---------------------------------
+        // ATTACH SENSOR
+        // ---------------------------------
+
+        function attachSensor() {
+
+            window.addEventListener(
+                "devicemotion",
+                onDeviceMotion
+            );
+
+        }
+
+        // ---------------------------------
+        // REQUEST PERMISSION
+        // ---------------------------------
+
+        async function requestSensorPermission() {
+
+            if (
+                typeof DeviceMotionEvent !== "undefined" &&
+                typeof DeviceMotionEvent.requestPermission === "function"
+            ) {
+
+                try {
+
+                    const result =
+                        await DeviceMotionEvent.requestPermission();
+
+                    if (result === "granted") {
+
+                        attachSensor();
+
+                        overlay.style.display = "none";
+
+                        sensorStatus.textContent =
+                            "sensor: ✓ iOS granted";
+
+                    } else {
+
+                        permErr.style.display = "block";
+
+                        permErr.textContent =
+                            "Motion access denied.";
+
+                        sensorStatus.textContent =
+                            "sensor: ✗ denied";
+
+                    }
+
+                } catch (err) {
+
+                    permErr.style.display = "block";
+
+                    permErr.textContent =
+                        "Error: " + err.message;
+
+                }
+
+            } else {
+
+                attachSensor();
+
+                overlay.style.display = "none";
+
+                sensorStatus.textContent =
+                    "sensor: listening";
+
+            }
+        }
+
+        permBtn.addEventListener(
+            "click",
+            requestSensorPermission
+        );
+
+        // ---------------------------------
+        // AUTO ENABLE NON-iOS
+        // ---------------------------------
+
+        const isIOS =
+            /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+            (navigator.platform === "MacIntel" &&
+                navigator.maxTouchPoints > 1);
+
+        if (!isIOS) {
+
+            overlay.style.display = "none";
+
+            attachSensor();
+        }
+
+        // ---------------------------------
+        // SENSOR CHECK
+        // ---------------------------------
+
+        setTimeout(() => {
+
+            if (!sensorActive) {
+
+                sensorStatus.textContent =
+                    "sensor: ✗ no data";
+
+                debug.innerHTML +=
+                    "<br>⚠ No sensor events received";
+
+            }
+
+        }, 4000);
+
+        // ---------------------------------
+        // SESSION
+        // ---------------------------------
+
+        let currentIndex = 0;
+
+        // ---------------------------------
+        // FRICTION VALUES
+        // ---------------------------------
+
+        let swipeThreshold = 120;
+        let transitionDelay = 100;
+
+        // ---------------------------------
+        // CLASSIFICATION LOOP
+        // ---------------------------------
+
+        setInterval(() => {
+
+            if (!walkingAverage) return;
+
+            const walkingDistance =
+                Math.abs(smoothMovement - walkingAverage);
+
+            const stillDistance =
+                Math.abs(smoothMovement - stillAverage);
+
+            let detectedState =
+                walkingDistance < stillDistance
+                    ? "walking"
+                    : "still";
+
+            // MODEL A
+            // more friction walking
+            // less friction still
+
+            let frictionAmount = 0;
+
+            if (frictionModel === "walking") {
+
+                frictionAmount =
+                    detectedState === "walking"
+                        ? 1
+                        : 0;
+            }
+
+            // MODEL B
+            // more friction still
+            // less friction walking
+
+            if (frictionModel === "still") {
+
+                frictionAmount =
+                    detectedState === "still"
+                        ? 1
+                        : 0;
+            }
+
+            // APPLY FRICTION
+
+            swipeThreshold =
+                frictionAmount
+                    ? 260
+                    : 120;
+
+            transitionDelay =
+                frictionAmount
+                    ? 1200
+                    : 100;
+
+            // LABEL
+
+            if (frictionModel === "walking") {
+
+                label.innerHTML =
+                    `
+                    <b>MODEL A</b><br>
+                    <span style="font-size:12px; opacity:0.8;">
+                    more friction walking<br>
+                    less friction still
+                    </span>
+                    `;
+
+            } else {
+
+                label.innerHTML =
+                    `
+                    <b>MODEL B</b><br>
+                    <span style="font-size:12px; opacity:0.8;">
+                    more friction still<br>
+                    less friction walking
+                    </span>
+                    `;
+
+            }
+
+            // DEBUG
+
+            debug.innerHTML = `
+Movement: ${smoothMovement.toFixed(1)}<br>
+Walking avg: ${walkingAverage.toFixed(1)}<br>
+Still avg: ${stillAverage.toFixed(1)}<br>
+Detected: <b style="color:#00ff66;">${detectedState}</b><br>
+Swipe threshold: ${Math.round(swipeThreshold)}<br>
+Delay: ${Math.round(transitionDelay)}ms
+            `;
+
+        }, 100);
+
+        // ---------------------------------
+        // PRELOAD
+        // ---------------------------------
+
+        function preload(index) {
+
+            const file =
+                videos[index % videos.length];
+
+            console.log("Preloading:", file);
+
+            next.pause();
+
+            next.removeAttribute("src");
+            next.load();
+
+            setTimeout(() => {
+
+                next.preload = "auto";
+                next.src = file;
+
+                next.load();
+
+                next.play().catch(err =>
+                    console.log(err)
+                );
+
+            }, 100);
+
+        }
+
+        // ---------------------------------
+        // INITIAL VIDEO
+        // ---------------------------------
+
+        current.src = videos[0];
+
+        current.play().catch(err =>
+            console.log(err)
+        );
+
+        preload(1);
+
+        current.style.transform =
+            "translateY(0vh)";
+
+        next.style.transform =
+            "translateY(100vh)";
+
+        // ---------------------------------
+        // DRAGGING
+        // ---------------------------------
+
+        let dragging = false;
+
+        let startX = 0;
+        let startY = 0;
+        let currentY = 0;
+
+        document.addEventListener("touchstart", e => {
+
+            dragging = true;
+
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+
+            currentY = startY;
+
+            current.style.transition = "none";
+            next.style.transition = "none";
+
+            current.play();
+
+        });
+
+        document.addEventListener("touchmove", e => {
+
+            if (!dragging) return;
+
+            currentY = e.touches[0].clientY;
+
+            let deltaY = currentY - startY;
+
+            if (deltaY < 0) {
+
+                current.style.transform =
+                    `translateY(${deltaY}px)`;
+
+                next.style.transform =
+                    `translateY(${window.innerHeight + deltaY}px)`;
+
+            }
+
+        });
+
+        document.addEventListener("touchend", e => {
+
+            dragging = false;
+
+            let dx =
+                e.changedTouches[0].clientX - startX;
+
+            let dy =
+                e.changedTouches[0].clientY - startY;
+
+            // SWITCH MODEL
+
+            if (Math.abs(dx) > Math.abs(dy)) {
+
+                if (dx < -50) {
+
+                    frictionModel =
+                        frictionModel === "walking"
+                            ? "still"
+                            : "walking";
+
+                }
+
+                current.style.transform =
+                    "translateY(0vh)";
+
+                next.style.transform =
+                    "translateY(100vh)";
+
+                return;
+            }
+
+            // VERTICAL SWIPE
+
+            current.style.transition =
+                "transform 0.25s ease";
+
+            next.style.transition =
+                "transform 0.25s ease";
+
+            if (dy < -swipeThreshold) {
+
+                current.style.transform =
+                    "translateY(-100vh)";
+
+                next.style.transform =
+                    "translateY(0vh)";
+
+                setTimeout(() => {
+
+                    let temp = current;
+                    current = next;
+                    next = temp;
+
+                    current.style.transition = "none";
+                    next.style.transition = "none";
+
+                    current.style.transform =
+                        "translateY(0vh)";
+
+                    next.style.transform =
+                        "translateY(100vh)";
+
+                    currentIndex =
+                        (currentIndex + 1) % videos.length;
+
+                    preload(currentIndex + 1);
+
+                    current.play().catch(err =>
+                        console.log(err)
+                    );
+
+                }, 250 + transitionDelay);
+
+            } else {
+
+                current.style.transform =
+                    "translateY(0vh)";
+
+                next.style.transform =
+                    "translateY(100vh)";
+
+            }
+
+        });
+
+        // ---------------------------------
+        // VIDEO ERRORS
+        // ---------------------------------
+
+        current.addEventListener(
+            "error",
+            () => console.log("CURRENT VIDEO FAILED")
+        );
+
+        next.addEventListener(
+            "error",
+            () => console.log("NEXT VIDEO FAILED")
+        );
+
+        // ---------------------------------
+        // LOAD TRAINING DATA
+        // ---------------------------------
+
+        loadTrainingData();
+
+    </script>
+
+</body>
+
+</html>
