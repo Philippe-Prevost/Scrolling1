@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+      touch-action: none;
+      font-family: sans-serif;
+    }
+
+    video {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      background: black;
+      will-change: transform, filter;
+    }
+
+    #ui {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    #modelBox {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 14px;
+      border-radius: 14px;
+      line-height: 1.45;
+      max-width: 240px;
+      backdrop-filter: blur(10px);
+      pointer-events: auto;
+    }
+
+    #modelTitle {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    #modelDesc {
+      font-size: 12px;
+      opacity: 0.82;
+      margin-top: 4px;
+    }
+
+    #stats {
+      position: fixed;
+      bottom: 12px;
+      left: 12px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 12px;
+      line-height: 1.5;
+      backdrop-filter: blur(10px);
+      pointer-events: auto;
+    }
+
+    #hideBtn {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 12px;
+      backdrop-filter: blur(10px);
+      pointer-events: auto;
+    }
+
+    #clock {
+      position: fixed;
+      top: 70px;
+      right: 12px;
+      color: white;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      display: none;
+      backdrop-filter: blur(10px);
+    }
+
+    #pauseOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      z-index: 999;
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      padding: 40px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="ui">
+
+    <div id="modelBox">
+      <div id="modelTitle"></div>
+      <div id="modelDesc"></div>
+    </div>
+
+    <button id="hideBtn">
+      Hide UI
+    </button>
+
+    <div id="stats">
+      Videos: <span id="videoCount">0</span><br>
+      Session: <span id="sessionTime">00:00</span>
+    </div>
+
+    <div id="clock"></div>
+
+  </div>
+
+  <div id="pauseOverlay">
+    Take a second.<br>
+    Notice the loop.
+  </div>
+
+  <video id="current" autoplay muted loop playsinline></video>
+  <video id="next" autoplay muted loop playsinline></video>
+
+  <script>
+
+    // ---------------------------------
+    // VIDEOS
+    // ---------------------------------
+
+    const videos = [
+      "videos/vid1.mp4",
+      "videos/vid2.mp4",
+      "videos/vid3.mp4",
+      "videos/vid4.mp4",
+      "videos/vid5.mp4",
+      "videos/vid6.mp4",
+      "videos/vid7.mp4",
+      "videos/vid8.mp4"
+    ];
+
+    // ---------------------------------
+    // ELEMENTS
+    // ---------------------------------
+
+    let current = document.getElementById("current");
+    let next = document.getElementById("next");
+
+    const modelTitle = document.getElementById("modelTitle");
+    const modelDesc = document.getElementById("modelDesc");
+
+    const videoCountEl = document.getElementById("videoCount");
+    const sessionTimeEl = document.getElementById("sessionTime");
+
+    const hideBtn = document.getElementById("hideBtn");
+    const modelBox = document.getElementById("modelBox");
+    const stats = document.getElementById("stats");
+
+    const clock = document.getElementById("clock");
+    const pauseOverlay = document.getElementById("pauseOverlay");
+
+    // ---------------------------------
+    // VIDEO SETUP
+    // ---------------------------------
+
+    [current, next].forEach(v => {
+
+      v.muted = true;
+      v.autoplay = true;
+      v.loop = true;
+      v.playsInline = true;
+
+    });
+
+    // ---------------------------------
+    // MODELS
+    // ---------------------------------
+
+    const models = [
+
+      {
+        name: "MODEL 1",
+        title: "Control",
+        desc: "Normal infinite scrolling feed."
+      },
+
+      {
+        name: "MODEL 2",
+        title: "Delay",
+        desc: "Tiny delay before feed transition."
+      },
+
+      {
+        name: "MODEL 3",
+        title: "Long Swipe",
+        desc: "Requires larger swipe movement."
+      },
+
+      {
+        name: "MODEL 4",
+        title: "Slow Swipe",
+        desc: "Quick flicks are ignored."
+      },
+
+      {
+        name: "MODEL 5",
+        title: "Random Delay",
+        desc: "Occasional unpredictable transition pauses."
+      },
+
+      {
+        name: "MODEL 6",
+        title: "Tilt Drift",
+        desc: "Feed subtly reacts to phone tilt."
+      },
+
+      {
+        name: "MODEL 7",
+        title: "Counter",
+        desc: "Persistent awareness of consumption."
+      },
+
+      {
+        name: "MODEL 8",
+        title: "Clock",
+        desc: "Continuous session time visibility."
+      },
+
+      {
+        name: "MODEL 9",
+        title: "Posture",
+        desc: "Screen dims during downward posture."
+      },
+
+      {
+        name: "MODEL 10",
+        title: "Intent Pause",
+        desc: "Brief reflection pause every 15 videos."
+      }
+
+    ];
+
+    let currentModel = 0;
+
+    // ---------------------------------
+    // STATE
+    // ---------------------------------
+
+    let currentIndex = 0;
+    let videoCount = 0;
+
+    let dragging = false;
+
+    let startX = 0;
+    let startY = 0;
+    let currentY = 0;
+
+    let swipeStartTime = 0;
+
+    let hideUI = false;
+
+    const sessionStart = Date.now();
+
+    // ---------------------------------
+    // MODEL UI
+    // ---------------------------------
+
+    function updateModelUI() {
+
+      const model = models[currentModel];
+
+      modelTitle.innerHTML =
+        `${model.name}<br><span style="font-size:13px">${model.title}</span>`;
+
+      modelDesc.innerHTML = model.desc;
+    }
+
+    updateModelUI();
+
+    // ---------------------------------
+    // HIDE UI
+    // ---------------------------------
+
+    hideBtn.addEventListener("click", () => {
+
+      hideUI = !hideUI;
+
+      if (hideUI) {
+
+        modelBox.style.display = "none";
+        stats.style.display = "none";
+        clock.style.display = "none";
+
+        hideBtn.innerText = "Show UI";
+
+      } else {
+
+        modelBox.style.display = "block";
+        stats.style.display = "block";
+
+        hideBtn.innerText = "Hide UI";
+
+      }
+
+    });
+
+    // ---------------------------------
+    // SESSION TIMER
+    // ---------------------------------
+
+    setInterval(() => {
+
+      const elapsed =
+        Math.floor((Date.now() - sessionStart) / 1000);
+
+      const min =
+        String(Math.floor(elapsed / 60)).padStart(2, "0");
+
+      const sec =
+        String(elapsed % 60).padStart(2, "0");
+
+      sessionTimeEl.innerText =
+        `${min}:${sec}`;
+
+      if (currentModel === 7 || currentModel === 8) {
+
+        clock.style.display = "block";
+
+        const now = new Date();
+
+        clock.innerText =
+          now.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
+          });
+
+      } else {
+
+        if (!hideUI) {
+          clock.style.display = "none";
+        }
+
+      }
+
+    }, 1000);
+
+    // ---------------------------------
+    // PRELOAD
+    // ---------------------------------
+
+    function preload(index) {
+
+      const file =
+        videos[index % videos.length];
+
+      next.pause();
+
+      next.removeAttribute("src");
+      next.load();
+
+      setTimeout(() => {
+
+        next.src = file;
+
+        next.load();
+
+        next.play().catch(() => { });
+
+      }, 50);
+
+    }
+
+    // ---------------------------------
+    // INITIAL VIDEO
+    // ---------------------------------
+
+    current.src = videos[0];
+
+    current.play();
+
+    preload(1);
+
+    current.style.transform = "translateY(0vh)";
+    next.style.transform = "translateY(100vh)";
+
+    // ---------------------------------
+    // TILT MODEL
+    // ---------------------------------
+
+    let tiltX = 0;
+
+    window.addEventListener("deviceorientation", e => {
+
+      tiltX =
+        (e.gamma || 0) * 0.2;
+
+      if (currentModel === 5) {
+
+        current.style.transform =
+          `translateX(${tiltX}px)`;
+
+      }
+
+      if (currentModel === 8) {
+
+        const beta = Math.abs(e.beta || 0);
+
+        if (beta > 55) {
+
+          current.style.filter =
+            "brightness(0.45)";
+
+        } else {
+
+          current.style.filter =
+            "brightness(1)";
+
+        }
+
+      } else {
+
+        current.style.filter =
+          "brightness(1)";
+      }
+
+    });
+
+    // ---------------------------------
+    // TOUCH START
+    // ---------------------------------
+
+    document.addEventListener("touchstart", e => {
+
+      dragging = true;
+
+      swipeStartTime = Date.now();
+
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+
+      currentY = startY;
+
+      current.style.transition = "none";
+      next.style.transition = "none";
+
+    });
+
+    // ---------------------------------
+    // TOUCH MOVE
+    // ---------------------------------
+
+    document.addEventListener("touchmove", e => {
+
+      if (!dragging) return;
+
+      currentY = e.touches[0].clientY;
+
+      let deltaY = currentY - startY;
+
+      if (deltaY < 0) {
+
+        current.style.transform =
+          `translateY(${deltaY}px)`;
+
+        next.style.transform =
+          `translateY(${window.innerHeight + deltaY}px)`;
+
+      }
+
+    });
+
+    // ---------------------------------
+    // TOUCH END
+    // ---------------------------------
+
+    document.addEventListener("touchend", e => {
+
+      dragging = false;
+
+      let dx =
+        e.changedTouches[0].clientX - startX;
+
+      let dy =
+        e.changedTouches[0].clientY - startY;
+
+      const swipeDuration =
+        Date.now() - swipeStartTime;
+
+      // ---------------------------------
+      // SWITCH MODELS
+      // ---------------------------------
+
+      if (Math.abs(dx) > Math.abs(dy)) {
+
+        if (dx < -50) {
+
+          currentModel++;
+
+          if (currentModel >= models.length) {
+            currentModel = 0;
+          }
+
+          updateModelUI();
+
+        }
+
+        if (dx > 50) {
+
+          currentModel--;
+
+          if (currentModel < 0) {
+            currentModel = models.length - 1;
+          }
+
+          updateModelUI();
+
+        }
+
+        current.style.transform =
+          "translateY(0vh)";
+
+        next.style.transform =
+          "translateY(100vh)";
+
+        return;
+      }
+
+      // ---------------------------------
+      // MODEL VARIABLES
+      // ---------------------------------
+
+      let swipeThreshold = 120;
+      let delay = 100;
+
+      // MODEL 2
+      if (currentModel === 1) {
+        delay = 500;
+      }
+
+      // MODEL 3
+      if (currentModel === 2) {
+        swipeThreshold = 280;
+      }
+
+      // MODEL 4
+      if (currentModel === 3) {
+
+        if (swipeDuration < 180) {
+
+          current.style.transform =
+            "translateY(0vh)";
+
+          next.style.transform =
+            "translateY(100vh)";
+
+          return;
+        }
+      }
+
+      // MODEL 5
+      if (currentModel === 4) {
+
+        if (Math.random() < 0.35) {
+          delay = 1200;
+        }
+      }
+
+      // ---------------------------------
+      // SWIPE
+      // ---------------------------------
+
+      current.style.transition =
+        "transform 0.25s ease";
+
+      next.style.transition =
+        "transform 0.25s ease";
+
+      if (dy < -swipeThreshold) {
+
+        current.style.transform =
+          "translateY(-100vh)";
+
+        next.style.transform =
+          "translateY(0vh)";
+
+        setTimeout(() => {
+
+          let temp = current;
+          current = next;
+          next = temp;
+
+          current.style.transition = "none";
+          next.style.transition = "none";
+
+          current.style.transform =
+            "translateY(0vh)";
+
+          next.style.transform =
+            "translateY(100vh)";
+
+          currentIndex =
+            (currentIndex + 1) % videos.length;
+
+          videoCount++;
+
+          videoCountEl.innerText =
+            videoCount;
+
+          preload(currentIndex + 1);
+
+          current.play();
+
+          // MODEL 10
+          if (
+            currentModel === 9 &&
+            videoCount > 0 &&
+            videoCount % 15 === 0
+          ) {
+
+            pauseOverlay.style.display = "flex";
+
+            setTimeout(() => {
+
+              pauseOverlay.style.display = "none";
+
+            }, 1800);
+
+          }
+
+        }, 250 + delay);
+
+      } else {
+
+        current.style.transform =
+          "translateY(0vh)";
+
+        next.style.transform =
+          "translateY(100vh)";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>
